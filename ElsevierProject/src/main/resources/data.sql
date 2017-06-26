@@ -7,11 +7,9 @@ INSERT INTO `book` (`book_id`, `book_image`, `description`, `e_bookisbn`, `forma
 INSERT INTO `book` (`book_id`, `book_image`, `description`, `e_bookisbn`, `format`, `page_count`, `paperisbn`, `price`, `published_date`, `publisher`, `table_of_contents`, `title`) VALUES ('2', 'images/divinecomedy.jpg', 'HELL!!', NULL, 'Paperback', '928', '451208633', '11.00', '2003', 'Berkley', NULL, 'The Divine Comedy (The Inferno, The Purgatorio, and The Paradiso)');
 
 
-
 INSERT INTO `author` (`author_id`, `about_author`, `affiliations`, `author_name`, `expertise`) VALUES ('1', 'Fairy Tales', NULL, 'Hans Christian Andersen', 'Fairy Tales');
 INSERT INTO `author` (`author_id`, `about_author`, `affiliations`, `author_name`, `expertise`) VALUES ('0', 'YAMS', NULL, 'Chinua Achebe', 'YAMS');
 INSERT INTO `author` (`author_id`, `about_author`, `affiliations`, `author_name`, `expertise`) VALUES ('2', 'Inferno', NULL, 'Dante Alighieri', 'Purgatorio');
-
 
 
 INSERT INTO `book_authors` (`book_book_id`, `authors_author_id`) VALUES ('0', '0');
