@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Shopping </title>
     <link rel="stylesheet" href="css/style.css">
+    
   </head>
   <body>
     
@@ -39,25 +40,25 @@
     <div class="callout large">
       <div class="row column">
         
-        <form action="/registerProcess" method="post">
+        <form id="register_form" action="/registerProcess" method="post">
         <div class="medium-6">
            <h3> Create an account  </h3>
                 
                 
                <label>First Name * </label>
-               <input type="text" placeholder="Enter firstname" name="firstName" id="firstName" required/> 
+               <input type="text" placeholder="Enter first name" name="firstName" id="firstName"/> 
                <label>Last Name * </label>
-               <input type="text" placeholder="Enter lastname" name="lastName" id="lastName" required/> 
+               <input type="text" placeholder="Enter last name" name="lastName" id="lastName"/> 
                <label>Email ID * </label>
-                <input type="text" placeholder="Enter email" name="email" id="email" required/> 
+                <input type="text" placeholder="Enter email" name="email" id="email"/> 
                 <label>Password * </label>
-				 <input type="password" placeholder="Enter Password" name="password" id="password" required/>
+				 <input type="password" placeholder="Enter password" name="password" id="password"/>
             	
             </div>
             
             <div class="medium-6">
            
-          	 <input type="checkbox" name="aggreement" required/> I have read and understood the 
+          	 <input type="checkbox" name="aggreement"/> I have read and understood the 
           	 <a href="/registered_user_agreement">Registered User Agreement </a> and agree to be bound by all of its terms. 
          
             </div>
@@ -74,6 +75,7 @@
    
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier.js"></script>
+    <script src="js/validations.js"></script>
     <script>
       $(document).foundation();
     </script>

@@ -8,5 +8,5 @@ import com.qa.models.Book;
 
 @Repository
 public interface BookService extends CrudRepository<Book, Integer>{
-
+	
 }

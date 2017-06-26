@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+
+.classpath
+.project
+bin/.DS_Store
+bin/com/qa/ElsevierProjectApplicationTests.class
+=======
 .gradle
 *.sw?
 .#*
@@ -36,3 +43,4 @@ overridedb.*
 .factorypath
 dump.rdb
 transaction-logs
+>>>>>>> refs/remotes/origin/working

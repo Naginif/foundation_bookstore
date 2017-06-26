@@ -27,5 +27,9 @@ public interface CustomerService extends CrudRepository<Customer, Integer>{
 			@Param("lastName") String lastName,
 			@Param("email") String email,
 			@Param("customerId") int customerId);
+	
+	//find existing email 
+	@Query("select c from Customer c where c.email = :email")
+	public Customer findExisting(@Param("email") String email);
 }
 
