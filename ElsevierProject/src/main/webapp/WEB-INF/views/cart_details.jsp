@@ -4,6 +4,7 @@
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.qa.models.Book"%>
+<%@page import="java.text.NumberFormat"%>
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
@@ -23,7 +24,7 @@
     
       
     %>
-    
+    <%NumberFormat formatter = NumberFormat.getCurrencyInstance(); %>
     
     <%
     
