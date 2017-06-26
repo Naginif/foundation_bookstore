@@ -12,11 +12,11 @@ String navName = "home";
 <html class="no-js" lang="en">
 
 <!-- Head tags  -->
-<%@include file="html/head.html" %>
+<%@include file="html/head.jsp" %>
 
   <body>
   	<!-- Navigation markup -->
-    <%@ include file="html/nav.html" %>
+    <%@ include file="html/nav.jsp" %>
 
 	<!-- Content goes here -->
 	
@@ -25,6 +25,6 @@ String navName = "home";
 	
 
 	<!--  Footer markup -->
-    <%@include file="html/footer.html" %>
+    <%@include file="html/footer.jsp" %>
   </body>
 </html>
