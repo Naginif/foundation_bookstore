@@ -35,7 +35,6 @@ if (firstname === '' && lastname === '' && address1 === '' &&
 	$('#email').css('border', '3px solid red');
 	
 	
-	alert("Please Fill Required	Fields");
 return false; // Indicates that don't submit the form, stay on same page
 } else {
 	
@@ -44,7 +43,7 @@ return false; // Indicates that don't submit the form, stay on same page
 
 if ($('#firstname').val() == '') {
     $('#firstname').css('border', '3px solid red');
-    alert("Please Fill Required Fields");
+    
     return false;
 }
 else {
@@ -155,8 +154,6 @@ $("#register_form").submit(function(){
 	$('#email').css('border', '3px solid red');
 	$('#password').css('border', '3px solid red');
 	
-	
-	alert("Please Fill Required	Fields");
 return false; // Indicates that don't submit the form, stay on same page
 } else {
 	
@@ -165,7 +162,6 @@ return false; // Indicates that don't submit the form, stay on same page
 
 if ($('#firstname').val() == '') {
     $('#firstname').css('border', '3px solid red');
-    alert("Please Fill Required Fields");
     return false;
 }
 else {
