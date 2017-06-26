@@ -31,12 +31,22 @@ public class AddressBookController {
 		System.out.println("Name"+loggedInCustomer.getFirstName());
 		System.out.println("Email"+loggedInCustomer.getEmail());
 		
+		int custId = loggedInCustomer.getCustomerId();
+		String addressType = address.getAddressType();
+		if (addressType.equals("billing"))
+		{
+			address.setAddressId(custId * 2);
+		}
+		else 
+		{
+			address.setAddressId(custId * 2 + 1);
+		}
 		
 		Address bAddress = addressService.findAddressByType(loggedInCustomer.getCustomerId(), "billing");
 		
 		Address sAddress = addressService.findAddressByType(loggedInCustomer.getCustomerId(), "shipping");
 		
-		if(bAddress!=null || sAddress!=null)
+		if((addressType.equals("billing") && bAddress!=null) || (addressType.equals("shipping") && sAddress!=null ))
 		{
 		
 		        int recordsUpdated = addressService.updateBillingAddress(address.getAddressLine1(),
