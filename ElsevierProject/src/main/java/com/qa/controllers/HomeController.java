@@ -39,7 +39,11 @@ public class HomeController {
 		
 		ArrayList<Book> cartItems = null;
 		
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(false);
+		
+		if (session == null) {
+			session = request.getSession();
+		}
 		
 		Object items = session.getAttribute("cart_items");
 		
