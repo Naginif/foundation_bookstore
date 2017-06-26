@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Shopping </title>
     <link rel="stylesheet" href="css/style.css">
+    
   </head>
   <body>
     
@@ -39,7 +40,7 @@
     <div class="callout large">
       <div class="row column">
         
-        <form action="/registerProcess" method="post">
+        <form id="register_form" action="/registerProcess" method="post">
         <div class="medium-6">
            <h3> Create an account  </h3>
                 
@@ -74,6 +75,7 @@
    
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier.js"></script>
+    <script src="js/validations.js"></script>
     <script>
       $(document).foundation();
     </script>
