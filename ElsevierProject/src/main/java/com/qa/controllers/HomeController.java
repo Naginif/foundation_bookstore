@@ -228,6 +228,13 @@ public class HomeController {
 	    return modelAndView;
 	}
 	
+	@RequestMapping("/logout")
+	public ModelAndView logout() {
+		ModelAndView modelAndView = new ModelAndView("index");
+		
+		
+		return modelAndView;
+	}
 	
 	
 	
