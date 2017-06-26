@@ -142,10 +142,10 @@ public class HomeController {
 		
 		ModelAndView modelAndView  = null;
 		
-		System.out.println("Email is "+email);
+//		System.out.println("Email is "+email);
 		
 		
-		System.out.println("Password is "+password);
+//		System.out.println("Password is "+password);
 		
 		
 		Customer c = customerService.loginProcess(email, password);
@@ -159,6 +159,7 @@ public class HomeController {
 		{
 			System.out.println("Failure");
 			modelAndView = new ModelAndView("login_failed");
+			
 		}
 	  		
 		return modelAndView;
