@@ -21,7 +21,6 @@
 	  	
 	  <div class="top-bar-right">
 		<ul class="menu">
-			<li><a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/></a></li>
 		  	<li><input type="search" placeholder="Search"></li>
 		  	<li><button type="button" class="button">Search</button></li>
 		</ul>
