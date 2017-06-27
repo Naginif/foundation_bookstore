@@ -44,7 +44,7 @@ String navName = "home";
             
             <div class="medium-6">
            
-          	 <input type="checkbox" name="aggreement"/> I have read and understood the 
+          	 <input type="checkbox" name="aggreement" required/> I have read and understood the 
           	 <a href="/registered_user_agreement" target="_blank">Registered User Agreement </a> and agree to be bound by all of its terms. 
          
             </div>
