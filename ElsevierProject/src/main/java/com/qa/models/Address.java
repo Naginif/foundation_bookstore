@@ -11,6 +11,7 @@ public class Address {
 	private int addressId;
 	
 	
+
 	private String addressLine1;
 	
 	private String addressLine2;
@@ -110,6 +111,13 @@ public class Address {
 		this.phoneNumber = phoneNumber;
 	}
 	
+
+	@Override
+	public String toString() {
+		return "Address [addressId=" + addressId + ", addressLine1=" + addressLine1 + ", addressLine2=" + addressLine2
+				+ ", city=" + city + ", postcode=" + postcode + ", state=" + state + ", country=" + country
+				+ ", phoneNumber=" + phoneNumber + ", addressType=" + addressType + ", customerId=" + customerId + "]";
+	}
 	
 	
 }

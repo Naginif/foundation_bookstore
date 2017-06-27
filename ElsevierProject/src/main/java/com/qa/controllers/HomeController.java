@@ -258,4 +258,18 @@ public class HomeController {
 		return modelAndView;
 	}
 	
+	@RequestMapping("/about")
+	public ModelAndView about(){
+		ModelAndView modelAndView = new ModelAndView("about");
+		
+		return modelAndView;
+	}
+	
+	@RequestMapping("/contact")
+	public ModelAndView contact(){
+		ModelAndView modelAndView = new ModelAndView("contact");
+		
+		return modelAndView;
+	}
+	
 }
