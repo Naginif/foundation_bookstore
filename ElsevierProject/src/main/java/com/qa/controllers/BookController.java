@@ -1,3 +1,4 @@
+
 package com.qa.controllers;
 
 import java.util.ArrayList;
@@ -54,7 +55,7 @@ public class BookController {
 	}
 	
 	@RequestMapping("/cart")
-	public ModelAndView cart(@ModelAttribute("books") Iterable<Book> books,@ModelAttribute("cart_items") ArrayList<Book> cartItems)
+	public ModelAndView viewCart(@ModelAttribute("books") Iterable<Book> books,@ModelAttribute("cart_items") ArrayList<Book> cartItems)
 	{
 		
 		ModelAndView modelAndView = null;

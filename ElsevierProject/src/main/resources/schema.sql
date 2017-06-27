@@ -1,4 +1,4 @@
-drop table if exists book_authors;
+/*drop table if exists book_authors;
 drop table if exists shopping_cart;
 drop table if exists customer_orders;
 drop table  if exists address;
@@ -102,4 +102,4 @@ CREATE TABLE address
 	FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
 	ON DELETE CASCADE ON UPDATE CASCADE,
 	PRIMARY KEY(customer_id, address_type)
-);
+);*/

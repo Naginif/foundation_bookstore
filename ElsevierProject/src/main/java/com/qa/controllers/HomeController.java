@@ -70,8 +70,11 @@ public class HomeController {
 		Iterable<Book> books = bookRepository.findAll();
 		
 		ModelAndView modelAndView = new ModelAndView("index","books",books);
-		
 		modelAndView.addObject("cart_items",cartItems);
+		if(request.getAttribute("order_recieved")==null){
+			modelAndView.addObject("order_recieved", false);
+		}
+		System.out.print(request.getAttribute("order_recieved"));
 		return modelAndView;
 		
 	}
@@ -153,6 +156,7 @@ public class HomeController {
 	  	
 		return modelAndView;
 	}
+	
 	
 	@RequestMapping("/loginProcess")
 	public ModelAndView loginProcess(@RequestParam("email") String email,

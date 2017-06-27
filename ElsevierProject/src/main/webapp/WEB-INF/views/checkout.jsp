@@ -57,51 +57,51 @@ String navName = "home";
         <div class="row small-up-shiping">
         
           <div class="columns">
-            <label> Firstname * </label>
-            <input type="text" name="firstName" id="firstName" size="30"/> 
+            <label> First Name * </label>
+            <input type="text" name="firstName" id="firstName" size="30" required/> 
           </div>
           <div class="columns">
-             <label> Lastname * </label>
-            <input type="text" name="lastName" id="lastName" size="30"/>
+             <label> Last Name * </label>
+            <input type="text" name="lastName" id="lastName" size="30" required/>
           </div>
           
           <div class="column">
            <label> Address 1 * </label>
-            <input type="text" name="addressLine1" id="addressLine1" size="30"/>
+            <input type="text" name="addressLine1" id="addressLine1" size="30" required/>
           </div>
           <div class="column">
-            <label> Address 2 * </label>
+            <label> Address 2 </label>
             <input type="text" name="addressLine2" id="addressLine2" size="30"/>
           </div>
           <div class="column">
             <label> City * </label>
-            <input type="text" name="city" id="city" size="30"/>
+            <input type="text" name="city" id="city" size="30" required/>
           </div>
           
           <div class="column">
             <label> Postcode / Zip code * </label>
-            <input type="text" name="postcode" id="postcode" size="30"/>
+            <input type="text" name="postcode" id="postcode" size="5" required/>
           </div>
           
           <div class="column">
             <label> State/Province * </label>
-            <input type="text" name="state" id="state" size="30"/>
+            <input type="text" name="state" id="state" size="30"/ required>
           </div>
           
           <div class="column">
-            <label> Country</label>
-            <input type="text" name="country" id="country" size="30"/>
+            <label> Country *</label>
+            <input type="text" name="country" id="country" size="30" required/>
           </div>
           
            <div class="column">
-            <label> Phone Number</label>
-            <input type="text" name="phone" id="phone" size="30"/>
+            <label> Phone Number *</label>
+            <input type="text" name="phone" id="phone" size="11" required/>
           </div>
           
           
            <div class="column">
             <label> Email * </label>
-            <input type="text" name="email" id="email" size="30"/>
+            <input type="text" name="email" id="email" size="30" required/>
           </div>
           
           
