@@ -2,6 +2,15 @@
 </div>
 </section>
 
+<footer class="row">
+  <nav class="large-12 column">
+    	<ul class="horizontal menu">
+		  <li><a href="/about">About</a></li>
+		  <li><a href="/contact">Contact</a></li>
+		</ul>
+  </nav>
+</footer>
+
 <script src="js/elsevier.js"></script>
 <script src="js/vendor/jquery.js"></script>
 <script src="js/vendor/what-input.js"></script>
