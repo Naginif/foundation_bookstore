@@ -67,7 +67,7 @@ CREATE TABLE customer_orders
 (
 	order_id int(11) NOT NULL,
 	customer_id int(11) NOT NULL,
-	quantity int(11) NOT NULL,
+	date varchar(255) NOT NULL,
 	FOREIGN KEY (order_id) REFERENCES orders(order_id)
 	ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
