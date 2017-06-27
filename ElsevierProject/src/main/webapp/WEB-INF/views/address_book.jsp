@@ -43,9 +43,9 @@ String navName = "home";
                 
               <form action="/updateAddress" method="post">
                <label>Address Line 1 * </label>
-               <input type="text" placeholder="Enter AddressLine2" name="addressLine1" id="addressLine1" required/> 
+               <input type="text" placeholder="Enter Address Line 1" name="addressLine1" id="addressLine1" required/> 
                <label>Address Line 2  </label>
-               <input type="text" placeholder="Enter Address Line2" name="addressLine2" id="addressLine2"/> 
+               <input type="text" placeholder="Enter Address Line 2" name="addressLine2" id="addressLine2"/> 
                <label>City * </label>
                 <input type="text" placeholder="Enter City" name="city" id="city" required/> 
                   <label>Postcode * </label>
@@ -79,9 +79,9 @@ String navName = "home";
                 
               <form action="/updateAddress" method="post">
                <label>Address Line 1 * </label>
-               <input type="text" placeholder="Enter AddressLine2" name="addressLine1" id="addressLine1" class="tex" required/> 
+               <input type="text" placeholder="Enter Address Line 1" name="addressLine1" id="addressLine1" class="tex" required/> 
                <label>Address Line s2 </label>
-               <input type="text" placeholder="Enter Address Line2" name="addressLine2" id="addressLine2" class="tex"/> 
+               <input type="text" placeholder="Enter Address Line 2" name="addressLine2" id="addressLine2" class="tex"/> 
                <label>City * </label>
                 <input type="text" placeholder="Enter City" name="city" id="city" class="tex" required/> 
                   <label>Postcode * </label>
