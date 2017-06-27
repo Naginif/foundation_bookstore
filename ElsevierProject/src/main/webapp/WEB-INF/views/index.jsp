@@ -59,10 +59,7 @@ String navName = "home";
     	%>
     	<div class="column large-4 medium-6 small-12 <% if (!bookIter.hasNext()) %>end <%;%>">
       
-        <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="thumbnail" src="<%=book.getBookImage()%>" style="width:300px;height:350px;"></a>
-        <p style="font-size:16px"><%= book.getTitle()%></p>
-        <%NumberFormat formatter = NumberFormat.getCurrencyInstance(); %>
-        <p style="font-size:16px"><%= formatter.format(book.getPrice())%></p>
+        <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="thumbnail" src="<%=book.getBookImage()%>" style="width:450px;height:375px;"></a>
         <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="button expanded">View book details</a>
         <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
       	
