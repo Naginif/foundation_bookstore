@@ -1,4 +1,4 @@
-package com.qa.repositories;
+package com.qa.services;
 
 public class CustomerService {
 
