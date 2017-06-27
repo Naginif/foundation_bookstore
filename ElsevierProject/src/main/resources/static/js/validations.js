@@ -140,64 +140,101 @@ else {
 
 });
 
-$("#register_form").submit(function(){
-	var firstname = $("#firstName").val();
-	var lastname = $("#lastName").val();
-	var email = $("#email").val();
-	var password = $("#password").val();
+    if ($('#firstName').val().length > 0) {
+        console.log("hello");
+        $ ('#firstName').css('border' , '2px solid green');
+    }
+        $( '#firstName' ).focus(function() {
+        if ($('#firstName').val() == ''){
+        console.log('first name in focus and has nothing');
+        $( this ).css( 'border' , '2px solid red');
+    }
+    });
+    $ ( '#firstName').keyup(function() {
+        if($('#firstName').val().length <= 0 ){
+            $ (this).css('border' , '2px solid red');
+            console.log('first name is empty');
+        } else if($('#firstName').val().length > 0) {
+            
+            $( this).css( 'border' ,'2px solid green');
+            console.log('first name has info');
+        }
+    });
+    // End of validation for First Name input
 
-	if (firstname === '' && lastname === '' && email === '' && password === ''
-    ) {
-	//$( ".columns" ).css("border", "3px solid red" );
-	$('#firstName').css('border', '3px solid red');
-	$('#lastName').css('border', '3px solid red');
-	$('#email').css('border', '3px solid red');
-	$('#password').css('border', '3px solid red');
-	
-return false; // Indicates that don't submit the form, stay on same page
-} else {
-	
+    //validation for Last Name Form Input
+        if ($('#lastName').val().length > 0) {
+        console.log("hello");
+        $ ('#lastName').css('border' , '2px solid green');
+    }
+        $( '#lastName' ).focus(function() {
+        if ($('#lastName').val() == ''){
+        console.log('first name in focus and has nothing');
+        $( this ).css( 'border' , '2px solid red');
+    }
+    });
+    $ ( '#lastName').keyup(function() {
+        if($('#lastName').val().length <= 0 ){
+            $ (this).css('border' , '2px solid red');
+            console.log('first name is empty');
+        } else if($('#lastName').val().length > 0) {
+            
+            $( this).css( 'border' ,'2px solid green');
+            console.log('first name has info');
+        }
+    });
+    // checking email validation
+        //validation for Last Name Form Input
+        if ($('#email').val().length > 0) {
+        console.log("hello");
+        $ ('#email').css('border' , '2px solid green');
+    }
+        $( '#email' ).focus(function() {
+        if ($('#email').val() == ''){
+        console.log('first name in focus and has nothing');
+        $( this ).css( 'border' , '2px solid red');
+    }
+    });
+    $ ( '#email').keyup(function() {
+        if($('#email').val().length <= 0 ){
+            $ (this).css('border' , '2px solid red');
+            console.log('first name is empty');
+        } else if($('#lastName').val().length > 0) {
+            
+            $( this).css( 'border' ,'2px solid green');
+            console.log('first name has info');
+        }
+    });
+// checking validation for password
+        if ($('#password').val().length > 0) {
+        console.log("hello");
+        $ ('#password').css('border' , '2px solid green');
+    }
+        $( '#password' ).focus(function() {
+        if ($('#password').val() == ''){
+        console.log('first name in focus and has nothing');
+        $( this ).css( 'border' , '2px solid red');
+    }
+    });
+    $ ( '#password').keyup(function() {
+        if($('#password').val().length <= 0 ){
+            $ (this).css('border' , '2px solid red');
+            console.log('first name is empty');
+        } else if($('#password').val().length > 0) {
+            
+            $( this).css( 'border' ,'2px solid green');
+            console.log('first name has info');
+        }
+    });
+// end of password validation
+    // checking validation for password
 
-
-
-if ($('#firstname').val() == '') {
-    $('#firstname').css('border', '3px solid red');
-    return false;
-}
-else {
-    $('#firstname').css('border-color', '');
-    //return true;
-}
-
-
-if ($('#lastname').val() == '') {
-    $('#lastname').css('border', '3px solid red');
-    return false;
-}
-else {
-    $('#lastname').css('border-color', '');
-    //return true;
-}
-
-if ($('#email').val() == '') {
-    $('#email').css('border', '3px solid red');
-    return false;
-}
-else {
-    $('#email').css('border-color', '');
-    //return true;
-}
-
-if ($('#password').val() == '') {
-    $('#password').css('border', '3px solid red');
-    return false;
-}
-else {
-    $('#password').css('border-color', '');
-    //return true;
-}
-
-}
+    $('#passwordConfirm').keyup(function () {
+    if($('#password').val() != $('#passwordConfirm').val()){
+        $('#passwordConfirm').css('border' , '2px solid red');
+    } else {
+        $('#passwordConfirm').css('border' , '2px solid green');
+    }
 
 });
 
