@@ -1,4 +1,4 @@
-drop table if exists book_authors;
+/*drop table if exists book_authors;
 drop table if exists shopping_cart;
 drop table if exists customer_orders;
 drop table  if exists address;
@@ -6,7 +6,7 @@ drop table  if exists address;
 drop table  if exists author;
 drop table if exists book;
 drop table if exists orders;
-drop table if exists customer;
+drop table if exists customer;*/
 
 
 
