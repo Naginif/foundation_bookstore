@@ -25,7 +25,7 @@ Customer current_customer = (Customer) session.getAttribute("logged_in_customer"
 			<ul class="vertical menu">
 			  <li><a href="#">Order history</a></li>
 			  <li><a href="/addressBook">Address book</a></li>
-			  <li><a href="/profile">Change password</a></li>
+			  <li><a href="/profile">Account details</a></li>
 			  <li><a href="#">Logout</a></li>
 			</ul>
 		  </li>
