@@ -27,14 +27,16 @@ String navName = "home";
            <h3> Create an account  </h3>
                 
                 
-               <label>First Name * </label>
+                <label>First Name <span style="color:red;">*</span> </label>
                <input type="text" placeholder="Enter first name" name="firstName" id="firstName"/> 
-               <label>Last Name * </label>
+               <label>Last Name <span style="color:red;">*</span> </label>
                <input type="text" placeholder="Enter last name" name="lastName" id="lastName"/> 
-               <label>Email ID * </label>
+               <label>Email ID <span style="color:red;">*</span> </label>
                 <input type="text" placeholder="Enter email" name="email" id="email"/> 
-                <label>Password * </label>
-				 <input type="password" placeholder="Enter password" name="password" id="password"/>
+                <label>Password <span style="color:red;">*</span> </label>
+         <input type="password" placeholder="Enter password" name="password" id="password"/>
+                <label>Confirm Password <span style="color:red;">*</span> </label>
+         <input type="password" placeholder="Enter password" name="password" id="passwordConfirm"/>
             	
             </div>
             
