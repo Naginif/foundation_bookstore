@@ -1,10 +1,11 @@
+
 <%
 
 // Webpage title 
 String title="Foundation Books"; 
 
 // Navigation link name
-String navName = "home";
+String navName = "about";
 %>
 
 <!doctype html>
