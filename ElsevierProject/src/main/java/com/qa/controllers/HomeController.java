@@ -204,12 +204,13 @@ public class HomeController {
 		System.out.println("ID "+loggedInCustomer.getCustomerId());
 		System.out.println("Name"+loggedInCustomer.getFirstName());
 		System.out.println("Email"+loggedInCustomer.getEmail());
-		
+		System.out.println("Password"+loggedInCustomer.getPassword());
 		
 		int recordsUpdated = customerService.updateCustomer(loggedInCustomer.getFirstName(),
 				loggedInCustomer.getLastName(),
 				loggedInCustomer.getEmail(), 
-				loggedInCustomer.getCustomerId());
+				loggedInCustomer.getCustomerId(),
+				loggedInCustomer.getPassword());
 		
 		if(recordsUpdated>0)
 		{
@@ -221,6 +222,7 @@ public class HomeController {
 			System.out.println("ID "+c.getCustomerId());
 			System.out.println("Name"+c.getFirstName());
 			System.out.println("Email"+c.getEmail());
+			System.out.println("Password"+c.getPassword());
 			
 			
 			modelAndView = new ModelAndView("profile","logged_in_customer",c);

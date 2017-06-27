@@ -46,13 +46,14 @@ String navName = "home";
            <h3> Account details </h3>
                 
                 
-               <label>Firstname * </label>
-               <input type="text" placeholder="Enter firstname" name="firstName" id="firstName" value="<%=c.getFirstName() %>"/> 
-               <label>Lastname * </label>
-               <input type="text" placeholder="Enter lastname" name="lastName" id="lastName" value="<%=c.getLastName()%>"/> 
+               <label>First name * </label>
+               <input type="text" placeholder="Enter new first name" name="firstName" id="firstName" value="<%=c.getFirstName() %>" required/> 
+               <label>Last name * </label>
+               <input type="text" placeholder="Enter new last name" name="lastName" id="lastName" value="<%=c.getLastName()%>" required/> 
                <label>Email ID * </label>
-                <input type="text" placeholder="Enter email" name="email" id="email" value="<%=c.getEmail()%>"/> 
-                
+                <input type="text" placeholder="Enter new email" name="email" id="email" value="<%=c.getEmail()%>" required/> 
+               <label>Password * </label>
+                <input type="password" placeholder="Enter new password" name="password" id="password" value="<%=c.getPassword()%>" required/>
             </div>
             
           
