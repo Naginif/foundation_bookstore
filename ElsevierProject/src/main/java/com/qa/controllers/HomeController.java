@@ -80,7 +80,7 @@ public class HomeController {
 	public ModelAndView login()
 	{
 		ModelAndView modelAndView = new ModelAndView("login");
-	
+		modelAndView.addObject("loginFailed", false);
 	    return modelAndView;
 	}
 	
@@ -169,11 +169,13 @@ public class HomeController {
 		{
 			System.out.println("Success");
 	  		modelAndView = new ModelAndView("customer_home","logged_in_customer",c);
+			modelAndView.addObject("loginFailed", false);
 		}
 		else
-		{
+		{	
 			System.out.println("Failure");
-			modelAndView = new ModelAndView("login_failed");
+			modelAndView = new ModelAndView("login");
+			modelAndView.addObject("loginFailed", true);
 			
 		}
 	  		
