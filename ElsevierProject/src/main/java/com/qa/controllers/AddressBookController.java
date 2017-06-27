@@ -8,13 +8,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.qa.models.Address;
 import com.qa.models.Customer;
-import com.qa.services.AddressService;
+import com.qa.repositories.AddressRepository;
 
 @Controller
 public class AddressBookController {
 
 	@Autowired
-	private AddressService addressService;
+	private AddressRepository addressService;
 	
 	
 	@RequestMapping("/updateAddress")
