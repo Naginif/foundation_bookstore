@@ -39,7 +39,22 @@ public class HomeController {
 		
 		ArrayList<Book> cartItems = null;
 		
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(false);
+		
+		if (session == null) {
+			session = request.getSession();
+		}
+		
+		Customer custId = (Customer) session.getAttribute("logged_in_customer");
+		String customerToString;
+		
+		if (custId==null) {
+			customerToString = null;
+		} else {
+			customerToString = custId.toString();
+		}
+		
+		System.out.println(customerToString);
 		
 		Object items = session.getAttribute("cart_items");
 		
@@ -236,6 +251,25 @@ public class HomeController {
 		return modelAndView;
 	}
 	
+	@RequestMapping("/registered_user_agreement")
+	public ModelAndView registereduseragreement(){
+		ModelAndView modelAndView = new ModelAndView("registered_user_agreement");
+		
+		return modelAndView;
+	}
 	
+	@RequestMapping("/about")
+	public ModelAndView about(){
+		ModelAndView modelAndView = new ModelAndView("about");
+		
+		return modelAndView;
+	}
+	
+	@RequestMapping("/contact")
+	public ModelAndView contact(){
+		ModelAndView modelAndView = new ModelAndView("contact");
+		
+		return modelAndView;
+	}
 	
 }
