@@ -1,10 +1,11 @@
 <nav class="top-bar">
 	  <div class="top-bar-left">
 		<ul class="dropdown menu" data-dropdown-menu>
-		  <li class="menu-text">Foundation Books</li>
-		  <li><a href="/">All books</a></li>
+		  <li class="menu-text"><a href="/">Foundation Books</a></li>
+		  <li><a href="#">All books</a></li>
 		  <li><a href="/about">About</a></li>
 		  <li><a href="/contact">Contact</a></li>
+		  <li><a href="/cart">Cart</a></li>
 		  
 		  <li><a href="/login">Login / User tools</a>
 			<ul class="menu vertical">
@@ -30,4 +31,4 @@
 
 <!-- Opening tags for main content box -->
 <section class="row">
-<div class="large-12 columns">
+<div class="large-12 column text-center">
