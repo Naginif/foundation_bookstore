@@ -24,6 +24,7 @@ String navName = "home";
         <h1>Item added to cart </h1>
         
         <a href="/" class="button large">Back to Items </a>
+        <a href="/cart" class="button large">Review Cart</a>
       
       </div>
     </div>

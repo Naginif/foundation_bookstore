@@ -23,6 +23,8 @@ public class Shipping {
 	private String phone;
 	
 	private String email;
+	
+	private boolean same;
 
 	public int getShippingId() {
 		return shippingId;
@@ -110,6 +112,14 @@ public class Shipping {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public boolean getSame(){
+		return same;
+	}
+	
+	public void setSame(boolean sameAddress){
+		this.same = sameAddress;
 	}
 	
 	

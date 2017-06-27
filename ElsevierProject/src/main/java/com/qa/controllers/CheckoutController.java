@@ -21,10 +21,12 @@ public class CheckoutController {
 	public ModelAndView checkoutProcess(@ModelAttribute("Shipping") Shipping shipping,@ModelAttribute("book_counts") Map<Integer,Integer> bookCounts,@RequestParam("order_total") double orderTotal)
 	{
 		System.out.println("First name "+shipping.getFirstName());
+		boolean sameAdd = shipping.getSame();
 		ModelAndView modelAndView = new ModelAndView("payment_form","order_total",orderTotal);
 		modelAndView.addObject("shipping_address", shipping);
 		modelAndView.addObject("order_total", orderTotal);
 		modelAndView.addObject("book_counts", bookCounts);
+		modelAndView.addObject("same", sameAdd);
 	    return modelAndView;
 	}
 	@RequestMapping("/loginThroughCheckout")
@@ -37,6 +39,21 @@ public class CheckoutController {
 		modelAndView.addObject("book_counts", bookCounts);
 	    return modelAndView;
 	}
+	
+	@RequestMapping("/paymentProcess")
+	public ModelAndView paymentProcess(){
+		ModelAndView modelAndView = new ModelAndView("index");
+		modelAndView.addObject("order_recieved", true);
+	    return modelAndView;
+	}
+	
+	@RequestMapping("/submitBilling")
+	public ModelAndView submitBilling(){
+		ModelAndView modelAndView = new ModelAndView("payment_form");
+		modelAndView.addObject("same", true);
+		return modelAndView;
+	}
+
 	
 	
 	

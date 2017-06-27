@@ -41,7 +41,13 @@ String navName = "home";
 		} else {
 			customerName = "Welcome";
 		}
-	%>	
+		
+		if((boolean)request.getAttribute("order_recieved")){%>
+			<div>
+			<h3>Your Order has been received!</h3> 
+			</div>
+		<%};%>
+					
 
       
 
