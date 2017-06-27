@@ -42,6 +42,7 @@
         
         <form id="register_form" action="/registerProcess" method="post">
         <div class="medium-6">
+        	<div class="user-event">
            <h3> Create an account  </h3>
                 
                 
@@ -57,6 +58,7 @@
          <input type="password" placeholder="Enter password" name="password" id="passwordConfirm"/>
             	
             </div>
+            </div>
             
             <div class="medium-6">
            
@@ -65,7 +67,7 @@
          
             </div>
       		
-      		<input type="submit" class="button create account" value="Create Account">
+      		<input id="btnRegister" type="submit" class="button create account" value="Create Account">
               
               </form>
     
