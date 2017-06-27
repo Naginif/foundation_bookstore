@@ -2,6 +2,7 @@
 <%@page import="java.util.ArrayList" %>
 <%@page import="java.util.Iterator" %>
 <%@page import="com.qa.models.Book" %>
+<%@page import="com.qa.models.Customer" %>
 <%@page import="java.text.NumberFormat" %>
 
 
@@ -28,7 +29,17 @@ String navName = "home";
 	<!-- Content goes here -->
 	
 	<div class="row column text-center">
-      <h2>Our Newest Books
+	<%
+		Customer customer = (Customer) session.getAttribute("logged_in_customer");
+		String customerName;	
+	
+		if (customer!=null) {
+			customerName = customer.getFirstName();
+		} else {
+			customerName = "Welcome";
+		}
+	%>	
+      <h2><%=customerName %>, Our Newest Books
       
       
       <%
