@@ -117,11 +117,11 @@ public class Book {
 		this.price = price;
 	}
 
-	public String ISBN() {
+	public String getISBN() {
 		return ISBN;
 	}
 
-	public void ISBN(String ISBN) {
+	public void setISBN(String ISBN) {
 		this.ISBN = ISBN;
 	}
 
