@@ -37,7 +37,7 @@ String navName = "home";
                 <label>Password <span style="color:red;">*</span> </label>
          <input type="password" placeholder="Enter password" name="password" id="password"/>
                 <label>Confirm Password <span style="color:red;">*</span> </label>
-         <input type="password" placeholder="Enter password" name="password" id="passwordConfirm"/>
+         <input type="password" placeholder="Enter password" name="passwordConfirm" id="passwordConfirm"/>
             	
             </div>
             </div>
