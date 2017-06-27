@@ -4,7 +4,7 @@
 String title="Foundation Books"; 
 
 // Navigation link name
-String navName = "home";
+String navName = "contact";
 %>
 
 <!doctype html>

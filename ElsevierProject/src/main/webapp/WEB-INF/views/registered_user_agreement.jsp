@@ -1,16 +1,27 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Registered User Agreement</title>
-</head>
-<body>
+<%
+// Webpage title 
+String title="Foundation Books"; 
+
+// Navigation link name
+String navName = "home";
+%>
+
+<!doctype html>
+
+<html class="no-js" lang="en">
+
+<!-- Head tags  -->
+<%@include file="html/head.jsp" %>
+
+  <body>
+  	<!-- Navigation markup -->
+    <%@ include file="html/nav.jsp" %>
+
+	<!-- Content goes here -->
 	
 <h1>Elsevier Registered User Agreement</h1>
 
-<p>This Registered User Agreement ("Agreement") sets forth the terms and conditions governing the use of the Elsevier websites, online services and interactive applications (each, a "Service") by registered users. By becoming a registered user, completing the online registration process and checking the box "I have read and understand the Registered User Agreement and agree to be bound by all of its terms" on the registration page, and using the Service, you agree to be bound by all of the terms and conditions of this Agreement.
+This Registered User Agreement ("Agreement") sets forth the terms and conditions governing the use of the Elsevier websites, online services and interactive applications (each, a "Service") by registered users. By becoming a registered user, completing the online registration process and checking the box "I have read and understand the Registered User Agreement and agree to be bound by all of its terms" on the registration page, and using the Service, you agree to be bound by all of the terms and conditions of this Agreement.
 <br>
 This Agreement is between you and the Elsevier group affiliate that owns the respective Service. This Agreement expressly incorporates by reference and includes the respective Service's Terms and Conditions. In the event of any conflicts or inconsistencies between those terms and this Agreement, this Agreement will control.
 <br>
@@ -33,7 +44,9 @@ If any provision in this Agreement is held invalid or unenforceable under applic
 <h3>Governing Law and Venue</h3>
 This Agreement will be governed by and construed in accordance with the laws of the State of New York, USA, without regard to conflicts of law principles, except if you reside outside of the United States, then the laws of the country of the Elsevier regional office in the region where you reside. The exclusive jurisdiction and venue with respect to any action or suit arising out of or pertaining to this Agreement shall be the courts of competent jurisdiction located in the State of New York, USA, except if you reside outside of the United States, then the courts located in the country of the Elsevier regional office in the region where you reside. This Agreement will not be governed by the United Nations Convention on Contracts for the International Sale of Goods.
 
-Last revised: 2 May 2013 </p>
+Last revised: 2 May 2013
 
-</body>
+<!--  Footer markup -->
+    <%@include file="html/footer.jsp" %>
+  </body>
 </html>

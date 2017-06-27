@@ -24,3 +24,8 @@
 		</ul>
 	  </div>
 </nav>
+
+
+<!-- Opening tags for main content box -->
+<section class="row">
+<div class="large-12 columns">
