@@ -20,6 +20,10 @@ String navName = "home";
 
 <!-- Head tags  -->
 <%@include file="html/head.jsp" %>
+<style>
+	.row:last-child{
+	float:left;}
+</style>
 
   <body>
   	<!-- Navigation markup -->
@@ -27,30 +31,20 @@ String navName = "home";
 
 	<!-- Content goes here -->
 	
-	<div class="row column text-center">
-      <h2>Our Newest Books
-      
-      
-      <%
-         Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
-          
-      %>
-      
-      
-      </h2>
-      <hr>
-    </div>
+    <h1>Our Newest Books</h1>
 
-    <div class="row small-up-2 large-up-4">
-    
+
+    <div class="row">
+
+ 
     <%
+    Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
+    Iterator<Book> bookIter = books.iterator();
+    while(bookIter.hasNext()) { 
     
-    for(Book book: books)
-    {
-      
-   
-    %>
-      <div class="column">
+    	Book book = bookIter.next();
+    	%>
+    	<div class="column large-3 medium-6 small-12 <% if (!bookIter.hasNext()) %>end <%;%>">
       
         <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="thumbnail" src="<%=book.getBookImage()%>"></a>
         <h5><%= book.getTitle()%></h5>
@@ -58,11 +52,12 @@ String navName = "home";
         <p><%= formatter.format(book.getPrice())%></p>
         <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="button expanded">View book details</a>
         <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
-      </div>
-    
+      </div> 
+      
     <%
     }
     %>  
+    
     </div>
 	
 	
