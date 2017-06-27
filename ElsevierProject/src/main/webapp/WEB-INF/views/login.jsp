@@ -25,9 +25,9 @@ String navName = "home";
 
     <div class="callout large">
       <div class="row column">
-        
 		
         <div class="large-6 medium-8 small-12 large-centered medium-centred small-centered">
+
            <h3> Please login using your stored credentials  </h3>
                 
                <form action="loginProcess" method="post"> 
@@ -39,7 +39,6 @@ String navName = "home";
             	<input type="submit" class="button expanded" value="Login">
               
               </form>
-            
            
            <p> New Customer?  </p> <a href="/register" class="button large expanded">Register</a>
          

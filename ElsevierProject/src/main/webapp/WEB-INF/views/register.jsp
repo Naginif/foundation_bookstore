@@ -33,7 +33,7 @@ String navName = "home";
         	if (failed) {
         		customer = (Customer) request.getAttribute("customer");
         	%>
-        	<p> <%=request.getAttribute("failure_reason") %> <p>
+        	<div class="error"> <%=request.getAttribute("failure_reason") %> </div>
         	<% } %>
         	
            <h3> Create an account  </h3>
