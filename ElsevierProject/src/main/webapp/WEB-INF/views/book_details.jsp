@@ -60,10 +60,7 @@ String navName = "home";
         <img class="thumbnail" src="<%=book.getBookImage()%>"/>
         <div class="row small-up-4">
           <div class="column">
-            eBook ISBN : <%=book.geteBookISBN()%>
-          </div>
-          <div class="column">
-            Print book ISBN <%=book.getPaperISBN()%>
+            ISBN : <%=book.getISBN()%>
           </div>
           <div class="column">
           <%NumberFormat formatter = NumberFormat.getCurrencyInstance(); %>

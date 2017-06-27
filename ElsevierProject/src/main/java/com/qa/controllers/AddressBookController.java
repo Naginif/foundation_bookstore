@@ -42,6 +42,7 @@ public class AddressBookController {
 		
 		int custId = loggedInCustomer.getCustomerId();
 		String addressType = address.getAddressType();
+		
 		if (addressType.equals("billing"))
 		{
 			address.setAddressId(custId * 2);
@@ -50,6 +51,7 @@ public class AddressBookController {
 		{
 			address.setAddressId(custId * 2 + 1);
 		}
+		address.setCustomerId(custId);
 		
 		Address bAddress = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "billing");
 		

@@ -42,9 +42,7 @@ public class Book {
 
 	private double price;
 	
-	private String paperISBN;
-	
-	private String eBookISBN;
+	private String ISBN;
 	
 	private String tableOfContents;
 	
@@ -119,21 +117,14 @@ public class Book {
 		this.price = price;
 	}
 
-	public String getPaperISBN() {
-		return paperISBN;
+	public String getISBN() {
+		return ISBN;
 	}
 
-	public void setPaperISBN(String paperISBN) {
-		this.paperISBN = paperISBN;
+	public void setISBN(String ISBN) {
+		this.ISBN = ISBN;
 	}
 
-	public String geteBookISBN() {
-		return eBookISBN;
-	}
-
-	public void seteBookISBN(String eBookISBN) {
-		this.eBookISBN = eBookISBN;
-	}
 
 	public String getTableOfContents() {
 		return tableOfContents;
