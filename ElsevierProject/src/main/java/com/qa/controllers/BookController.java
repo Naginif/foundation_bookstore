@@ -53,8 +53,8 @@ public class BookController {
 		
 	}
 	
-	@RequestMapping("/viewCart")
-	public ModelAndView viewCart(@ModelAttribute("books") Iterable<Book> books,@ModelAttribute("cart_items") ArrayList<Book> cartItems)
+	@RequestMapping("/cart")
+	public ModelAndView cart(@ModelAttribute("books") Iterable<Book> books,@ModelAttribute("cart_items") ArrayList<Book> cartItems)
 	{
 		
 		ModelAndView modelAndView = null;
