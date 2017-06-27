@@ -1,4 +1,3 @@
-
 <%@page import="java.util.List" %>
 <%@page import="java.util.ArrayList" %>
 <%@page import="java.util.Iterator" %>
@@ -42,13 +41,7 @@ String navName = "home";
 		} else {
 			customerName = "Welcome";
 		}
-		
-		if((boolean)request.getAttribute("order_recieved")){%>
-			<div>
-			<h3>Your Order has been received!</h3> 
-			</div>
-		<%};%>
-					
+	%>	
 
       
 
@@ -64,15 +57,13 @@ String navName = "home";
     
     	Book book = bookIter.next();
     	%>
-    	<div class="column large-3 medium-6 small-12 <% if (!bookIter.hasNext()) %>end <%;%>">
+    	<div class="column large-4 medium-6 small-12 <% if (!bookIter.hasNext()) %>end <%;%>">
       
-        <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="thumbnail" src="<%=book.getBookImage()%>"></a>
-        <h5><%= book.getTitle()%></h5>
-        <%NumberFormat formatter = NumberFormat.getCurrencyInstance(); %>
-        <p><%= formatter.format(book.getPrice())%></p>
+        <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="thumbnail" src="<%=book.getBookImage()%>" style="width:450px;height:375px;"></a>
         <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="button expanded">View book details</a>
         <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
-      </div> 
+      	
+      	</div>
       
     <%
     }
