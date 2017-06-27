@@ -1,3 +1,9 @@
+<%@page import="com.qa.models.Customer"  %>
+
+<%
+Customer current_customer = (Customer) session.getAttribute("logged_in_customer");	
+%>
+
 <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
   <button class="menu-icon" type="button" data-toggle="example-menu"></button>
   <div class="title-bar-title">Menu</div>
@@ -10,8 +16,12 @@
       <li class="menu-text"><a href="/">Foundation Books</a></li>
 		  
 		  <li><a href="/">All books</a></li>
-		  <li><a href="/viewCart">Cart</a></li>
-		  <li><a href="/login">Login / User tools</a>
+		  <li><a href="/cart">Cart</a></li>
+		  <% if(current_customer==null) { %>
+		  <li><a href="/login">Login</a></li>
+		  <li><a href="/register">Register</a></li>
+		  <% } else { %>
+		  <li><a href="#"><%=current_customer.getFirstName() %></a>
 			<ul class="vertical menu">
 			  <li><a href="#">Order history</a></li>
 			  <li><a href="/addressBook">Address book</a></li>
@@ -19,6 +29,7 @@
 			  <li><a href="#">Logout</a></li>
 			</ul>
 		  </li>
+		  <% } %>
     </ul>
   </div>
   <div class="top-bar-right">
