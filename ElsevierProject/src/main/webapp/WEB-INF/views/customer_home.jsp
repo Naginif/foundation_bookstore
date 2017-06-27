@@ -14,7 +14,7 @@
   Customer c;
   
   %>
-  
+
   
   <%
  		c = (Customer) session.getAttribute("logged_in_customer");

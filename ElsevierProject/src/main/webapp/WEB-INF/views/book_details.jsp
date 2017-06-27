@@ -1,5 +1,6 @@
 <!doctype html>
 <%@page import="com.qa.models.Book"%>
+<%@page import="java.text.NumberFormat"%>
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
@@ -87,7 +88,8 @@
             Print book ISBN <%=book.getPaperISBN()%>
           </div>
           <div class="column">
-           Price :       $<%=book.getPrice()%>
+          <%NumberFormat formatter = NumberFormat.getCurrencyInstance(); %>
+           Price :       <%= formatter.format(book.getPrice())%>
           </div>
           <div class="column">
             Published On <%=book.getPublishedDate()%>

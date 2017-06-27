@@ -76,7 +76,8 @@ public class HomeController {
 	
 	@RequestMapping("/register")
 	public ModelAndView register()
-	{
+	{	
+		
 		ModelAndView modelAndView = new ModelAndView("register");
 	
 	    return modelAndView;
@@ -89,23 +90,51 @@ public class HomeController {
 	public ModelAndView registerProcess(@ModelAttribute("Customer") Customer customer)
 	{
 		
-		ModelAndView modelAndView  = null;
+		Customer existing = customerService.findExisting(customer.getEmail());
+		boolean customerExists = false;
+		
+		if(existing != null) {
+			customerExists = true;
+		}
+		
+		System.out.println("The email " + customer.getEmail() + " is already taken.");
+		
+		ModelAndView modelAndView  = null; 
 		
 		System.out.println("Customer Firstname is "+customer.getFirstName());
 		
 		
 		System.out.println("Customer Password is "+customer.getPassword());
 		
-		Customer c = customerService.save(customer);
-	  
-		if(c!=null)
-		{
-	  		modelAndView = new ModelAndView("registration_success");
+		String[] fields = new String[4];
+		fields[0] = customer.getFirstName();
+		fields[1] = customer.getLastName();
+		fields[2] = customer.getEmail();
+		fields[3] = customer.getPassword();
+		
+		boolean anyEmpty = false;
+		
+		for (int i = 0; i <fields.length; i++){
+			
+			if(fields[i].isEmpty()){
+				anyEmpty = true;
+			}
 		}
-		else
-		{
-			modelAndView = new ModelAndView("registration_failed");
-		}
+			if(anyEmpty){
+				modelAndView = new ModelAndView("registration_failed");
+				System.out.println("registration failed");
+			} else 
+			{
+				if (!customerExists){
+				Customer c = customerService.save(customer);
+				modelAndView = new ModelAndView("registration_success");
+				System.out.println("registration success");
+				} else {
+					modelAndView = new ModelAndView("registration_failed");
+					System.out.println("email already exists");
+				}
+			}
+		
 	  		
 		return modelAndView;
 	}
@@ -117,10 +146,10 @@ public class HomeController {
 		
 		ModelAndView modelAndView  = null;
 		
-		System.out.println("Email is "+email);
+//		System.out.println("Email is "+email);
 		
 		
-		System.out.println("Password is "+password);
+//		System.out.println("Password is "+password);
 		
 		
 		Customer c = customerService.loginProcess(email, password);
@@ -134,6 +163,7 @@ public class HomeController {
 		{
 			System.out.println("Failure");
 			modelAndView = new ModelAndView("login_failed");
+			
 		}
 	  		
 		return modelAndView;
@@ -202,7 +232,19 @@ public class HomeController {
 	    return modelAndView;
 	}
 	
+	@RequestMapping("/logout")
+	public ModelAndView logout() {
+		ModelAndView modelAndView = new ModelAndView("index");
+		
+		
+		return modelAndView;
+	}
 	
-	
+	@RequestMapping("/registered_user_agreement")
+	public ModelAndView registereduseragreement(){
+		ModelAndView modelAndView = new ModelAndView("registered_user_agreement");
+		
+		return modelAndView;
+	}
 	
 }

@@ -35,7 +35,6 @@ if (firstname === '' && lastname === '' && address1 === '' &&
 	$('#email').css('border', '3px solid red');
 	
 	
-	alert("Please Fill Required	Fields");
 return false; // Indicates that don't submit the form, stay on same page
 } else {
 	
@@ -44,7 +43,7 @@ return false; // Indicates that don't submit the form, stay on same page
 
 if ($('#firstname').val() == '') {
     $('#firstname').css('border', '3px solid red');
-    alert("Please Fill Required Fields");
+    
     return false;
 }
 else {
@@ -139,8 +138,70 @@ else {
 
 }
 
+});
 
+$("#register_form").submit(function(){
+	var firstname = $("#firstName").val();
+	var lastname = $("#lastName").val();
+	var email = $("#email").val();
+	var password = $("#password").val();
+
+	if (firstname === '' && lastname === '' && email === '' && password === ''
+    ) {
+	//$( ".columns" ).css("border", "3px solid red" );
+	$('#firstName').css('border', '3px solid red');
+	$('#lastName').css('border', '3px solid red');
+	$('#email').css('border', '3px solid red');
+	$('#password').css('border', '3px solid red');
+	
+return false; // Indicates that don't submit the form, stay on same page
+} else {
+	
+
+
+
+if ($('#firstname').val() == '') {
+    $('#firstname').css('border', '3px solid red');
+    return false;
+}
+else {
+    $('#firstname').css('border-color', '');
+    //return true;
+}
+
+
+if ($('#lastname').val() == '') {
+    $('#lastname').css('border', '3px solid red');
+    return false;
+}
+else {
+    $('#lastname').css('border-color', '');
+    //return true;
+}
+
+if ($('#email').val() == '') {
+    $('#email').css('border', '3px solid red');
+    return false;
+}
+else {
+    $('#email').css('border-color', '');
+    //return true;
+}
+
+if ($('#password').val() == '') {
+    $('#password').css('border', '3px solid red');
+    return false;
+}
+else {
+    $('#password').css('border-color', '');
+    //return true;
+}
+
+}
 
 });
+
+
+
 });
 
