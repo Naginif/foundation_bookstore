@@ -39,7 +39,7 @@ CREATE TABLE book
 	description varchar(8000),
 	page_count int(11),
 	publisher varchar(255),
-	publsihed_date varchar(255),
+	published_date varchar(255),
 	table_of_contents varchar(255),
 	PRIMARY KEY(book_id)
 );
@@ -56,11 +56,11 @@ CREATE TABLE author
 
 CREATE TABLE book_authors
 (
-	book_id int(11) NOT NULL,
-	author_id int(11) NOT NULL,
-	FOREIGN KEY (book_id) REFERENCES book(book_id),
-	FOREIGN KEY (author_id) REFERENCES author(author_id),
-	PRIMARY KEY(author_id, book_id)
+	book_book_id int(11) NOT NULL,
+	authors_author_id int(11) NOT NULL,
+	FOREIGN KEY (book_book_id) REFERENCES book(book_id),
+	FOREIGN KEY (authors_author_id) REFERENCES author(author_id),
+	PRIMARY KEY(authors_author_id, book_book_id)
 );
 
 CREATE TABLE customer_orders
