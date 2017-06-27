@@ -10,7 +10,7 @@
       <li class="menu-text"><a href="/">Foundation Books</a></li>
 		  
 		  <li><a href="/">All books</a></li>
-		  <li><a href="/cart">Cart</a></li>
+		  <li><a href="/viewCart">Cart</a></li>
 		  <li><a href="/login">Login / User tools</a>
 			<ul class="vertical menu">
 			  <li><a href="#">Order history</a></li>
