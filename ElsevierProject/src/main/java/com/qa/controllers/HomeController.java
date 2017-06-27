@@ -136,7 +136,9 @@ public class HomeController {
 		}
 			if(anyEmpty){
 				modelAndView = new ModelAndView("registration_failed");
-				System.out.println("registration failed");
+				modelAndView.addObject("failure_reason",  "Some fields were left blank");
+				modelAndView.addObject("customer", customer);
+				System.out.println("register");
 			} else 
 			{
 				if (!customerExists){
@@ -144,14 +146,17 @@ public class HomeController {
 				modelAndView = new ModelAndView("registration_success");
 				System.out.println("registration success");
 				} else {
-					modelAndView = new ModelAndView("registration_failed");
+					modelAndView = new ModelAndView("register");
+					modelAndView.addObject("failure_reason", "That email address has already been registered");
+					modelAndView.addObject("customer", customer);
 					System.out.println("email already exists");
 				}
 			}
 		
-	  		
+	  	
 		return modelAndView;
 	}
+	
 	
 	@RequestMapping("/loginProcess")
 	public ModelAndView loginProcess(@RequestParam("email") String email,
