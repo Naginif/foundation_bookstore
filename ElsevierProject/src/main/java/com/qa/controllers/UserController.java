@@ -37,24 +37,29 @@ public class UserController {
 		ModelAndView modelAndView  = null;
 		
 		System.out.println("Before update ");
+
 		System.out.println("ID "+loggedInCustomer.getCustomerId());
 		System.out.println("Name"+loggedInCustomer.getFirstName());
-		System.out.println("Email"+loggedInCustomer.getEmail());		
+		System.out.println("Email"+loggedInCustomer.getEmail());
+		System.out.println("Password"+loggedInCustomer.getPassword());
 		
 		int recordsUpdated = customerRepository.updateCustomer(loggedInCustomer.getFirstName(),
 				loggedInCustomer.getLastName(),
 				loggedInCustomer.getEmail(), 
-				loggedInCustomer.getCustomerId());
+				loggedInCustomer.getCustomerId(),
+				loggedInCustomer.getPassword());
 		
 		if(recordsUpdated>0)
 		{
 			Customer c  = customerRepository.findOne(loggedInCustomer.getCustomerId());
 		
+			
 			System.out.println("After update ");
 
 			System.out.println("ID "+c.getCustomerId());
 			System.out.println("Name"+c.getFirstName());
 			System.out.println("Email"+c.getEmail());
+			System.out.println("Password"+c.getPassword());
 			
 			
 			modelAndView = new ModelAndView("profile","logged_in_customer",c);

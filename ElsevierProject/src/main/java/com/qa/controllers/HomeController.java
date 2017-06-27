@@ -181,9 +181,6 @@ public class HomeController {
 	}
 	
 	
-	
-	
-	
 	@RequestMapping("/registered_user_agreement")
 	public ModelAndView registereduseragreement(){
 		ModelAndView modelAndView = new ModelAndView("registered_user_agreement");

@@ -22,11 +22,12 @@ public interface CustomerRepository extends CrudRepository<Customer, Integer>{
 		
 	@Modifying
 	@Transactional
-	@Query("UPDATE Customer c set c.firstName = :firstName, c.lastName = :lastName, c.email = :email WHERE c.customerId = :customerId")
+	@Query("UPDATE Customer c set c.firstName = :firstName, c.lastName = :lastName, c.email = :email, c.password = :password WHERE c.customerId = :customerId")
 	public int updateCustomer(@Param("firstName") String firstName,
 			@Param("lastName") String lastName,
 			@Param("email") String email,
-			@Param("customerId") int customerId);
+			@Param("customerId") int customerId,
+			@Param("password") String password);
 	
 	//find existing email 
 	@Query("select c from Customer c where c.email = :email")
