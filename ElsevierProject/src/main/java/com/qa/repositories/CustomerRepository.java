@@ -1,4 +1,4 @@
-package com.qa.services;
+package com.qa.repositories;
 
 import javax.transaction.Transactional;
 
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.qa.models.Customer;
 
 @Repository
-public interface CustomerService extends CrudRepository<Customer, Integer>{
+public interface CustomerRepository extends CrudRepository<Customer, Integer>{
 	
 	
 		@Query("select c from Customer c where c.email = :email and c.password = :password")

@@ -20,18 +20,18 @@ import org.springframework.web.servlet.ModelAndView;
 import com.qa.models.Book;
 import com.qa.models.Customer;
 import com.qa.models.Shipping;
-import com.qa.services.BookService;
-import com.qa.services.CustomerService;
+import com.qa.repositories.BookRepository;
+import com.qa.repositories.CustomerRepository;
 
 @Controller
 @SessionAttributes(names={"books","cart_items","logged_in_customer","Address"})
 public class HomeController {
 
 	@Autowired
-	BookService bookService;
+	BookRepository bookService;
 	
 	@Autowired
-	CustomerService customerService;
+	CustomerRepository customerService;
 	
 	@RequestMapping("/")
 	public ModelAndView indexPage(HttpServletRequest request)
