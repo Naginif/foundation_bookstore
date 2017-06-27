@@ -98,10 +98,7 @@ String navName = "home";
         <div class="row small-up-4">
         
           <div class="column">
-            eBook ISBN : <%=book.geteBookISBN()%>
-          </div>
-          <div class="column">
-            Print book ISBN <%=book.getPaperISBN()%>
+            ISBN : <%=book.getISBN()%>
           </div>
           
           <div class="column">

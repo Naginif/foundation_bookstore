@@ -1,5 +1,6 @@
 
 <%@page import="com.qa.models.Customer"%>
+<%@page import="com.qa.models.Address" %>
 <%
 // Webpage title 
 String title="Foundation Books"; 
@@ -24,12 +25,14 @@ String navName = "home";
   <%!
   
   Customer c;
+  Address a;
   
   %>
   
   
   <%
  		c = (Customer) session.getAttribute("logged_in_customer");
+  		a = (Address) session.getAttribute("Address");
   %>
         
        <div class="row">

@@ -24,6 +24,7 @@ String navName = "home";
         
         <form id="register_form" action="/registerProcess" method="post">
         <div class="medium-6">
+        	<div class="user-event">
            <h3> Create an account  </h3>
                 
                 
@@ -36,18 +37,19 @@ String navName = "home";
                 <label>Password <span style="color:red;">*</span> </label>
          <input type="password" placeholder="Enter password" name="password" id="password"/>
                 <label>Confirm Password <span style="color:red;">*</span> </label>
-         <input type="password" placeholder="Enter password" name="password" id="passwordConfirm"/>
+         <input type="password" placeholder="Enter password" name="passwordConfirm" id="passwordConfirm"/>
             	
+            </div>
             </div>
             
             <div class="medium-6">
            
-          	 <input type="checkbox" name="aggreement"/> I have read and understood the 
+          	 <input type="checkbox" name="aggreement" required/> I have read and understood the 
           	 <a href="/registered_user_agreement" target="_blank">Registered User Agreement </a> and agree to be bound by all of its terms. 
          
             </div>
       		
-      		<input type="submit" class="button create account" value="Create Account">
+      		<input id="btnRegister" type="submit" class="button create account" value="Create Account">
               
               </form>
     
