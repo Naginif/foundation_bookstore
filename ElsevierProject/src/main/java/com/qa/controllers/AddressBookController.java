@@ -27,7 +27,7 @@ public class AddressBookController {
 	}
 	
 	@RequestMapping("/updateAddress")
-	public ModelAndView updateAddress(@ModelAttribute("logged_in_customer") Customer loggedInCustomer, @ModelAttribute("Address") Address address)
+	public ModelAndView updateAddress(@ModelAttribute("logged_in_customer") Customer loggedInCustomer, @ModelAttribute("Address_book") Address address)
 	{
 		
 		ModelAndView modelAndView  = null;
