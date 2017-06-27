@@ -32,20 +32,7 @@ String navName = "home";
 
 	<!-- Content goes here -->
 
-	<%
-		Customer customer = (Customer) session.getAttribute("logged_in_customer");
-		String customerName;	
-	
-		if (customer!=null) {
-			customerName = customer.getFirstName();
-		} else {
-			customerName = "Welcome";
-		}
-	%>	
-
-      
-
-    <h1><%=customerName %>, Our Newest Books</h1>
+    <h1>Our Newest Books</h1>
 
     <div class="row">
 
