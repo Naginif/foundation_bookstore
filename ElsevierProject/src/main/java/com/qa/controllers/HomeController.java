@@ -45,6 +45,17 @@ public class HomeController {
 			session = request.getSession();
 		}
 		
+		Customer custId = (Customer) session.getAttribute("logged_in_customer");
+		String customerToString;
+		
+		if (custId==null) {
+			customerToString = null;
+		} else {
+			customerToString = custId.toString();
+		}
+		
+		System.out.println(customerToString);
+		
 		Object items = session.getAttribute("cart_items");
 		
 		if(items!=null)
