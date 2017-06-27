@@ -1,11 +1,14 @@
 package com.qa.controllers;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.qa.models.Book;
@@ -83,6 +87,17 @@ public class HomeController {
 		modelAndView.addObject("loginFailed", false);
 	    return modelAndView;
 	}
+	
+//	@RequestMapping("/logout")
+//	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+//	{
+//		HttpSession session = request.getSession();
+//		if (session != null) {
+//			session.invalidate();
+//			response.sendRedirect("index.jsp");
+//		}
+//		return indexPage(request);
+//	}
 	
 	
 	@RequestMapping("/register")
