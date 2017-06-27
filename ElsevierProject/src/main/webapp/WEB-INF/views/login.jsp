@@ -35,7 +35,11 @@
       </div>
     </div>
     <!-- End Top Bar -->
-
+    
+   <% if( (boolean) request.getAttribute("loginFailed")) { %>
+   <div><p>Login failed</p></div>
+   <% } %>
+	   	
     <div class="callout large">
       <div class="row column">
         
