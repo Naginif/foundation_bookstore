@@ -1,20 +1,30 @@
-<!doctype html>
+
 <%@page import="java.util.Map"%>
 <%@page import="java.util.Set"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.qa.models.Book"%>
 <%@page import="java.text.NumberFormat"%>
+<%
+// Webpage title 
+String title="Foundation Books"; 
+
+// Navigation link name
+String navName = "home";
+%>
+
+<!doctype html>
+
 <html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shopping Cart | Week 3</title>
-    <link rel="stylesheet" href="css/style.css">
-    
-    
-  </head>
+
+<!-- Head tags  -->
+<%@include file="html/head.jsp" %>
+
   <body>
+  	<!-- Navigation markup -->
+    <%@ include file="html/nav.jsp" %>
+
+	<!-- Content goes here -->
     
     <%!
     
@@ -41,35 +51,6 @@
     double totalPrice =  0.0;
     %>
     
-   
-
-<!-- Start Top Bar -->
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li class="menu-text" style="color:red">Online Shopping</li>
-          <li><a href="#">Home</a></li>
-          
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        
-             <ul class="dropdown menu" data-dropdown-menu>
-            <li id="cart_items"></li>
-            <li class="has-submenu">
-              <a href="/viewCart"> <img src="images/cart.jpg" width="50" height="50"/></a>
-              <ul class="submenu menu vertical" data-submenu>
-                <li><a href="/viewCart"><img src="images/cart.jpg" width="50" height="50"/> View Cart </a></li>
-                <li><a href="/login">Register | Login</a></li>
-              </ul>
-            </li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-          
-      </div>
-    </div>
-    <!-- End Top Bar -->
     <br>
     <!-- You can now combine a row and column if you just need a 12 column row -->
     <div class="row columns">
@@ -206,6 +187,8 @@
     <script>
       $(document).foundation();
     </script> 
+  <!--  Footer markup -->
+    <%@include file="html/footer.jsp" %>
   </body>
 </html>
 
