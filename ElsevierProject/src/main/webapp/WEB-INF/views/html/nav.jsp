@@ -1,28 +1,26 @@
-<nav class="top-bar" data-topbar role="navigation">
-  <ul class="title-area">
-    <li class="name">
-      <h1><a href="#">My Site</a></h1>
-    </li>
-     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
-
-  <section class="top-bar-section">
-    <!-- Right Nav Section -->
-    <ul class="right">
-      <li class="active"><a href="#">Right Button Active</a></li>
-      <li class="has-dropdown">
-        <a href="#">Right Button Dropdown</a>
-        <ul class="dropdown">
-          <li><a href="#">First link in dropdown</a></li>
-          <li class="active"><a href="#">Active link in dropdown</a></li>
-        </ul>
-      </li>
-    </ul>
-
-    <!-- Left Nav Section -->
-    <ul class="left">
-      <li><a href="#">Left Nav Button</a></li>
-    </ul>
-  </section>
+<nav class="top-bar">
+	  <div class="top-bar-left">
+		<ul class="dropdown menu" data-dropdown-menu>
+		  <li class="menu-text">Foundation Books</li>
+		  <li><a href="#">All books</a></li>
+		  <li><a href="/about">About</a></li>
+		  <li><a href="/contact">Contact</a></li>
+		  
+		  <li><a href="/login">Login / User tools</a>
+			<ul class="menu vertical">
+			  <li><a href="#">Order history</a></li>
+			  <li><a href="#">Address book</a></li>
+			  <li><a href="#">Change password</a></li>
+			  <li><a href="#">Logout</a></li>
+			</ul>
+		  </li>
+		  
+		</ul>
+	  </div>
+	  <div class="top-bar-right">
+		<ul class="menu">
+		  <li><input type="search" placeholder="Search"></li>
+		  <li><button type="button" class="button">Search</button></li>
+		</ul>
+	  </div>
 </nav>
