@@ -23,7 +23,7 @@ String navName = "home";
       <div class="row column text-center">
         <h1>Login failed </h1>
         
-        <a href="/login" class="button large"> Click here to try again </a>
+        <a href="/login" class="button large"> Click here to return to Login </a>
       
       </div>
     </div>

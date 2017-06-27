@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.qa.models.Address;
@@ -11,11 +12,19 @@ import com.qa.models.Customer;
 import com.qa.repositories.AddressRepository;
 
 @Controller
+@SessionAttributes(names={"books","cart_items","logged_in_customer","Address"})
 public class AddressBookController {
 
 	@Autowired
-	private AddressRepository addressService;
+	private AddressRepository addressRepository;
 	
+	@RequestMapping("/addressBook")
+	public ModelAndView addressBook(@ModelAttribute("logged_in_customer") Customer loggedInCustomer)
+	{
+		ModelAndView modelAndView = new ModelAndView("address_book","logged_in_customer",loggedInCustomer);
+	
+	    return modelAndView;
+	}
 	
 	@RequestMapping("/updateAddress")
 	public ModelAndView updateAddress(@ModelAttribute("logged_in_customer") Customer loggedInCustomer, @ModelAttribute("Address") Address address)
@@ -42,14 +51,14 @@ public class AddressBookController {
 			address.setAddressId(custId * 2 + 1);
 		}
 		
-		Address bAddress = addressService.findAddressByType(loggedInCustomer.getCustomerId(), "billing");
+		Address bAddress = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "billing");
 		
-		Address sAddress = addressService.findAddressByType(loggedInCustomer.getCustomerId(), "shipping");
+		Address sAddress = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "shipping");
 		
 		if((addressType.equals("billing") && bAddress!=null) || (addressType.equals("shipping") && sAddress!=null ))
 		{
 		
-		        int recordsUpdated = addressService.updateBillingAddress(address.getAddressLine1(),
+		        int recordsUpdated = addressRepository.updateBillingAddress(address.getAddressLine1(),
 				address.getAddressLine2(), 
 				address.getCity(), 
 				address.getPostcode(),
@@ -61,8 +70,8 @@ public class AddressBookController {
 		
 		if(recordsUpdated>0)
 		{
-			billingAddress  = addressService.findAddressByType(loggedInCustomer.getCustomerId(),"billing");
-			shippingAddress  = addressService.findAddressByType(loggedInCustomer.getCustomerId(),"shipping");
+			billingAddress  = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(),"billing");
+			shippingAddress  = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(),"shipping");
 			
 			System.out.println("After update ");
 			modelAndView = new ModelAndView("address_book","billing_address",billingAddress);
@@ -78,7 +87,7 @@ public class AddressBookController {
 		}
 		else
 		{
-			Address savedAddress = addressService.save(address);
+			Address savedAddress = addressRepository.save(address);
 			modelAndView = new ModelAndView("address_book","billing_address",savedAddress);
 			
 		}
