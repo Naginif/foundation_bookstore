@@ -47,25 +47,17 @@ public class CheckoutController {
 	    return modelAndView;
 	}
 	
-//	@RequestMapping("/loginThroughCheckout")
-//	public ModelAndView loginThroughCheckout(@ModelAttribute("book_counts") Map<Integer,Integer> bookCounts,@RequestParam("order_total") double orderTotal)
-//	{
-//		
-//		ModelAndView modelAndView = new ModelAndView("login_through_checkout","order_total",orderTotal);
-//		
-//		modelAndView.addObject("order_total", orderTotal);
-//		modelAndView.addObject("book_counts", bookCounts);
-//	    return modelAndView;
-//	}
-	
 	@RequestMapping("/paymentProcess")
 	public ModelAndView paymentProcess(){
 		ModelAndView modelAndView = new ModelAndView("confirm_order");
-//		modelAndView.addObject("shipping_address", shipping);
-//		modelAndView.addObject("billing_address", billing);
-//		System.out.println("\nShipping: " + shipping);
-//		modelAndView.addObject("order_recieved", true);
 	    return modelAndView;
+	}
+	
+	@RequestMapping("/confirm_order")
+	public ModelAndView confirmOrder() {
+		ModelAndView modelAndView = new ModelAndView("index");
+		modelAndView.addObject("order_recieved", true);
+		return modelAndView;
 	}
 	
 //	@RequestMapping("/submitBilling")

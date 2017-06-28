@@ -39,7 +39,7 @@ String navName = "home";
   
   				 <div class="columns" id="expiration-date">
                 <label>Expiration Date</label>
-                <select>
+                <select name = "expiration_month">
                     <option value="01">January</option>
                     <option value="02">February </option>
                     <option value="03">March</option>
@@ -53,7 +53,7 @@ String navName = "home";
                     <option value="11">November</option>
                     <option value="12">December</option>
                 </select>
-                <select>
+                <select name = "expiration_year">
                     <option value="17"> 2017</option>
                     <option value="18"> 2018</option>
                     <option value="19"> 2019</option>
