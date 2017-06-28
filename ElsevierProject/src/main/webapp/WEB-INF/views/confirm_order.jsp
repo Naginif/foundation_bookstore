@@ -24,7 +24,7 @@ String navName = "home";
 	
 	<h1>Confirm your order</h1>
 	Shipping Address: <br> 
-	<%=request.getAttribute("shipping_address") %>
+	<%=session.getAttribute("shipping_address").toString() %>
 	
 	
 

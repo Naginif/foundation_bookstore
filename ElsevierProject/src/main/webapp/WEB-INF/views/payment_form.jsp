@@ -24,7 +24,7 @@ String navName = "home";
 	 <div class="callout large">
       <div class="row column">
         
-     <form id="payment_form" action="/paymentProcess" method="post">
+     <form id="payment_form" action="/paymentProcess">
         <div class="medium-6">
            <h3> Submit Payment  </h3>
                 
