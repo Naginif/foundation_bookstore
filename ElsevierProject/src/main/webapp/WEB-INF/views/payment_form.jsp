@@ -26,6 +26,7 @@ String navName = "home";
         
      <form id="payment_form" action="/paymentProcess" method="post">
         <div class="large-6 medium-8 small-12 large-centered medium-centred small-centered">
+
            <h3> Submit Payment  </h3>
                 
                 
