@@ -69,7 +69,7 @@ String navName = "home";
    
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier.js"></script>
-    <script src="js/validations.js"></script>
+    <script src="js/registration_validation.js"></script>
     <script>
       $(document).foundation();
     </script>

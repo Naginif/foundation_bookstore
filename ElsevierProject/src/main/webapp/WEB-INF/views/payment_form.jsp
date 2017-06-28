@@ -142,12 +142,12 @@ String navName = "home";
                     <option value="12">December</option>
                 </select>
                 <select>
-                    <option value="16"> 2016</option>
                     <option value="17"> 2017</option>
                     <option value="18"> 2018</option>
                     <option value="19"> 2019</option>
                     <option value="20"> 2020</option>
                     <option value="21"> 2021</option>
+                    <option value="22"> 2022</option>
                 </select>
                </div>  
             </div>

@@ -19,7 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.qa.models.Book;
 import com.qa.models.Customer;
-import com.qa.models.Shipping;
+import com.qa.models.Address;
 import com.qa.repositories.BookRepository;
 import com.qa.repositories.CustomerRepository;
 
@@ -56,8 +56,18 @@ public class HomeController {
 		
 		System.out.println(customerToString);
 		
-		Object items = session.getAttribute("cart_items");
+		Object items = null;
 		
+		System.out.println("order recieved is " + session.getAttribute("order_recieved"));
+		if (session.getAttribute("order_recieved") != null) {
+			System.out.println("order_recieved is not null");
+			if ((boolean) session.getAttribute("order_recieved") == true) {
+			}
+						
+		} else {
+			items = session.getAttribute("cart_items");
+		}
+
 		if(items!=null)
 		{
 			cartItems = (ArrayList<Book>) items;
@@ -208,6 +218,13 @@ public class HomeController {
 	@RequestMapping("/contact")
 	public ModelAndView contact(){
 		ModelAndView modelAndView = new ModelAndView("contact");
+		
+		return modelAndView;
+	}
+	
+	@RequestMapping("/request")
+	public ModelAndView request(){
+		ModelAndView modelAndView = new ModelAndView("request");
 		
 		return modelAndView;
 	}
