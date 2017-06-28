@@ -25,9 +25,9 @@ String navName = "home";
 
     <div class="callout large">
       <div class="row column">
-        
-        
-        <div class="large-6 medium-8 small-12 large-centered medium-centered small-centered">
+		
+        <div class="large-6 medium-8 small-12 large-centered medium-centred small-centered">
+
            <h3> Please login using your stored credentials  </h3>
                 
                <form action="loginProcess" method="post"> 

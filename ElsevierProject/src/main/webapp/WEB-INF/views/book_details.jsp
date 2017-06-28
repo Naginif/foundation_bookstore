@@ -56,23 +56,23 @@ String navName = "home";
     </div>
 
     <div class="row">
-      <div class="medium-6 columns">
-        <img class="thumbnail" src="<%=book.getBookImage()%>"/>
-        <div class="row small-up-4">
-          <div class="column">
-            ISBN : <%=book.getISBN()%>
+      <div class="medium-6 large-6 columns">
+        <img class="thumbnail" src="<%=book.getBookImage()%>" height="350px" width="225px"/>
+        <div class="row">
+          <div class="column large-4 medium-4 small-12">
+            ISBN: <%=book.getISBN()%>
           </div>
-          <div class="column">
+          <div class="column large-4 medium-4 small-12">
           <%NumberFormat formatter = NumberFormat.getCurrencyInstance(); %>
-           Price :       <%= formatter.format(book.getPrice())%>
+           Price:       <%= formatter.format(book.getPrice())%>
           </div>
-          <div class="column">
-            Published On <%=book.getPublishedDate()%>
+          <div class="column large-4 medium-4 small-12">
+            Published In <%=book.getPublishedDate()%>
           </div>
         
         </div>
       </div>
-      <div class="medium-6 large-5 columns">
+      <div class="medium-6 large-6 columns">
         <h3><%=book.getTitle() %></h3>
         <p><%=book.getDescription() %></p>
 
@@ -90,19 +90,6 @@ String navName = "home";
         <!-- <button href="/addToCart?bookId=<%=book.getBookId()%>" class="button large expanded" script="">Add to Cart</button> -->
         </div>
     </div>
-
-    <div class="row column">
-      <hr>
-      <ul class="menu">
-        <li>Online Shopping</li>
-        <li><a href="/">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-        <li class="float-right">Copyright 2017</li>
-      </ul>
-    </div>
-
-
  
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier.js"></script>
