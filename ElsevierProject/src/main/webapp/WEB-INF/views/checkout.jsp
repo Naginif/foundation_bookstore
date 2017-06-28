@@ -22,21 +22,6 @@ String navName = "home";
 	<section class="large-6 medium-8 small-12 large-centered medium-centred small-centered">
 	<h1>Shipping details</h1>
 	
-	<ul class="accordion" data-accordion>
-  		<li class="accordion-item" data-accordion-item>
-  			<a href="#" class="accordion-title"> Saved addresses </a>
-  			<div class="accordion-content" data-tab-content>
-  				<p>Placeholder for saved addresses</p>
-  				<form>
-  				
-	          		<input type="submit" class="button expanded" value="Next" />
-  				</form>
-  			</div>
-  		</li>
-  		
-  		<li class="accordion-item is-active" data-accordion-item>
-  			<a class="accordion-title" href="#"> New address </a>
-  			<div class="accordion-content" data-tab-content>
   			
 		 <form action="/sendShippingAddress">
 		 
@@ -92,9 +77,6 @@ String navName = "home";
 	          <input type="submit" class="button expanded" value="Next" />
 		 
 		 </form>
-		 </div>
-	  </li>
-	</ul>
   </section>
 	
 	
