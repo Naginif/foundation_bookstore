@@ -27,11 +27,6 @@ import com.qa.repositories.CustomerRepository;
 @Controller
 @SessionAttributes(names={"books"})
 public class AdminController {
-	@Autowired
-	BookRepository bookRepository;
-	
-	@Autowired
-	CustomerRepository customerRepository;
 
 	@RequestMapping("/logout")
 	public ModelAndView logout(HttpSession session) 
