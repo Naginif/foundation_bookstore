@@ -250,8 +250,10 @@ public class BookController {
 		System.out.print(books);
 		session.setAttribute("books", books);
 		System.out.println(query);
-		ModelAndView mav =  new ModelAndView("/index");
+		ModelAndView mav =  new ModelAndView("/searchBooks");
+		session.setAttribute("searchQuery", query);
 		mav.addObject("books", books);
+		mav.addObject("searchQuery", query);
 		return mav;
 	}
 	

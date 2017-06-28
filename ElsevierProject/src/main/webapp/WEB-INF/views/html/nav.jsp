@@ -34,7 +34,7 @@ Customer current_customer = (Customer) session.getAttribute("logged_in_customer"
   </div>
   <div class="top-bar-right">
       
-      <form action="/search" method="POST">
+      <form action="/search" method="GET">
       <input type="search" name = "searchQuery" id = "searchQuery" placeholder="Search">
       <input type="submit" class="button" value="Search">
       </form>
