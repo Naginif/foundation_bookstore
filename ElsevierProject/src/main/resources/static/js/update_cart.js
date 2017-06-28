@@ -1,8 +1,19 @@
+$(document).ready(function() {
+	$('#cartForm').on('change', 'input', function(e) {
+		console.log(e.target.id);
 
+		var selector = "quantity"+e.target.id;
+		$('#'+selector).change(function(){
+			console.log(e.target.id + ": hello world");
+		});
+	});
+});
+
+/**
 function calculateTotalPrice(price,quantity,price_label)
 {
 	     
-	       
+	       console.log("this is working")
 	       var cartTotal = document.getElementById("cart_total").value;
 	       var orderTotal = document.getElementById("order_total").value;
 	       
@@ -41,4 +52,4 @@ function calculateTotalPrice(price,quantity,price_label)
 //	        xmlhttp.send();
 	    
 }
-	
+**/	
