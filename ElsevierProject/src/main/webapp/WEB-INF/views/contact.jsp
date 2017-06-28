@@ -17,7 +17,9 @@ String navName = "contact";
   		<!-- Navigation markup -->
     	<%@ include file="html/nav.jsp" %>
     	<div class="row column text-center">
-		<form id="contact_form" action="mailto:customersupport@foundationbooks.com" method="post">
+		<form id="contact_form" 
+		action="mailto:customersupport@foundationbooks.com" 
+		method="post">
         <div class="large-6 medium-8 small-12 large-centered medium-centered small-centered">
            <h3> Contact Us!  </h3>
                <label>First Name </label>
