@@ -1,4 +1,3 @@
-
 <%@page import="java.util.Map"%>
 <%@page import="java.util.Set"%>
 <%@page import="java.util.HashMap"%>
@@ -179,6 +178,3 @@ String navName = "cart";
     <%@include file="html/footer.jsp" %>
   </body>
 </html>
-
-
-    
