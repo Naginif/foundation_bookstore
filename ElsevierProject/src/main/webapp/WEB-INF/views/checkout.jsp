@@ -79,7 +79,7 @@ String navName = "home";
 	          
 	           <div class="column">
 	            <label> Phone Number *</label>
-	            <input type="text" name="phone" id="phone" size="11" required/>
+	            <input type="text" name="phoneNumber" id="phoneNumber" size="11" required/>
 	          </div>
 	          
 	          

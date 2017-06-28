@@ -1,9 +1,8 @@
 package com.qa.controllers;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
-
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,17 +11,29 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.qa.models.Address;
+import com.qa.models.Customer;
+import com.qa.repositories.AddressRepository;
 
 @SessionAttributes(names={"book_counts"})
 @Controller
 public class CheckoutController {
+	
+	
 
 	@RequestMapping("/checkoutProcess")
-	public ModelAndView checkoutProcess(@ModelAttribute("Address") Address shipping)
+	public ModelAndView checkoutProcess(@ModelAttribute("Address") Address shipping, @ModelAttribute("logged_in_customer") Customer customer)
 	{	
+		
 		ModelAndView modelAndView = new ModelAndView("payment_form");
+		shipping.setAddressType("type_placeholder");
 		modelAndView.addObject("shipping_address", shipping);
-		// Save the address
+		
+		
+		shipping.setCustomerId(customer.getCustomerId());
+		System.out.println(shipping);
+		// Save the address to the address book
+		
+		
 		// Add it to the current order
 	    return modelAndView;
 	}
