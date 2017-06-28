@@ -93,7 +93,7 @@ String navName = "home";
 	<h3>Payment details</h3>
 	<p>
 		<%=payment.getCardName() %><br>
-		*********<%=payment.getCardNumber().substring(10) %><br>
+		*********<%=payment.getCardNumber().substring(12) %><br>
 		Expiring <%=payment.getExpiration_month() %> / <%=payment.getExpiration_year() %>
 	</p>
 	
