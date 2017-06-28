@@ -212,4 +212,11 @@ public class HomeController {
 		return modelAndView;
 	}
 	
+	@RequestMapping("/request")
+	public ModelAndView request(){
+		ModelAndView modelAndView = new ModelAndView("request");
+		
+		return modelAndView;
+	}
+	
 }
