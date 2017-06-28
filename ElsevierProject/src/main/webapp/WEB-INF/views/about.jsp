@@ -17,8 +17,17 @@ String navName = "about";
  	<body>
   		<!-- Navigation markup -->
     	<%@ include file="html/nav.jsp" %>
-    	<div class="row column text-center">
-		<h2>J's on my feet</h2>
+    	<div class="row column text-center large-12 medium-12 small-12">
+		<h1>Welcome to Foundation Bookstore!</h1></div>
+		<div class="row">
+		<div class="column large-4 medium-4 small-12">
+		<p style="font-size:24px">Looking for the classics? Looking for something new? Looking for 
+		a great gift? No matter what you are looking for, we have it. And if we don't, we'll order 
+		it just for you! <a href="/register">Register</a> an account with us and start loving books all over again.</p>
+		</div>
+		<div class="column large-8 medium-8 small-12">
+		<img src="images/foundation.jpg" alt="foundation" width="75%">
+		</div>
 		</div>
 		<!--  Footer markup -->
     	<%@include file="html/footer.jsp" %>
