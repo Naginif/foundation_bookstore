@@ -24,7 +24,7 @@ public class AddressBookController {
 		Address sAddress = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "shipping");
 		Address bAddress = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "billing");
 		String view;
-		if ((sAddress!=null) && (bAddress!=null)){
+		if ((sAddress!=null) || (bAddress!=null)){
 			view = "address_book2";
 		}
 		else {
@@ -123,8 +123,9 @@ public class AddressBookController {
 		}
 		else
 		{
+		
 			Address savedAddress = addressRepository.save(address);
-			modelAndView = new ModelAndView("address_book2","billing_address",savedAddress);
+			modelAndView = new ModelAndView("address_book2",addressType+"_address",savedAddress);
 			
 		}
 		return modelAndView;
