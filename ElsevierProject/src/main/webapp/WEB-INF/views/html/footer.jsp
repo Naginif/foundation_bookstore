@@ -2,11 +2,19 @@
 </div>
 </section>
 
-<footer class="row">
+<style>
+	#footer{
+	position: fixed;
+	bottom: 0;
+	}
+</style>
+
+<footer class="row" id="footer">
   <nav class="large-12 column">
     	<ul class="horizontal menu">
 		  <li><a href="/about">About</a></li>
 		  <li><a href="/contact">Contact</a></li>
+		  <li><a href="/request">Request a Book</a></li>
 		</ul>
   </nav>
 </footer>

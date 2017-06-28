@@ -21,8 +21,28 @@ public class AddressBookController {
 	@RequestMapping("/addressBook")
 	public ModelAndView addressBook(@ModelAttribute("logged_in_customer") Customer loggedInCustomer)
 	{
-		ModelAndView modelAndView = new ModelAndView("address_book","logged_in_customer",loggedInCustomer);
+		Address sAddress = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "shipping");
+		Address bAddress = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "billing");
+		String view;
+		if ((sAddress!=null) && (bAddress!=null)){
+			view = "address_book2";
+		}
+		else {
+			view = "address_book";
+		}
+		System.out.println(bAddress);
+		ModelAndView modelAndView = new ModelAndView(view,"logged_in_customer",loggedInCustomer);
+		modelAndView.addObject("shipping_address", sAddress);
+		modelAndView.addObject("billing_address", bAddress);
+		
+	    return modelAndView;
+	}
 	
+	@RequestMapping("/updateAddressBook")
+	public ModelAndView updateAddressBook(@ModelAttribute("logged_in_customer") Customer loggedInCustomer)
+	{
+		ModelAndView modelAndView = new ModelAndView("address_book","logged_in_customer",loggedInCustomer);
+		
 	    return modelAndView;
 	}
 	
@@ -76,12 +96,12 @@ public class AddressBookController {
 			shippingAddress  = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(),"shipping");
 			
 			System.out.println("After update ");
-			modelAndView = new ModelAndView("address_book","billing_address",billingAddress);
+			modelAndView = new ModelAndView("address_book2","billing_address",billingAddress);
 			modelAndView.addObject("shipping_address", shippingAddress);
 		}
 		else
 		{
-			modelAndView = new ModelAndView("address_book","billing_address",billingAddress);
+			modelAndView = new ModelAndView("address_book2","billing_address",billingAddress);
 			modelAndView.addObject("shipping_address", shippingAddress);
 			
 		}
@@ -90,7 +110,7 @@ public class AddressBookController {
 		else
 		{
 			Address savedAddress = addressRepository.save(address);
-			modelAndView = new ModelAndView("address_book","billing_address",savedAddress);
+			modelAndView = new ModelAndView("address_book2","billing_address",savedAddress);
 			
 		}
 		return modelAndView;

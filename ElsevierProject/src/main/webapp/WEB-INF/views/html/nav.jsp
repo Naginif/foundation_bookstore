@@ -15,18 +15,18 @@ Customer current_customer = (Customer) session.getAttribute("logged_in_customer"
     data-responsive-menu="drilldown medium-dropdown">
       <li class="menu-text"><a href="/">Foundation Books</a></li>
 		  
-		  <li><a href="/">All books</a></li>
+		  <li><a href="/allbooks">All books</a></li>
 		  <li><a href="/cart">Cart</a></li>
 		  <% if(current_customer==null) { %>
 		  <li><a href="/login">Login</a></li>
 		  <li><a href="/register">Register</a></li>
 		  <% } else { %>
-		  <li><a href="#"><%=current_customer.getFirstName() %></a>
+		  <li><a href="/profile"><%=current_customer.getFirstName() %></a>
 			<ul class="vertical menu">
 			  <li><a href="#">Order history</a></li>
 			  <li><a href="/addressBook">Address book</a></li>
 			  <li><a href="/profile">Account details</a></li>
-			  <li><a href="#">Logout</a></li>
+			  <li><a href="/logout">Logout</a></li>
 			</ul>
 		  </li>
 		  <% } %>
