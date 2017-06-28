@@ -91,7 +91,8 @@ public class HomeController {
 	
 	@RequestMapping("/allbooks")
 	public ModelAndView allbooks(){
-		ModelAndView modelAndView = new ModelAndView("allbooks");
+		Iterable<Book> books = bookRepository.findAll();
+		ModelAndView modelAndView = new ModelAndView("allbooks","books",books);
 		return modelAndView;
 	}
 
