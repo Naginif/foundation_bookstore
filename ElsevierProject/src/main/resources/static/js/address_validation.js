@@ -229,5 +229,31 @@ $(document).ready(function() {
     });
     // end of validation block
      // end of validation block
+     $('#chkIsSame').change(function() {
+     	if(this.checked){
+     		//if checked
+     		$('#shippingLine1').val($('#addressLine1').val()); 
+     		$('#shippingLine2').val($('#addressLine2').val()); 
+     		$('#shippingCity').val($('#city').val()); 
+     		$('#shippingPostCode').val($('#postcode').val()); 
+     		$('#shippingState').val($('#state').val()); 
+     		$('#shippingCounty').val($('#county').val());
+     		$('#shippingPhoneNumber').val($('#phoneNumber').val());  
 
+            //disable form with
+                    $(".tex")
+            .attr("disabled", "disabled")
+        button.disabled = true;
+
+     	} else {
+     		// not checked
+            $('#shippingLine1').val(''); 
+            $('#shippingLine2').val(''); 
+            $('#shippingCity').val(''); 
+            $('#shippingPostCode').val(''); 
+            $('#shippingState').val($(''); 
+            $('#shippingCounty').val($('');
+            $('#shippingPhoneNumber').val('');
+     	}
+     });
 });

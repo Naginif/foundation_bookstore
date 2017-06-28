@@ -75,7 +75,8 @@ String navName = "home";
                <div class="medium-6 columns">
                 <h3> Shipping Address </h3>
                 
-                <input type="checkbox" class="ba" checked="checked" /> Different from billing address
+                <input type="checkbox" class="ba" id="chkIsSame" /> Different from billing address
+               
                 
               <form action="/updateAddress" method="post">
                <label>Address Line 1 * </label>
@@ -120,7 +121,6 @@ String navName = "home";
        
       
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="js/elsevier2.js"></script>
     <script src="js/address_validation.js"></script>
     <script>
       $(document).foundation();
