@@ -22,7 +22,7 @@ public class CheckoutController {
 	{
 		System.out.println("First name "+shipping.getFirstName());
 		boolean sameAdd = shipping.getSame();
-		ModelAndView modelAndView = new ModelAndView("payment_form","order_total",orderTotal);
+		ModelAndView modelAndView = new ModelAndView("payment_form");
 		modelAndView.addObject("shipping_address", shipping);
 		modelAndView.addObject("order_total", orderTotal);
 		modelAndView.addObject("book_counts", bookCounts);
