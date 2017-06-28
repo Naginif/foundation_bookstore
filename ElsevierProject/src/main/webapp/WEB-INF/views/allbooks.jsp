@@ -1,4 +1,9 @@
-
+<%@page import="java.util.List" %>
+<%@page import="java.util.ArrayList" %>
+<%@page import="java.util.Iterator" %>
+<%@page import="com.qa.models.Book" %>
+<%@page import="com.qa.models.Customer" %>
+<%@page import="java.text.NumberFormat" %>
 <%
 // Webpage title 
 String title="Foundation Books"; 
@@ -26,19 +31,22 @@ String navName = "home";
 	<div class="row">
 	
 		<%
-		for (int i=0;i<24;i++){
-			
-	
+		Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
+		Iterator<Book> bookIter = books.iterator();
+		while(bookIter.hasNext()) {
+			Book book = bookIter.next();
 		%>
-	
-		<div class="column large-3 medium-6 small-12">
-		
-			<p><%=i %></p>
-	
-		</div>
-		<%
-		}
-		%>
+		   	<div class="column large-4 medium-6 small-12 <% if (!bookIter.hasNext()) %>end <%;%>">
+      
+        <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="thumbnail" src="<%=book.getBookImage()%>" style="width:450px;height:375px;"></a>
+        <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="button expanded">View book details</a>
+        <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
+      	
+      	</div>
+      
+    <%
+    }
+    %> 
 	
 	</div>
 	
