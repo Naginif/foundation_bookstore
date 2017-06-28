@@ -19,7 +19,8 @@ public class CheckoutController {
 
 	@RequestMapping("/checkoutProcess")
 	public ModelAndView checkoutProcess(@ModelAttribute("Address") Address shipping,@ModelAttribute("book_counts") Map<Integer,Integer> bookCounts,@RequestParam("order_total") double orderTotal)
-	{
+	{	
+		//Commit test
 		//boolean sameAdd = shipping.getSame();
 		ModelAndView modelAndView = new ModelAndView("payment_form");
 		modelAndView.addObject("shipping_address", shipping);
