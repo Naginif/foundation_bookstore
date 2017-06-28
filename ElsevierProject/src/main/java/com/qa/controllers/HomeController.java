@@ -88,6 +88,12 @@ public class HomeController {
 		return modelAndView;
 		
 	}
+	
+	@RequestMapping("/allbooks")
+	public ModelAndView allbooks(){
+		ModelAndView modelAndView = new ModelAndView("allbooks");
+		return modelAndView;
+	}
 
 	@RequestMapping("/login")
 	public ModelAndView login()
