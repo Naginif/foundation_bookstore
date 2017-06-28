@@ -18,7 +18,7 @@ function calculateTotalPrice(price,quantity,price_label)
 	       
 	       document.getElementById("order_total_label").innerHTML = "$"+oTotal;
 	       
-	       //document.getElementById("price").value = totalPrice;
+	       document.getElementById("price").value = totalPrice;
 	       
 	       
 	       document.getElementById("cart_total").value = cTotal;
