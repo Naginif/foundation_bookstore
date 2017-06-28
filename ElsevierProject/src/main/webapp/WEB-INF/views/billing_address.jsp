@@ -38,7 +38,7 @@ String navName = "home";
   			<a class="accordion-title" href="#"> New address </a>
   			<div class="accordion-content" data-tab-content>
   			
-		 <form action="/sendShippingAddress">
+		 <form action="/sendBillingAddress">
 		 
 		 	<div class="column">
 	            <label> First Name * </label>

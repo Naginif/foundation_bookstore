@@ -26,7 +26,6 @@ public class Address {
 	
 	private String phoneNumber;
 	
-	
 	private String addressType;
 
 	public String getAddressType() {
