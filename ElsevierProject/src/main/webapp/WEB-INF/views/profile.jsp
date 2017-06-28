@@ -42,7 +42,7 @@ String navName = "home";
        <div class="row column">
         
         <form action="/updateProfile" method="post">
-        <div class="medium-6">
+        <div class="large-6 medium-8 small-12 large-centered medium-centered small-centered">
            <h3> Account details </h3>
                 
                 
@@ -76,6 +76,7 @@ String navName = "home";
     
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier.js"></script>
+    <script src="js/profile_validation.js"></script>
     <script>
       $(document).foundation();
     </script>

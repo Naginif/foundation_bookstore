@@ -26,6 +26,7 @@ public class Address {
 	
 	private String phoneNumber;
 	
+	
 	private String addressType;
 
 	public String getAddressType() {
@@ -35,6 +36,7 @@ public class Address {
 	public void setAddressType(String addressType) {
 		this.addressType = addressType;
 	}
+	
 
 	private int customerId;
 	
@@ -116,7 +118,7 @@ public class Address {
 	public String toString() {
 		return "Address [addressId=" + addressId + ", addressLine1=" + addressLine1 + ", addressLine2=" + addressLine2
 				+ ", city=" + city + ", postcode=" + postcode + ", state=" + state + ", country=" + country
-				+ ", phoneNumber=" + phoneNumber + ", addressType=" + addressType + ", customerId=" + customerId + "]";
+				+ ", phoneNumber=" + phoneNumber + ", customerId=" + customerId + "]";
 	}
 	
 	
