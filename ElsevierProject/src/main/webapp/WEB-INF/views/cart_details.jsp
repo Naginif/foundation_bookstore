@@ -71,7 +71,7 @@ String navName = "cart";
     </div>
 
     <div class="row">
-      <div class="medium-6 columns">
+      <div class="medium-6 large-6 columns">
       <% 
      
       
@@ -105,23 +105,20 @@ String navName = "cart";
       %>
        
         <img class="thumbnail" src="<%=book.getBookImage()%>"/>
-        <div class="row small-up-4">
+        <div class="row">
         
-          <div class="column">
-            ISBN : <%=book.getISBN()%>
+          <div class="column large-4 medium-4 small-12">
+            ISBN: <%=book.getISBN()%>
           </div>
           
-          <div class="column">
-           
+          <div class="column large-4 medium-4 small-12">
+            Published In <%=book.getPublishedDate()%>
           </div>
-          <div class="column">
-            Published On <%=book.getPublishedDate()%>
-          </div>
-          <div class="column">
+          <div class="column large-4 medium-4 small-12">
             <form name="f1">
             	<input type="hidden" name="price" value="<%=price%>"/>
             	<input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
-            	Price <label id="price_label<%=i%>"><%=priceForm%></label>
+            	Price: <label id="price_label<%=i%>"><%=priceForm%></label>
             	<input type="hidden" name="cart_total" value="<%=priceForm%>"/>
             	Quantity <input type="number"  min="1" name="quantity" value="<%=quantity%>" oninput="calculateTotalPrice(price.value,this.value,price_label<%=i%>)"/>
             </form>
@@ -130,7 +127,7 @@ String navName = "cart";
          
         </div>
         
-        <div class="row small-up-4">
+        <div class="row">
           
           <div class="column">
             <a href="/removeFromCart?bookId=<%=book.getBookId() %>"> Remove </a>
@@ -138,14 +135,13 @@ String navName = "cart";
         
         </div>
         
-        <hr>
       <%
       i++;
       }
       %>
      
       </div>
-      <div class="medium-6 large-5 columns">
+      <div class="medium-6 large-6 columns">
         <h3>Order Summary </h3>
         <p> </p>
 
