@@ -104,7 +104,7 @@ String navName = "cart";
     	  
       %>
        
-        <img class="thumbnail" src="<%=book.getBookImage()%>"/>
+        <img class="thumbnail" src="<%=book.getBookImage()%>" height="350px" width="225px"/>
         <div class="row">
         
           <div class="column large-4 medium-4 small-12">
