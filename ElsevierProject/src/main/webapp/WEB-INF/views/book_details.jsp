@@ -77,105 +77,20 @@ String navName = "home";
         <p><%=book.getDescription() %></p>
 
         <label>Select the format
-        <select>
-          <option value="">-- Select -- </option>
+        <select id="bookOptions">
+          <option value="default">-- Select -- </option>
           <option value="print">Paperback</option>
           <option value="eBook">eBook</option>
           <option value="printAndeBook">PrintBook & eBook</option>
         </select>
         </label>
-
+		<div id="warning" style="color: red;">You must select an option!</div>
         
-
-        <a href="/addToCart?bookId=<%=book.getBookId()%>" class="button large expanded">Add to Cart</a>
-
-        <!-- <div class="small secondary expanded button-group">
-            <a class="button">Facebook</a>
-            <a class="button">Twitter</a>
-            <a class="button">Yo</a>
-          </div> -->
+		<button onclick="validateAndSubmit()" class="button large expanded">Add Me To Cart</button>
+        <!-- <button href="/addToCart?bookId=<%=book.getBookId()%>" class="button large expanded" script="">Add to Cart</button> -->
         </div>
     </div>
-<!--  
-    <div class="column row">
-      <hr>
-      <ul class="tabs" data-tabs id="example-tabs">
-        <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Reviews</a></li>
-        <li class="tabs-title"><a href="#panel2">Similar Products</a></li>
-      </ul>
-      <div class="tabs-content" data-tabs-content="example-tabs">
-        <div class="tabs-panel is-active" id="panel1">
-          <h4>Reviews</h4>
-          <div class="media-object stack-for-small">
-            <div class="media-object-section">
-              <img class="thumbnail" src="http://placehold.it/200x200">
-            </div>
-            <div class="media-object-section">
-              <h5>Mike Stevenson</h5>
-              <p>I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you.</p>
-            </div>
-          </div>
-          <div class="media-object stack-for-small">
-            <div class="media-object-section">
-              <img class="thumbnail" src="http://placehold.it/200x200">
-            </div>
-            <div class="media-object-section">
-              <h5>Mike Stevenson</h5>
-              <p>I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you</p>
-            </div>
-          </div>
-          <div class="media-object stack-for-small">
-            <div class="media-object-section">
-              <img class="thumbnail" src="http://placehold.it/200x200">
-            </div>
-            <div class="media-object-section">
-              <h5>Mike Stevenson</h5>
-              <p>I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you</p>
-            </div>
-          </div>
-          <label>
-            My Review
-            <textarea placeholder="None"></textarea>
-          </label>
-          <button class="button">Submit Review</button>
-        </div>
-        <div class="tabs-panel" id="panel2">
-          <div class="row medium-up-3 large-up-5">
-            <div class="column">
-              <img class="thumbnail" src="http://placehold.it/350x200">
-              <h5>Other Product <small>$22</small></h5>
-              <p>In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam.</p>
-              <a href="#" class="button hollow tiny expanded">Buy Now</a>
-            </div>
-            <div class="column">
-              <img class="thumbnail" src="http://placehold.it/350x200">
-              <h5>Other Product <small>$22</small></h5>
-              <p>In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam.</p>
-              <a href="#" class="button hollow tiny expanded">Buy Now</a>
-            </div>
-            <div class="column">
-              <img class="thumbnail" src="http://placehold.it/350x200">
-              <h5>Other Product <small>$22</small></h5>
-              <p>In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam.</p>
-              <a href="#" class="button hollow tiny expanded">Buy Now</a>
-            </div>
-            <div class="column">
-              <img class="thumbnail" src="http://placehold.it/350x200">
-              <h5>Other Product <small>$22</small></h5>
-              <p>In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam.</p>
-              <a href="#" class="button hollow tiny expanded">Buy Now</a>
-            </div>
-            <div class="column">
-              <img class="thumbnail" src="http://placehold.it/350x200">
-              <h5>Other Product <small>$22</small></h5>
-              <p>In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam.</p>
-              <a href="#" class="button hollow tiny expanded">Buy Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
--->
+
     <div class="row column">
       <hr>
       <ul class="menu">
@@ -193,6 +108,15 @@ String navName = "home";
     <script src="js/elsevier.js"></script>
     <script>
       $(document).foundation();
+      
+      document.getElementById("warning").style.visibility = "hidden";
+      function validateAndSubmit() {
+    	  if (document.getElementById("bookOptions").selectedIndex == 0) {
+    		  document.getElementById("warning").style.visibility = "visible";
+    	  } else {
+    		  location.href="/addToCart?bookId=<%=book.getBookId()%>";
+    	  }
+      }
     </script> 
   <!--  Footer markup -->
     <%@include file="html/footer.jsp" %>

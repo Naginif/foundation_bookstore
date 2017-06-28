@@ -41,6 +41,15 @@ String navName = "home";
 		} else {
 			customerName = "Welcome";
 		}
+	%>
+	
+	<% 
+		ArrayList<Book> cart_items = (ArrayList<Book>) session.getAttribute("cart_items");
+		
+	if (cart_items == null){
+		cart_items = new ArrayList<Book>();
+		session.setAttribute("cart_items", cart_items);
+	}
 	%>	
 
       
