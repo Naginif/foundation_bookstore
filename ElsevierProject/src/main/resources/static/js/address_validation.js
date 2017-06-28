@@ -27,5 +27,34 @@ $(document).ready(function() {
 
 	var shippingValidationArr = [shippingLine1Valid, shippingLine2Valid, shippingCityValid, shippingPostcodeValid, shippingStateValid, shippingCountyValid, shippingPhoneNumberValid, shippingAddressTypeValid];
 
-	
-}
+	console.log("hello world")
+
+	// beggining of validation block
+	    if ($('#addressLine1').val().length > 0) {
+       // console.log("hello");
+        $ ('#addressLine1').css('border' , '2px solid green');
+        !addressLine1Valid;
+    }
+        $( '#addressLine1' ).focus(function() {
+        if ($('#addressLine1').val() == ''){
+       // console.log('first name in focus and has nothing');
+        $( this ).css( 'border' , '2px solid red');
+        addressLine1Valid = false;
+    }
+    });
+
+           $ ( '#addressLine1').keyup(function() {
+        if($('#addressLine1').val().length <= 0 ){
+            $ (this).css('border' , '2px solid red');
+            //console.log('first name is empty');
+            addressLine1Valid = false;
+        } else if($('#addressLine1').val().length > 0) {
+            
+            $( this).css( 'border' ,'2px solid green');
+           // console.log('first name has info');
+      
+            addressLine1Valid = true;
+        }
+    });
+    // end of validation block
+});

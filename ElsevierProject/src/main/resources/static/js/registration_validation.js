@@ -47,7 +47,7 @@ $(document).ready(function() {
         if($('#firstName').val().length <= 0 ){
             $ (this).css('border' , '2px solid red');
             //console.log('first name is empty');
-            firstNameValie = false;
+            firstNameValid = false;
         } else if($('#firstName').val().length > 0) {
             
             $( this).css( 'border' ,'2px solid green');

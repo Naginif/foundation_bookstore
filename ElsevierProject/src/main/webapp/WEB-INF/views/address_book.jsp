@@ -67,7 +67,7 @@ String navName = "home";
                 <input type="hidden" name="addressType" id="addressType" value="billing"/> 
                 
                 
-                <input type="submit" class="button create account" value="Update Billing Address">
+                <input type="submit" class="button create account" value="Update Billing Address" id="billingButton">
                </form>
             </div>
             
@@ -118,10 +118,10 @@ String navName = "home";
     
          
        
-    </div>
-    
+      
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier2.js"></script>
+    <script src="js/address_validation.js"></script>
     <script>
       $(document).foundation();
     </script>
