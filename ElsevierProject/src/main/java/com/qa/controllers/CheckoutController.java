@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.qa.models.Address;
 import com.qa.models.Customer;
+import com.qa.models.Payment;
 
 @SessionAttributes(names={"book_counts"})
 @Controller
@@ -38,9 +39,9 @@ public class CheckoutController {
 	}
 	
 	@RequestMapping("/paymentProcess")
-	public ModelAndView paymentProcess(){
+	public ModelAndView paymentProcess(HttpSession session, @ModelAttribute("Payment") Payment payment){
 		ModelAndView modelAndView = new ModelAndView("confirm_order");
-		
+		session.setAttribute("payment", payment);
 	    return modelAndView;
 	}
 	

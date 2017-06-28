@@ -5,11 +5,20 @@ import javax.persistence.Id;
 
 @Entity
 public class Payment {
+	@Id
+	private int paymentId;
 	private String cardName;
 	private String cardNumber;
 	private String CCV;
 	private String expiration_month;
 	private String expiration_year;
+	
+	public int getPaymentId() {
+		return paymentId;
+	}
+	public void setPaymentId(int paymentId) {
+		this.paymentId = paymentId;
+	}
 	public String getCardName() {
 		return cardName;
 	}

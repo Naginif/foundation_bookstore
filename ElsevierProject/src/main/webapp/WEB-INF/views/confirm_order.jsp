@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="com.qa.models.Address, com.qa.models.Book, java.util.ArrayList, java.util.Map" %>
-
+<%@page import="com.qa.models.Payment" %>
 
 
 <%
@@ -34,6 +34,7 @@ String navName = "home";
 	Map<Integer, Integer> bookCounts = (Map<Integer,Integer>)  session.getAttribute("book_counts");
 	Address shipping = (Address) session.getAttribute("shipping_address");
 	Address billing = (Address) session.getAttribute("billing_address");
+	Payment payment = (Payment) session.getAttribute("payment");
 	%>
 	
 	
@@ -90,10 +91,17 @@ String navName = "home";
 	<div class="large-4 medium-4 small-12 column">
 	<div class="panel callout">
 	<h3>Payment details</h3>
+	<p>
+		<%=payment.getCardName() %><br>
+		*********<%=payment.getCardNumber().substring(10) %><br>
+		Expiring <%=payment.getExpiration_month() %> / <%=payment.getExpiration_year() %>
+	</p>
 	
 	</div>
 	</div>
-	
+	<form action="/confirm_order" >
+	<input type="submit" value="Confirm order" class="button expanded" />
+	</form>
 	</div>
 	
 	
