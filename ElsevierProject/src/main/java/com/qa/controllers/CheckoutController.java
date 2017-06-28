@@ -4,6 +4,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,9 +45,12 @@ public class CheckoutController {
 	}
 	
 	@RequestMapping("/paymentProcess")
-	public ModelAndView paymentProcess(){
+	public ModelAndView paymentProcess(HttpServletRequest request){
 		ModelAndView modelAndView = new ModelAndView("index");
 		modelAndView.addObject("order_recieved", true);
+		HttpSession sesh = request.getSession();
+		sesh.setAttribute("order_recieved", true);
+		//request.setAttribute("order_recieved", true);
 	    return modelAndView;
 	}
 	

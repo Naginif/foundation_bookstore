@@ -56,8 +56,18 @@ public class HomeController {
 		
 		System.out.println(customerToString);
 		
-		Object items = session.getAttribute("cart_items");
+		Object items = null;
 		
+		System.out.println("order recieved is " + session.getAttribute("order_recieved"));
+		if (session.getAttribute("order_recieved") != null) {
+			System.out.println("order_recieved is not null");
+			if ((boolean) session.getAttribute("order_recieved") == true) {
+			}
+						
+		} else {
+			items = session.getAttribute("cart_items");
+		}
+
 		if(items!=null)
 		{
 			cartItems = (ArrayList<Book>) items;

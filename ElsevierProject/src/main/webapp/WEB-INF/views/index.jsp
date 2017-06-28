@@ -37,24 +37,30 @@ String navName = "home";
 		String customerName;	
 	
 		if (customer!=null) {
-			customerName = customer.getFirstName();
+			customerName = customer.getFirstName() + ", ";
 		} else {
-			customerName = "Welcome";
+			customerName = "Here's";
 		}
 	%>
 	
 	<% 
-		ArrayList<Book> cart_items = (ArrayList<Book>) session.getAttribute("cart_items");
+		ArrayList<Book> cart_items = null;
 		
-	if (cart_items == null){
-		cart_items = new ArrayList<Book>();
-		session.setAttribute("cart_items", cart_items);
-	}
+		if (session.getAttribute("order_recieved") == null) {
+			cart_items = (ArrayList<Book>) session.getAttribute("cart_items");
+		} else {
+			
+		}		
+		
+		if (cart_items == null){
+			cart_items = new ArrayList<Book>();
+			session.setAttribute("cart_items", cart_items);
+		}
 	%>	
 
       
 
-    <h1><%=customerName %>, Our Newest Books</h1>
+    <h1><%=customerName %> Our Newest Books</h1>
 
     <div class="row">
 
