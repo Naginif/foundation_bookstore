@@ -46,7 +46,7 @@ String navName = "home";
 	<% 
 		ArrayList<Book> cart_items = null;
 		
-		if (session.getAttribute("order_recieved") == null) {
+		if (session.getAttribute("confirm_order") == null) {
 			cart_items = (ArrayList<Book>) session.getAttribute("cart_items");
 		} else {
 			

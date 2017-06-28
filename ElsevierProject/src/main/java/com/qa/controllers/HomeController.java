@@ -58,10 +58,10 @@ public class HomeController {
 		
 		Object items = null;
 		
-		System.out.println("order recieved is " + session.getAttribute("order_recieved"));
-		if (session.getAttribute("order_recieved") != null) {
+		System.out.println("order recieved is " + session.getAttribute("confirm_order"));
+		if (session.getAttribute("confirm_order") != null) {
 			System.out.println("order_recieved is not null");
-			if ((boolean) session.getAttribute("order_recieved") == true) {
+			if ((boolean) session.getAttribute("confirm_order") == true) {
 			}
 						
 		} else {
@@ -81,10 +81,10 @@ public class HomeController {
 		
 		ModelAndView modelAndView = new ModelAndView("index","books",books);
 		modelAndView.addObject("cart_items",cartItems);
-		if(request.getAttribute("order_recieved")==null){
-			modelAndView.addObject("order_recieved", false);
+		if(request.getAttribute("confirm_order")==null){
+			modelAndView.addObject("confirm_order", false);
 		}
-		System.out.print(request.getAttribute("order_recieved"));
+		System.out.print(request.getAttribute("confirm_order"));
 		return modelAndView;
 		
 	}

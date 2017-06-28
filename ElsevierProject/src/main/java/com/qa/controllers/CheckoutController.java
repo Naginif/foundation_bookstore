@@ -2,6 +2,7 @@ package com.qa.controllers;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,10 +47,12 @@ public class CheckoutController {
 	}
 	
 	@RequestMapping("/confirm_order")
-	public ModelAndView confirmOrder() {
+	public ModelAndView confirmOrder(HttpServletRequest request) {
 		ModelAndView modelAndView = new ModelAndView("index");
-		modelAndView.addObject("order_recieved", true);
 		
+		modelAndView.addObject("confirm_order", true);
+		HttpSession sesh = request.getSession();
+		sesh.setAttribute("confirm_order", true);
 		return modelAndView;
 	}
 
