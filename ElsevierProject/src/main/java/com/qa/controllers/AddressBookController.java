@@ -24,7 +24,7 @@ public class AddressBookController {
 		Address sAddress = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "shipping");
 		Address bAddress = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "billing");
 		String view;
-		if ((sAddress!=null) && (bAddress!=null)){
+		if ((sAddress!=null) || (bAddress!=null)){
 			view = "address_book2";
 		}
 		else {
