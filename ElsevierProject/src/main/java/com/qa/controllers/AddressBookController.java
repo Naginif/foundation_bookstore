@@ -123,9 +123,16 @@ public class AddressBookController {
 		}
 		else
 		{
-		
+			
 			Address savedAddress = addressRepository.save(address);
 			modelAndView = new ModelAndView("address_book2",addressType+"_address",savedAddress);
+			if(addressType.equals("billing")) {
+				modelAndView.addObject("shipping_address", sAddress);
+			}
+			else {
+				modelAndView.addObject("billing_address", bAddress);
+			}
+			
 			
 		}
 		return modelAndView;
