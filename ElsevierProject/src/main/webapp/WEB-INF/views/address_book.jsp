@@ -122,6 +122,7 @@ String navName = "home";
     
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier2.js"></script>
+   
     <script>
       $(document).foundation();
     </script>
