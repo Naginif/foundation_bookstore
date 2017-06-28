@@ -4,11 +4,18 @@
 
 <style>
 	#footer{
-	position: absolute;
+	position: fixed;
 	right: 0;
 	bottom: 0;
 	}
 </style>
+
+<div class="row column">
+	<hr>
+	<ul class="menu">
+		
+	</ul>
+</div>
 
 <footer class="row" id="footer">
   <nav class="large-12 column">
