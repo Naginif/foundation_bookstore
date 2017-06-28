@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -240,6 +242,19 @@ public class BookController {
         System.out.println("Number of filtered items "+filteredBooks.size());
 		return filteredBooks;
 	
+	}
+	
+	@RequestMapping("/search")
+	public ModelAndView searchedBooks(@RequestParam("searchQuery") String query, HttpSession session){
+		Iterable<Book> books = bookService.findBooks(query);
+		System.out.print(books);
+		session.setAttribute("books", books);
+		System.out.println(query);
+		ModelAndView mav =  new ModelAndView("/searchBooks");
+		session.setAttribute("searchQuery", query);
+		mav.addObject("books", books);
+		mav.addObject("searchQuery", query);
+		return mav;
 	}
 	
 }
