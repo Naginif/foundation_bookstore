@@ -89,10 +89,6 @@ String navName = "home";
 	          </div>
 	          
 	          
-	          <div class="column">
-	            <input type="checkbox" name="same" id="same"/> My billing and shipping address are the same
-	          </div>
-	          
 	          <input type="submit" class="button expanded" value="Next" />
 		 
 		 </form>

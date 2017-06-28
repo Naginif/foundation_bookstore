@@ -18,15 +18,12 @@ import com.qa.models.Address;
 public class CheckoutController {
 
 	@RequestMapping("/checkoutProcess")
-	public ModelAndView checkoutProcess(@ModelAttribute("Address") Address shipping,@ModelAttribute("book_counts") Map<Integer,Integer> bookCounts,@RequestParam("order_total") double orderTotal)
+	public ModelAndView checkoutProcess(@ModelAttribute("Address") Address shipping)
 	{	
-		//Commit test
-		//boolean sameAdd = shipping.getSame();
 		ModelAndView modelAndView = new ModelAndView("payment_form");
 		modelAndView.addObject("shipping_address", shipping);
-		modelAndView.addObject("order_total", orderTotal);
-		modelAndView.addObject("book_counts", bookCounts);
-		//modelAndView.addObject("same", sameAdd);
+		// Save the address
+		// Add it to the current order
 	    return modelAndView;
 	}
 	@RequestMapping("/loginThroughCheckout")
