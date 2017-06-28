@@ -1,9 +1,4 @@
 
-<%@page import="java.util.Map"%>
-<%@page import="java.util.Set"%>
-<%@page import="java.util.HashMap"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="com.qa.models.Book"%>
 <%
 // Webpage title 
 String title="Foundation Books"; 
@@ -24,39 +19,11 @@ String navName = "home";
     <%@ include file="html/nav.jsp" %>
 
 	<!-- Content goes here -->
-    
-    <form action="/checkoutProcess" method="post">
-    
-     <%
-    
-    double orderTotal = (Double) request.getAttribute("order_total");
-    
-   
-    %>   
-
-    <br>
-    <!-- You can now combine a row and column if you just need a 12 column row -->
-    <div class="row columns">
-      <nav aria-label="You are here:" role="navigation">
-        <ul class="breadcrumbs">
-         
-          <li><a href="/">Home</a></li>
-          <li>
-            <span class="show-for-sr">Current: </span> Cart Details
-          </li>
-        </ul>
-      </nav>
-    </div>
-
-    <div class="row">
- 
-      <div class="medium-6 columns">
-      
-       <h2> Shipping Address </h2>
-        
-        <div class="row small-up-shiping">
-        
-          <div class="columns">
+	<section class="large-6 medium-8 small-12 large-centered medium-centred small-centered">
+	<h1>Shipping details</h1>
+	 <form action="/checkoutProcess">
+	 
+	 	<div class="column">
             <label> First Name * </label>
             <input type="text" name="firstName" id="firstName" size="30" required/> 
           </div>
@@ -109,148 +76,18 @@ String navName = "home";
             <input type="checkbox" name="same" id="same"/> My billing and shipping address are the same
           </div>
           
-        </div>
-        
-        <div class="row small-up-4">
-          
-          <div class="column">
-           
-          </div>
-        
-        </div>
-        
-        <hr>
-      
-      </div>
-      <div class="medium-6 large-5 columns">
-      
-      
-        <!--  <div class="login_in_shipping">
-    
+          <input type="submit" class="button expanded" value="Next" />
+	 
+	 </form>
+	 </section>
+	
+	
+	
+	
+	
+	
 
-        <div class="row">
-          <div class="small-3 columns">
-            <h4>Already have an account </h4>
-            <p> Login to check out using your saved details </p>
-            <label> Email * </label>
-            <input type="text" name="email" placeholder="Enter your email ID" size="40"/>   
-             <label> Password * </label>
-            <input type="password" name="password" placeholder="Enter your password" size="40"/>   
-           
-           <input type="submit" id="login_submit" value="Login"/>
-             
-          </div>
-          
-           
-       </div>
-      
-      </div> -->
-      
-           <h3>Already have an account </h3>
-        <p> Please login using saved details</p>
-
-        <div class="row">
-        
-          <div class="small-3 columnsee">
-          
-          <!--     Email *
-             <input type="text" id="email" name="email" size="30"/> 
-             
-             Password *
-             <input type="password" id="password" name="password" size="30"/>  -->
-             <a href="/loginThroughCheckout?order_total=<%=orderTotal%>" class="button large expanded">Login</a>
-          </div>
-           
-       </div>
-
-          <div class="row">
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">VAT </label>
-          </div>
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">Applicable Tax </label>
-           </div>
-           
-        </div>
-    
-        <div class="row">
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">Order Total  </label>
-          </div>
-          <div class="small-3 columns">
-          
-            <label for="middle-label" class="middle" id="order_total_label">$<%=orderTotal%></label>
-           </div>
-      
-        </div>
-
-		<form action="checkoutProcess" id="checkout_form">
-		<input type="hidden" name="order_total" value="<%=orderTotal %>"/>   
-        <input type="submit" class="button large expanded" value="Checkout"/>
-       </form>
-      </div> 
-      
-      
-      <br>
-      
-        <%-- <h3>Order Summary </h3>
-        <p> </p>
-
-        <div class="row">
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">Cart Total</label>
-          </div>
-          <div class="small-3 columns">
-             
-            <label for="middle-label" class="middle" id="cart_total_label">$<%=orderTotal %></label>
-           </div>
-           
-       </div>
-
-
-
-          <div class="row">
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">VAT </label>
-          </div>
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">Applicable Tax </label>
-           </div>
-           
-        </div>
-    
-        <div class="row">
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">Order Total  </label>
-          </div>
-          <div class="small-3 columns">
-          
-            <label for="middle-label" class="middle" id="order_total_label">$<%=orderTotal%></label>
-           </div>
-      
-        </div> --%>
-
-		  
-		<%-- <input type="hidden" name="order_total" value="<%=orderTotal %>"/>   
-        <input type="submit" class="button large expanded" value="Checkout"/> --%>
-       
-      </div>  
-   
- </div>
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="js/elsevier.js"></script>
-    <script src="js/update_cart.js"></script>
-    
-    <script src="js/validations.js"></script>
-    <script>
-      $(document).foundation();
-    </script> 
-    
-   </form>
-  <!--  Footer markup -->
+	<!--  Footer markup -->
     <%@include file="html/footer.jsp" %>
   </body>
 </html>
-
-
-    
