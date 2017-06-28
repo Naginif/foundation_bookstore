@@ -55,6 +55,10 @@ $(document).ready(function() {
       
             addressLine1Valid = true;
         }
+
+        if( $('#chkIsSame').is(':checked')) {
+            $('#shippingLine1').val($('#addressLine1').val());
+        }
     });
     // end of validation block
     	// beggining of validation block
@@ -82,6 +86,10 @@ $(document).ready(function() {
            // console.log('first name has info');
       
             addressLine2Valid = true;
+        }
+
+         if( $('#chkIsSame').is(':checked')) {
+            $('#shippingLine2').val($('#addressLine2').val());
         }
     });
     // end of validation block
@@ -111,6 +119,9 @@ $(document).ready(function() {
       
             cityValid = true;
         }
+         if( $('#chkIsSame').is(':checked')) {
+            $('#shippingCity').val($('#city').val());
+        }
     });
     // end of validation block
     	// beggining of validation block
@@ -125,6 +136,7 @@ $(document).ready(function() {
         $( this ).css( 'border' , '2px solid red');
         postcodeValid = false;
     }
+
     });
 
            $ ( '#postcode').keyup(function() {
@@ -138,6 +150,9 @@ $(document).ready(function() {
            // console.log('first name has info');
       
             postcodeValid = true;
+        }
+         if( $('#chkIsSame').is(':checked')) {
+            $('#shippingPostcode').val($('#postcode').val());
         }
     });
     // end of validation block
@@ -168,6 +183,9 @@ $(document).ready(function() {
       
             stateValid = true;
         }
+         if( $('#chkIsSame').is(':checked')) {
+            $('#shippingState').val($('#state').val());
+        }
     });
     // end of validation block
      // end of validation block
@@ -196,6 +214,9 @@ $(document).ready(function() {
            // console.log('first name has info');
       
             countyValid = true;
+        }
+         if( $('#chkIsSame').is(':checked')) {
+            $('#shippingCounty').val($('#county').val());
         }
     });
     // end of validation block
@@ -226,13 +247,17 @@ $(document).ready(function() {
       
             phoneNumberValid = true;
         }
+         if( $('#chkIsSame').is(':checked')) {
+            $('#shippingPhoneNumber').val($('#phoneNumber').val());
+        }
+
     });
     // end of validation block
      // end of validation block
      $('#chkIsSame').change(function() {
      	if(this.checked){
      		//if checked
-     		$('#shippingLine1').val($('#addressLine1').val()); 
+     		$('#shippingLine1').val($('#addressLine1').val());
      		$('#shippingLine2').val($('#addressLine2').val()); 
      		$('#shippingCity').val($('#city').val()); 
      		$('#shippingPostCode').val($('#postcode').val()); 
@@ -240,10 +265,10 @@ $(document).ready(function() {
      		$('#shippingCounty').val($('#county').val());
      		$('#shippingPhoneNumber').val($('#phoneNumber').val());  
 
-            //disable form with
-                    $(".tex")
-            .attr("disabled", "disabled")
-        button.disabled = true;
+
+
+            $(".tex").attr("disabled", "disabled");
+            console.log('is checked');
 
      	} else {
      		// not checked
@@ -251,9 +276,12 @@ $(document).ready(function() {
             $('#shippingLine2').val(''); 
             $('#shippingCity').val(''); 
             $('#shippingPostCode').val(''); 
-            $('#shippingState').val($(''); 
-            $('#shippingCounty').val($('');
+            $('#shippingState').val(''); 
+            $('#shippingCounty').val('');
             $('#shippingPhoneNumber').val('');
+
+            $(".tex").removeAttr("disabled");
+            console.log('not checked');
      	}
      });
 });

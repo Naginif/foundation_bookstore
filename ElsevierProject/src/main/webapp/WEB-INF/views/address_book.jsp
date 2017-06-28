@@ -42,6 +42,7 @@ String navName = "home";
            <h3> Billing Address </h3>
                 
               <form action="/updateAddress" method="post">
+              <div class="event-user">
                <label>Address Line 1 * </label>
                <input type="text" placeholder="Enter Address Line 1" name="addressLine1" id="addressLine1" required/> 
                <label>Address Line 2  </label>
@@ -68,6 +69,7 @@ String navName = "home";
                 
                 
                 <input type="submit" class="button create account" value="Update Billing Address" id="billingButton">
+               </div>
                </form>
             </div>
             
@@ -75,7 +77,7 @@ String navName = "home";
                <div class="medium-6 columns">
                 <h3> Shipping Address </h3>
                 
-                <input type="checkbox" class="ba" id="chkIsSame" /> Different from billing address
+                <input type="checkbox" class="ba" id="chkIsSame" /> Same as billing address
                
                 
               <form action="/updateAddress" method="post">
