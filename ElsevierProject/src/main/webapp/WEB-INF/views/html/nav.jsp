@@ -15,7 +15,7 @@ Customer current_customer = (Customer) session.getAttribute("logged_in_customer"
     data-responsive-menu="drilldown medium-dropdown">
       <li class="menu-text"><a href="/">Foundation Books</a></li>
 		  
-		  <li><a href="/">All books</a></li>
+		  <li><a href="/allbooks">All books</a></li>
 		  <li><a href="/cart">Cart</a></li>
 		  <% if(current_customer==null) { %>
 		  <li><a href="/login">Login</a></li>

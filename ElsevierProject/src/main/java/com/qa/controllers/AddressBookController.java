@@ -92,15 +92,29 @@ public class AddressBookController {
 		
 		if(recordsUpdated>0)
 		{
-			billingAddress  = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(),"billing");
-			shippingAddress  = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(),"shipping");
+			if (address.getAddressType().equals("billing")){
+				billingAddress = address;
+				shippingAddress = sAddress;
+			}
+			else
+			{
+				shippingAddress = address;
+				billingAddress=bAddress;
+			}
+//			billingAddress  = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(),"billing");
+//			shippingAddress  = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(),"shipping");
 			
 			System.out.println("After update ");
 			modelAndView = new ModelAndView("address_book2","billing_address",billingAddress);
 			modelAndView.addObject("shipping_address", shippingAddress);
+			System.out.print(billingAddress);
+			System.out.print(shippingAddress);
+			
 		}
 		else
 		{
+			billingAddress  = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(),"billing");
+			shippingAddress  = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(),"shipping");
 			modelAndView = new ModelAndView("address_book2","billing_address",billingAddress);
 			modelAndView.addObject("shipping_address", shippingAddress);
 			
