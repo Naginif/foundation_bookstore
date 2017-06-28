@@ -123,8 +123,9 @@ public class AddressBookController {
 		}
 		else
 		{
+		
 			Address savedAddress = addressRepository.save(address);
-			modelAndView = new ModelAndView("address_book2","billing_address",savedAddress);
+			modelAndView = new ModelAndView("address_book2",addressType+"_address",savedAddress);
 			
 		}
 		return modelAndView;
