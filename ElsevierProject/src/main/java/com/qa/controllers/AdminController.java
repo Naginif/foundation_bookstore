@@ -24,7 +24,7 @@ import com.qa.repositories.BookRepository;
 import com.qa.repositories.CustomerRepository;
 
 @Controller
-@SessionAttributes(names={"books","cart_items","Address"})
+@SessionAttributes(names={"books"})
 public class AdminController {
 	@Autowired
 	BookRepository bookRepository;
