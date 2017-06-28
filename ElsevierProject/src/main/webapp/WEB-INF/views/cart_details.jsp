@@ -49,6 +49,12 @@ String navName = "cart";
     double orderTotal = 0.0;
     
     double totalPrice =  0.0;
+    
+	String cartTotalForm = "$0.00";
+    
+    String orderTotalForm = "$0.00";
+    
+    String totalPriceForm = "$0.00";
     %>
     
     <br>
@@ -92,6 +98,11 @@ String navName = "cart";
     	  cartTotal = cartTotal + book.getPrice()*quantity;
     	  System.out.println("Cart Total "+cartTotal);
     	  
+    	  totalPriceForm = formatter.format(totalPrice);
+    	  cartTotalForm = formatter.format(cartTotal);
+    	  String priceForm = formatter.format(price);
+    	  
+    	  
       %>
        
         <img class="thumbnail" src="<%=book.getBookImage()%>"/>
@@ -111,8 +122,8 @@ String navName = "cart";
             <form name="f1">
             	<input type="hidden" name="price" value="<%=price%>"/>
             	<input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
-            	Price <label id="price_label<%=i%>">$<%=totalPrice%></label>
-            	<input type="hidden" name="cart_total" value="<%=price%>"/>
+            	Price <label id="price_label<%=i%>"><%=priceForm%></label>
+            	<input type="hidden" name="cart_total" value="<%=priceForm%>"/>
             	Quantity <input type="number"  min="1" name="quantity" value="<%=quantity%>" oninput="calculateTotalPrice(price.value,this.value,price_label<%=i%>)"/>
             </form>
           </div>
@@ -145,32 +156,12 @@ String navName = "cart";
           </div>
           <div class="small-3 columns">
              <input type="hidden" name="order_total" id="cart_total" value="<%=cartTotal %>"/> 
-            <label for="middle-label" class="middle" id="cart_total_label">$<%=cartTotal %></label>
+            <label for="middle-label" class="middle" id="cart_total_label"><%=cartTotalForm %></label>
            </div>
            
        </div>
-
-
-          <div class="row">
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">VAT </label>
-          </div>
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">Applicable Tax </label>
-           </div>
-           
-        </div>
     
-        <div class="row">
-          <div class="small-3 columns">
-            <label for="middle-label" class="middle">Order Total  </label>
-          </div>
-          <div class="small-3 columns">
-            <input type="hidden" name="order_total" id="order_total" value="<%=cartTotal %>"/> 
-            <label for="middle-label" class="middle" id="order_total_label">$<%=cartTotal%></label>
-           </div>
-      
-        </div>
+        
 
 		<form action="/checkout" method="post" id="checkout_form">   
 		<input type="hidden" name="order_total" value="<%=cartTotal %>"/>   
