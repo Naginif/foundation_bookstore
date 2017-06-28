@@ -35,7 +35,7 @@ String navName = "home";
                <label>Card Number</label>
                <input type="text" placeholder ="Enter Card Number" name="cardNumber" required maxlength="16"/>
                <label> CVV </label>
-               <input type="text" placeholder="Enter CVV" name="CVV" id="CVV" required maxlength="3"/> 
+               <input type="password" placeholder="Enter CVV" name="CVV" id="CVV" required maxlength="3"/> 
   
   				 <div class="columns" id="expiration-date">
                 <label>Expiration Date</label>
