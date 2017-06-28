@@ -15,6 +15,9 @@ import com.qa.models.Orders;
 @Repository
 public interface OrdersRepository extends CrudRepository<Orders, Integer>{
 	
+	@Query("Select co from customer_orders co where co.customer_id = :customer_id")
+	public Iterable<Orders> orderIdHistory(@Param("customer_id") int customer_id); 
+	
 	
 		@Query("select c from Customer c where c.email = :email and c.password = :password")
 			public Customer loginProcess(@Param("email") String email,@Param("password") String password);
