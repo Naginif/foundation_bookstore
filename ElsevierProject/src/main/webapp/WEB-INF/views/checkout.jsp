@@ -79,7 +79,7 @@ String navName = "home";
 	          
 	           <div class="column">
 	            <label> Phone Number *</label>
-	            <input type="text" name="phone" id="phone" size="11" required/>
+	            <input type="text" name="phoneNumber" id="phoneNumber" size="11" required/>
 	          </div>
 	          
 	          
@@ -88,10 +88,6 @@ String navName = "home";
 	            <input type="text" name="email" id="email" size="30" required/>
 	          </div>
 	          
-	          
-	          <div class="column">
-	            <input type="checkbox" name="same" id="same"/> My billing and shipping address are the same
-	          </div>
 	          
 	          <input type="submit" class="button expanded" value="Next" />
 		 
