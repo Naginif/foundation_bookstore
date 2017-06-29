@@ -49,11 +49,15 @@ String navName = "home";
     <%
     Iterable<Orders> orders = (Iterable<Orders>) session.getAttribute("orders");
     Iterator<Orders> orderIter = orders.iterator();
-    System.out.println(orderIter);
+    String date = "";
     while(orderIter.hasNext()) { 
     
     	Orders order = orderIter.next();
-    	%>
+    	if (!order.getDate().equals(date)){
+    		date = order.getDate();
+    %>
+    	<div class="row">
+    	<h1> Books Ordered on: <%=date%></h1>
     	<div class="column large-4 medium-6 small-12 <% if (!orderIter.hasNext()) %>end <%;%>">
       
         <a href="/bookDetails?bookId=<%=order.getBook_id()%>"><img class="thumbnail" src="<%=order.getBook_image()%>" style="width:450px;height:375px;"></a>
@@ -61,8 +65,10 @@ String navName = "home";
         
       	
       	</div>
+      	</div>
       
     <%
+    	}
     }
     %>  
     
