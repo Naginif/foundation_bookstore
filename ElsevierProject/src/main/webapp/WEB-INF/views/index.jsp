@@ -45,7 +45,7 @@ String height = "400px";
     <%@ include file="html/nav.jsp" %>
     
     
-	<h1>Foundation bookstore's staff picks</h1>
+	<h1 align="center">Foundation Bookstore's Staff Picks</h1>
     
     <section class="row">
 	<div class="large-12 column text-center">

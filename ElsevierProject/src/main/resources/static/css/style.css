@@ -40,5 +40,20 @@ footer a {
 button, .button 
 {
 	background-color: #472C25;
+p{
+	font-family: 'Zilla Slab', serif;
+}
+
+.title-bar, .top-bar, .orbit-caption, h3{
+	font-family: 'Zilla Slab', serif;
+}
+
+.orbit-caption{
+	background-color: #FADDAF;
+	color:#91371B;
+}
+
+.orbit-previous, .orbit-next{
+	color:#91371B;
 }
 
