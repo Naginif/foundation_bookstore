@@ -22,7 +22,7 @@ String navName = "home";
 
 	<!-- Content goes here -->
 	<section class="large-6 medium-8 small-12 large-centered medium-centred small-centered">
-	<h1>Shipping details</h1>
+	<h2>Shipping details</h2>
 	
   			
 		 <form action="/sendShippingAddress">

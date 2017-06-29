@@ -18,6 +18,7 @@ String navName = "home";
   <body>
   	<!-- Navigation markup -->
     <%@ include file="html/nav.jsp" %>
+    <h1>Your profile</h1>
     <section class="row">
 	<div class="large-12 column text-center">
 

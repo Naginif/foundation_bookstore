@@ -25,13 +25,15 @@ navName = "header_workaround";
   <body>
   	<!-- Navigation markup -->
     <%@ include file="html/nav.jsp" %>
+    
+	<h1>Our Library</h1>
+	
     <section class="row">
 	<div class="large-12 column text-center">
 
 	<!-- Content goes here -->
 	
 	
-	<h1>Our Library</h1>
 	
 	<div class="row">
 	

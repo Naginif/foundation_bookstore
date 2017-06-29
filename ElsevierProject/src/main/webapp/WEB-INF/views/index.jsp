@@ -40,11 +40,14 @@ String height = "400px";
 </style>
   	<!-- Navigation markup -->
     <%@ include file="html/nav.jsp" %>
+    
+    
+	<h1>Foundation bookstore's staff picks</h1>
+    
     <section class="row">
 	<div class="large-12 column text-center">
     
     
-	<h1>Foundation bookstore's staff picks</h1>
     
     <section class="row">
 	<div class="large-12 column text-center">

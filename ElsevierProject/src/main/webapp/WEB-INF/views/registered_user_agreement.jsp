@@ -16,12 +16,14 @@ String navName = "home";
   <body>
   	<!-- Navigation markup -->
     <%@ include file="html/nav.jsp" %>
+    
+<h1>Elsevier Registered User Agreement</h1>
+
     <section class="row">
 	<div class="large-12 column text-center">
 
 	<!-- Content goes here -->
 	
-<h1>Elsevier Registered User Agreement</h1>
 
 This Registered User Agreement ("Agreement") sets forth the terms and conditions governing the use of the Elsevier websites, online services and interactive applications (each, a "Service") by registered users. By becoming a registered user, completing the online registration process and checking the box "I have read and understand the Registered User Agreement and agree to be bound by all of its terms" on the registration page, and using the Service, you agree to be bound by all of the terms and conditions of this Agreement.
 <br>

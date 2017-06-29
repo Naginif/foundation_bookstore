@@ -16,6 +16,9 @@ String navName = "home";
   <body>
   	<!-- Navigation markup -->
     <%@ include file="html/nav.jsp" %>
+    
+           <h1> Please login using your stored credentials  </h1>
+                
     <section class="row">
 	<div class="large-12 column text-center">
 
@@ -25,13 +28,10 @@ String navName = "home";
 	  <% } %>
 	
 
-    <div class="callout large">
       <div class="row column">
 		
         <div class="large-6 medium-8 small-12 large-centered medium-centred small-centered">
 
-           <h3> Please login using your stored credentials  </h3>
-                
                <form action="loginProcess" method="post"> 
               
                <label>Email ID * </label>
@@ -48,7 +48,7 @@ String navName = "home";
       
        
       </div>
-    </div>
+   
     
    
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
