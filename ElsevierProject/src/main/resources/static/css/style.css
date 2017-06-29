@@ -69,3 +69,12 @@ h1, h2, h3, h4, h5, h6, h7{
 	height: 83vh;
 }
 
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+  border-color: #EB712F rgba(0, 0, 0, 0) rgba(0, 0, 0, 0)!important; 
+ }
+
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after .menuLink {
+  color: #EB712F; 
+ }
+
+
