@@ -19,44 +19,7 @@ import com.qa.repositories.AddressRepository;
 @Controller
 public class CartController {
 
-	@Autowired
-	private AddressRepository addressRepository;
-	
-	@RequestMapping("/updatePrice")
-	public ModelAndView bookDetails(@RequestParam("price") double price,@RequestParam("quantity") int quantity)
-	{
-		double totalPrice = price * quantity;
-		
-		System.out.println("Total price is "+price);
-		ModelAndView modelAndView = new ModelAndView("return_price","total_price",totalPrice);
-		
-		return modelAndView;
-		
-	}
-	
-	
-	
-	@RequestMapping("/checkout")
-	public ModelAndView checkoutForm(HttpSession session, @ModelAttribute("book_counts") Map<Integer,Integer> bookCounts,@RequestParam("order_total") double orderTotal)
-	{
-		Customer loggedInCustomer = (Customer) session.getAttribute("logged_in_customer");
-		
-		Address sAddress = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "shipping");
-		Address bAddress = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "billing");
-		
-		System.out.println("Customer: " + loggedInCustomer);
-		System.out.println("Address: " + addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "shipping"));
-		
-		ModelAndView modelAndView = new ModelAndView("checkout","order_total",orderTotal);
-		modelAndView.addObject("book_counts", bookCounts);
-		modelAndView.addObject("shipping_address", sAddress);
-		modelAndView.addObject("billing_address", bAddress);
-		return modelAndView;
-		
-	}
-	
-	
-	
+
 	
 	
 }
