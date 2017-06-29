@@ -25,7 +25,11 @@ CREATE TABLE orders
     order_id int(11) NOT NULL,
     book_id int(11) NOT NULL,
     quantity int(11) NOT NULL,
-    PRIMARY KEY(order_id, book_id)
+    date varchar(255) NOT NULL,
+    customer_id int(11) NOT NULL,
+    FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
+	ON DELETE CASCADE ON UPDATE CASCADE,
+    PRIMARY KEY(customer_id, book_id, date)
 );
 
 CREATE TABLE book
@@ -63,17 +67,6 @@ CREATE TABLE book_authors
 	PRIMARY KEY(authors_author_id, book_book_id)
 );
 
-CREATE TABLE customer_orders
-(
-	order_id int(11) NOT NULL,
-	customer_id int(11) NOT NULL,
-	date varchar(255) NOT NULL,
-	FOREIGN KEY (order_id) REFERENCES orders(order_id)
-	ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
-	ON DELETE CASCADE ON UPDATE CASCADE,
-	PRIMARY KEY(order_id, customer_id)
-);
 	
 CREATE TABLE shopping_cart
 (
