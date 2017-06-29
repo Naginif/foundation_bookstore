@@ -14,6 +14,8 @@ INSERT INTO `book` (`book_id`, `title`, `book_image`, `format`, `price`, `isbn`,
 INSERT INTO `book` (`book_id`, `title`, `book_image`, `format`, `price`, `isbn`, `description`, `page_count`, `publisher`, `published_date`, `table_of_contents`) VALUES ('7', 'Lolita', 'https://upload.wikimedia.org/wikipedia/commons/5/57/Lolita_1955.JPG', 'Paperback', '11.00', '4523452', 'v controversial', '928', 'Berkley', '1955', '');
 INSERT INTO `book` (`book_id`, `title`, `book_image`, `format`, `price`, `isbn`, `description`, `page_count`, `publisher`, `published_date`, `table_of_contents`) VALUES ('8', 'Middlemarch', 'https://upload.wikimedia.org/wikipedia/commons/2/25/Middlemarch_1.jpg', 'Paperback', '11.00', '4523452', 'a study of povincial life', '928', 'Berkley', '1871', '');
 INSERT INTO `book` (`book_id`, `title`, `book_image`, `format`, `price`, `isbn`, `description`, `page_count`, `publisher`, `published_date`, `table_of_contents`) VALUES ('9', 'The Adventures of Huckleberry Finn', 'https://upload.wikimedia.org/wikipedia/commons/6/61/Huckleberry_Finn_book.JPG', 'Paperback', '3.75', '4523452', 'boy oblivious of his dreadful life goes on great adventures', '928', 'Berkley', '1885', '');
+INSERT INTO `book` (`book_id`, `title`, `book_image`, `format`, `price`, `isbn`, `description`, `page_count`, `publisher`, `published_date`, `table_of_contents`) VALUES ('10', 'The Kite Runner', 'https://images.gr-assets.com/books/1484565687l/77203.jpg', 'Paperback', '3.75', '4523452', 'wealthy boy befriends not nearly as wealthy boy', '928', 'Berkley', '2004', '');
+INSERT INTO `book` (`book_id`, `title`, `book_image`, `format`, `price`, `isbn`, `description`, `page_count`, `publisher`, `published_date`, `table_of_contents`) VALUES ('11', 'The Book Thief', 'https://images.gr-assets.com/books/1390053681l/19063.jpg', 'Paperback', '5.00', '4523452', 'foster girl during world war 2', '928', 'Berkley', '2004', '');
 
 
 INSERT INTO `author` (`author_id`, `about_author`, `affiliations`, `author_name`, `expertise`) VALUES ('1', 'Fairy Tales', NULL, 'Hans Christian Andersen', 'Fairy Tales');
@@ -25,6 +27,8 @@ INSERT INTO `author` (`author_id`, `about_author`, `affiliations`, `author_name`
 INSERT INTO `author` (`author_id`, `about_author`, `affiliations`, `author_name`, `expertise`) VALUES ('6', 'Lolita', NULL, 'Vladimir Nabokov', 'internationally famous');
 INSERT INTO `author` (`author_id`, `about_author`, `affiliations`, `author_name`, `expertise`) VALUES ('7', 'Middlemarch', NULL, 'George Eliot', 'pen name for Mary Anne Evans');
 INSERT INTO `author` (`author_id`, `about_author`, `affiliations`, `author_name`, `expertise`) VALUES ('8', 'Huck Finn', NULL, 'Mark Twain', 'Americans love him');
+INSERT INTO `author` (`author_id`, `about_author`, `affiliations`, `author_name`, `expertise`) VALUES ('9', 'The Kite Runner', NULL, 'Khaled Hosseini', 'great author');
+INSERT INTO `author` (`author_id`, `about_author`, `affiliations`, `author_name`, `expertise`) VALUES ('10', 'The Book Thief', NULL, 'Markus Zusak', 'great author');
 
 INSERT INTO `book_authors` (`book_book_id`, `authors_author_id`) VALUES ('0', '0');
 INSERT INTO `book_authors` (`book_book_id`, `authors_author_id`) VALUES ('1', '1');
@@ -36,6 +40,9 @@ INSERT INTO `book_authors` (`book_book_id`, `authors_author_id`) VALUES ('6', '5
 INSERT INTO `book_authors` (`book_book_id`, `authors_author_id`) VALUES ('7', '6');
 INSERT INTO `book_authors` (`book_book_id`, `authors_author_id`) VALUES ('8', '7');
 INSERT INTO `book_authors` (`book_book_id`, `authors_author_id`) VALUES ('9', '8');
+INSERT INTO `book_authors` (`book_book_id`, `authors_author_id`) VALUES ('10', '9');
+INSERT INTO `book_authors` (`book_book_id`, `authors_author_id`) VALUES ('11', '10');
+
 
 
 
