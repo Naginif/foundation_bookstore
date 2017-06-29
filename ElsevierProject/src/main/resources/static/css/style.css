@@ -25,8 +25,9 @@ h1 {
 }
 
 footer {
-	position: fixed;
+	position: fixed absolute;
 	bottom: 0;
+	center: 0;
 	width: 100%;
 	background-color: #91371B;
 }
