@@ -129,7 +129,7 @@ String navName = "cart";
         <div class="row">
           
           <div class="column">
-            <a href="/removeFromCart?bookId=<%=book.getBookId() %>"> Remove </a>
+            <a href="/removeFromCart?bookId=<%=book.getBookId() %>" class="button large"> Remove </a>
           </div>
         
         </div>
