@@ -37,17 +37,17 @@ String navName = "home";
 	
 	<section class="large-6 medium-8 small-12 large-centered medium-centred small-centered">
 	<h1>Shipping details</h1>
-	
+	<div class="event-user">
   			
 		 <form action="/sendShippingAddress">
 		 
-		 	<% if(sa !=null) { %>
+		 <% if(sa !=null) { %>
 		 
 		 	<div class="column">
 	            <label> First Name * </label>
 	            <input type="text" name="addressFirstName" id="addressFirstName" size="30" value=<%=c.getFirstName() %> required/> 
 	          </div>
-	          <div class="columns">
+	          <div class="column">
 	             <label> Last Name * </label>
 	            <input type="text" name="addressLastName" id="addressLastName" size="30" value=<%=c.getLastName()%> required/>
 	          </div>
@@ -96,7 +96,7 @@ String navName = "home";
 	            <label> First Name * </label>
 	            <input type="text" name="addressFirstName" id="addressFirstName" size="30" value="<%=c.getFirstName() %>" required/> 
 	          </div>
-	          <div class="columns">
+	          <div class="column">
 	             <label> Last Name * </label>
 	            <input type="text" name="addressLastName" id="addressLastName" size="30" value="<%=c.getLastName() %>" required/>
 	          </div>
@@ -145,11 +145,12 @@ String navName = "home";
 	          
 		 
 		 </form>
+		 </div>
   </section>
 	
 	
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-	
+
 	
 	
 	
