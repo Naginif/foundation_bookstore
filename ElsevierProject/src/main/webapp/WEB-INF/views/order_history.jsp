@@ -2,6 +2,7 @@
 <%@page import="java.util.ArrayList" %>
 <%@page import="java.util.Iterator" %>
 <%@page import="com.qa.models.Book" %>
+<%@page import="com.qa.models.Orders" %>
 <%@page import="com.qa.models.Customer" %>
 <%@page import="java.text.NumberFormat" %>
 
@@ -13,9 +14,6 @@ String title="Foundation Books";
 
 // Navigation link name
 String navName = "home";
-
-//Part of a workaround to make the header look nice
-navName = "header_workaround";
 %>
 
 <!doctype html>
@@ -36,28 +34,31 @@ navName = "header_workaround";
 	<!-- Content goes here -->
 
 	<%
-		String query = (String) session.getAttribute("searchQuery");
+		Customer customer = (Customer) session.getAttribute("logged_in_customer");
+		String customerName = customer.getFirstName();	
+
 	%>
-
-
+	
       
 
-    <h1>Search Results for <%=query %></h1>
+    <h1><%=customerName %> Your Order History</h1>
 
     <div class="row">
 
  
     <%
-    Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
-    Iterator<Book> bookIter = books.iterator();
-    while(bookIter.hasNext()) { 
+    Iterable<Orders> orders = (Iterable<Orders>) session.getAttribute("orders");
+    Iterator<Orders> orderIter = orders.iterator();
+    String date = "";
+    while(orderIter.hasNext()) { 
     
-    	Book book = bookIter.next();
+    	Orders order = orderIter.next();
     	%>
-    	<div class="column large-4 medium-6 small-12 <% if (!bookIter.hasNext()) %>end <%;%>">
+    	<div class="column large-4 medium-6 small-12 <% if (!orderIter.hasNext()) %>end <%;%>">
       
-        <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="thumbnail" src="<%=book.getBookImage()%>" style="width:450px;height:375px;"></a>
-        <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="button expanded">View book details</a>
+      	Ordered on <%=order.getDate() %>
+        <a href="/bookDetails?bookId=<%=order.getBook_id()%>"><img class="thumbnail" src="<%=order.getBook_image()%>" style="width:450px;height:375px;"></a>
+        
         <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
       	
       	</div>

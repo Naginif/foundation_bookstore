@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,9 +20,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.qa.models.Book;
 import com.qa.models.Customer;
+import com.qa.models.Orders;
 import com.qa.models.Address;
 import com.qa.repositories.BookRepository;
 import com.qa.repositories.CustomerRepository;
+import com.qa.repositories.OrdersRepository;
 
 @Controller
 @SessionAttributes(names={"books","cart_items","logged_in_customer","Address"})
@@ -32,6 +35,9 @@ public class HomeController {
 	
 	@Autowired
 	CustomerRepository customerRepository;
+	
+	@Autowired
+	OrdersRepository ordersRepository;
 	
 	@RequestMapping("/")
 	public ModelAndView indexPage(HttpServletRequest request)
@@ -193,7 +199,7 @@ public class HomeController {
 		if(c!=null)
 		{
 			System.out.println("Success");
-	  		modelAndView = new ModelAndView("customer_home","logged_in_customer",c);
+	  		modelAndView = new ModelAndView("profile","logged_in_customer",c);
 			modelAndView.addObject("loginFailed", false);
 		}
 		else
@@ -218,6 +224,17 @@ public class HomeController {
 	@RequestMapping("/about")
 	public ModelAndView about(){
 		ModelAndView modelAndView = new ModelAndView("about");
+		
+		return modelAndView;
+	}
+	
+	@RequestMapping("/order_history")
+	public ModelAndView order_history(HttpSession session, @ModelAttribute("logged_in_customer") Customer customer){
+		System.out.println(customer);
+		Iterable<Orders> orders = ordersRepository.findOrders(customer.getCustomerId());
+		System.out.println(orders);
+		ModelAndView modelAndView = new ModelAndView("order_history", "orders", orders);
+		session.setAttribute("orders", orders);
 		
 		return modelAndView;
 	}

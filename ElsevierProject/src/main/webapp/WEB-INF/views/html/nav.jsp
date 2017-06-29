@@ -4,12 +4,21 @@
 Customer current_customer = (Customer) session.getAttribute("logged_in_customer");	
 %>
 
+<style>
+	#searchQuery{
+		float:left;
+	}
+	#searchButton{
+		float:right;
+	}
+</style>
+
 <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
   <button class="menu-icon" type="button" data-toggle="example-menu"></button>
   <div class="title-bar-title">Menu</div>
 </div>
 
-<div class="top-bar" id="example-menu">
+<div class="top-bar" id="top-menu">
   <div class="top-bar-left">
     <ul class="vertical medium-horizontal menu"
     data-responsive-menu="drilldown medium-dropdown">
@@ -23,7 +32,7 @@ Customer current_customer = (Customer) session.getAttribute("logged_in_customer"
 		  <% } else { %>
 		  <li><a href="/profile"><%=current_customer.getFirstName() %></a>
 			<ul class="vertical menu">
-			  <li><a href="#">Order history</a></li>
+			  <li><a href="/order_history">Order history</a></li>
 			  <li><a href="/addressBook">Address book</a></li>
 			  <li><a href="/profile">Account details</a></li>
 			  <li><a href="/logout">Logout</a></li>
@@ -32,16 +41,19 @@ Customer current_customer = (Customer) session.getAttribute("logged_in_customer"
 		  <% } %>
     </ul>
   </div>
+  
   <div class="top-bar-right">
-      
-      <form action="/search" method="GET">
-      <input type="search" name = "searchQuery" id = "searchQuery" placeholder="Search">
-      <input type="submit" class="button" value="Search">
-      </form>
+      	<form action="/search" method="GET">
+      	<input type="search" name = "searchQuery" id = "searchQuery" placeholder="Search" required>
+      	<input type="submit" id="searchButton" class="button" value="Search">
+      	</form>
 
   </div>
 </div>
 
+
+<% if (!navName.equals("header_workaround")) { %>
 <!-- Opening tags for main content box -->
 <section class="row">
 <div class="large-12 column text-center">
+<% } %>

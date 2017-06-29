@@ -13,9 +13,6 @@ String title="Foundation Books";
 
 // Navigation link name
 String navName = "home";
-
-//Part of a workaround to make the header look nice
-navName = "header_workaround";
 %>
 
 <!doctype html>
@@ -36,13 +33,34 @@ navName = "header_workaround";
 	<!-- Content goes here -->
 
 	<%
-		String query = (String) session.getAttribute("searchQuery");
+		Customer customer = (Customer) session.getAttribute("logged_in_customer");
+		String customerName;	
+	
+		if (customer!=null) {
+			customerName = customer.getFirstName() + ", ";
+		} else {
+			customerName = "Here's";
+		}
 	%>
-
+	
+	<% 
+		ArrayList<Book> cart_items = null;
+		
+		if (session.getAttribute("confirm_order") == null) {
+			cart_items = (ArrayList<Book>) session.getAttribute("cart_items");
+		} else {
+			
+		}		
+		
+		if (cart_items == null){
+			cart_items = new ArrayList<Book>();
+			session.setAttribute("cart_items", cart_items);
+		}
+	%>	
 
       
 
-    <h1>Search Results for <%=query %></h1>
+    <h1><%=customerName %> Our Newest Books</h1>
 
     <div class="row">
 
