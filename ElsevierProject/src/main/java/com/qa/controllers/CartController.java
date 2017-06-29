@@ -2,6 +2,8 @@ package com.qa.controllers;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -35,11 +37,15 @@ public class CartController {
 	
 	
 	@RequestMapping("/checkout")
-	public ModelAndView checkoutForm(@ModelAttribute("book_counts") Map<Integer,Integer> bookCounts,@RequestParam("order_total") double orderTotal, @ModelAttribute("logged_in_customer") Customer loggedInCustomer)
+	public ModelAndView checkoutForm(HttpSession session, @ModelAttribute("book_counts") Map<Integer,Integer> bookCounts,@RequestParam("order_total") double orderTotal)
 	{
+		Customer loggedInCustomer = (Customer) session.getAttribute("logged_in_customer");
+		
 		Address sAddress = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "shipping");
 		Address bAddress = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "billing");
 		
+		System.out.println("Customer: " + loggedInCustomer);
+		System.out.println("Address: " + addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "shipping"));
 		
 		ModelAndView modelAndView = new ModelAndView("checkout","order_total",orderTotal);
 		modelAndView.addObject("book_counts", bookCounts);
