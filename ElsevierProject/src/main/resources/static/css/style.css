@@ -40,8 +40,20 @@ footer a {
 button, .button 
 {
 	background-color: #472C25;
+}
+
 p{
 	font-family: 'Zilla Slab', serif;
+}
+
+.orbit-caption{
+	background-color: #FADDAF;
+	color:#91371B;
+	font-family: 'Zilla Slab', serif;
+}
+
+.orbit-previous, .orbit-next{
+	background-color: none;
 }
 
 .title-bar, .top-bar, .orbit-caption{
@@ -52,12 +64,4 @@ h1, h2, h3, h4, h5, h6, h7{
 	font-family: 'Zilla Slab', serif;
 }
 
-.orbit-caption{
-	background-color: #FADDAF;
-	color:#91371B;
-}
-
-.orbit-previous, .orbit-next{
-	color:#91371B;
-}
 

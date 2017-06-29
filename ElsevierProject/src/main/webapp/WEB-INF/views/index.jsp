@@ -82,7 +82,7 @@ String height = "400px";
 	
 	
 	 <!-- Books carousel -->
- <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+ <div class="orbit" role="region" aria-label="Staff Picks" data-orbit>
   <div class="orbit-wrapper">
     <div class="orbit-controls">
       <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
@@ -111,13 +111,14 @@ String height = "400px";
     %>  
     </ul>
     </div>
-    <nav class="orbit-bullets">
+<!-- 
+   <nav class="orbit-bullets">
     <% bookIter = books.iterator();
     for (int i = 1; i <= n_books; i++) {
     	Book book = bookIter.next();%>
 		<button data-slide="<%=i%>"<% if (i==1) %> class = "is-active"<%;%>><span class="show-for-sr"><%=book.getDescription() %></span></button>
 	 <% } %>  
-	 </nav>
+	 </nav> -->
     
     
     </div>
