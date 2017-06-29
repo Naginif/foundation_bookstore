@@ -12,6 +12,9 @@ String title="Foundation Books";
 // Navigation link name
 String navName = "home";
 
+//Part of a workaround to make the header look nice
+navName = "header_workaround";
+
 //Number of books to show in the carousel
 int n_books = 3;
 
@@ -40,6 +43,12 @@ String height = "400px";
 </style>
   	<!-- Navigation markup -->
     <%@ include file="html/nav.jsp" %>
+    
+    
+	<h1>Foundation bookstore's staff picks</h1>
+    
+    <section class="row">
+	<div class="large-12 column text-center">
 
 	<!-- Content goes here -->
 	
@@ -69,7 +78,6 @@ String height = "400px";
 		}
 	%>	
 	
-	<h1>Foundation bookstore's staff picks</h1>
 	
 	 <!-- Books carousel -->
  <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>

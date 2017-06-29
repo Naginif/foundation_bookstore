@@ -51,6 +51,9 @@ Customer current_customer = (Customer) session.getAttribute("logged_in_customer"
   </div>
 </div>
 
+
+<% if (!navName.equals("header_workaround")) { %>
 <!-- Opening tags for main content box -->
 <section class="row">
 <div class="large-12 column text-center">
+<% } %>
