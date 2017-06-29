@@ -43,7 +43,7 @@ String navName = "home";
 
     <h1>Recently Ordered Books</h1>
 
-    <div class="row">
+    
 
  
     <%
@@ -54,7 +54,7 @@ String navName = "home";
     
     	Orders order = orderIter.next();
     	%>
-    	<div class="column large-4 medium-6 small-12 <% if (!orderIter.hasNext()) %>end <%;%>">
+    	<div class="column large-3 medium-6 small-12 <% if (!orderIter.hasNext()) %>end <%;%>">
       
       	
         <a href="/bookDetails?bookId=<%=order.getBook_id()%>"><img class="thumbnail" src="<%=order.getBook_image()%>" style="width:450px;height:375px;"></a>
