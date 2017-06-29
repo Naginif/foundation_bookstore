@@ -27,11 +27,11 @@ String navName = "home";
 		 
 		 	<div class="column">
 	            <label> First Name * </label>
-	            <input type="text" name="firstName" id="firstName" size="30" required/> 
+	            <input type="text" name="addressFirstName" id="addressFirstName" size="30" required/> 
 	          </div>
 	          <div class="columns">
 	             <label> Last Name * </label>
-	            <input type="text" name="lastName" id="lastName" size="30" required/>
+	            <input type="text" name="addressLastName" id="addressLastName" size="30" required/>
 	          </div>
 	          
 	          <div class="column">
@@ -70,7 +70,7 @@ String navName = "home";
 	          
 	           <div class="column">
 	            <label> Email * </label>
-	            <input type="text" name="email" id="email" size="30" required/>
+	            <input type="text" name="addressEmail" id="addressEmail" size="30" required/>
 	          </div>
 	          
 	          
