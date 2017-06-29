@@ -117,10 +117,17 @@ String navName = "cart";
           <div class="column large-4 medium-4 small-12">
             <form id="cartForm" name="f1">
             	<input type="hidden" name="price" value="<%=price%>"/>
-            	<input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
+            	<input type="hidden" name="cart_total_<%=i %>" value="<%=cartTotal%>"/>
             	Price: <label id="price_label<%=i%>"><%=priceForm%></label>
             	<input type="hidden" name="cart_total" value="<%=priceForm%>"/>
-            	Quantity <input id="quantity<%=i%>" type="number"  min="1" name="quantity" value="<%=quantity%>" oninput="calculateTotalPrice(price.value,this.value,price_label<%=i%>)"/>
+            	<!--  Quantity <input id="quantity<%=i%>" type="number"  min="1" name="quantity" value="<%=quantity%>" oninput="calculateTotalPrice(price.value,this.value,price_label<%=i%>)"/> -->
+            	<input type="hidden" id="line_total_<%=i %>" name="line_total_<%=i %>" value="sum(price.value, quantity.value)"/>
+            	<select id="quantity" name="quantity" onchange="sumLines(<%=books.size()%>)">
+            		<option value=1>1</option>
+            		<option value=2>2</option>
+            		<option value=3>3</option>
+            	</select>
+            	
             </form>
           </div>
           
@@ -169,6 +176,27 @@ String navName = "cart";
     <script src="js/update_cart.js"></script>
     <script>
       $(document).foundation();
+      
+      function sumLines(x) {
+    	  var cartTotal = document.getElementById("cart_total").value;
+    	  console.log("cart_total" + cartTotal);
+    	  console.log(x);
+    	  for (i = 1; i < x+1; i++) {
+    		  console.log("line_item_"+i);
+    		  console.log("line_item_"+i + ", " + document.getElementById("cartForm.line_item_"+i));
+    		  console.log("line_item_"+i + ", " + document.getElementById("cartForm.line_item_"+i).value);
+    		  cartTotal += document.getElementById("cartForm.line_item_"+i).value;
+    	  }
+    	  
+    	  console.log(cartTotal);
+    	  
+    	  document.getElementById("cartForm.cart_total_label").value = cartTotal;
+      }
+      
+      function sum(x, y) {
+    	  console.log(x + ', ' + y);
+    	  return Number(x) + Number(y);
+      }
     </script> 
   <!--  Footer markup -->
     <%@include file="html/footer.jsp" %>
