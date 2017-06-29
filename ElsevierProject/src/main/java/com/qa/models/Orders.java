@@ -6,9 +6,31 @@ import javax.persistence.Id;
 @Entity
 public class Orders {
 	
+	public Orders(int order_id, int book_id, String book_image, int quantity, String date, int customer_id) {
+		super();
+		this.order_id = order_id;
+		this.book_id = book_id;
+		this.book_image = book_image;
+		this.quantity = quantity;
+		this.date = date;
+		this.customer_id = customer_id;
+	}
+	
+	public String getBook_image() {
+		return book_image;
+	}
+
+	public void setBook_image(String book_image) {
+		this.book_image = book_image;
+	}
+
+	public Orders() {
+		super();
+	}
 	@Id
 	private int order_id;
 	
+	private String book_image;
 	private int book_id;
 	private int quantity;
 	

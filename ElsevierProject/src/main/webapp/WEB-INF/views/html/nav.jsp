@@ -23,7 +23,7 @@ Customer current_customer = (Customer) session.getAttribute("logged_in_customer"
 		  <% } else { %>
 		  <li><a href="/profile"><%=current_customer.getFirstName() %></a>
 			<ul class="vertical menu">
-			  <li><a href="#">Order history</a></li>
+			  <li><a href="/order_history">Order history</a></li>
 			  <li><a href="/addressBook">Address book</a></li>
 			  <li><a href="/profile">Account details</a></li>
 			  <li><a href="/logout">Logout</a></li>
