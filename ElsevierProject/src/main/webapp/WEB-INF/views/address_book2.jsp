@@ -19,6 +19,8 @@ String navName = "home";
   <body>
   	<!-- Navigation markup -->
     <%@ include file="html/nav.jsp" %>
+    
+    <div class="bkg">
     <section class="row">
 	<div class="large-12 column text-center">
 
@@ -88,7 +90,7 @@ String navName = "home";
          
        
     </div>
-    
+    </div>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier2.js"></script>
     <script>

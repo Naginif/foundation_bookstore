@@ -78,14 +78,12 @@ String navName = "home";
           
                <div class="medium-6 columns">
                 <h3> Shipping Address </h3>
-                
-                <input type="checkbox" class="ba" id="chkIsSame" /> Same as billing address
-               
+                              
                 
               <form action="/updateAddress" method="post">
                <label>Address Line 1 * </label>
                <input type="text" placeholder="Enter Address Line 1" name="addressLine1" id="shippingLine1" class="tex" required/> 
-               <label>Address Line s2 </label>
+               <label>Address Line 2 </label>
                <input type="text" placeholder="Enter Address Line 2" name="addressLine2" id="shippingLine2" class="tex"/> 
                <label>City * </label>
                 <input type="text" placeholder="Enter City" name="city" id="shippingCity" class="tex" required/> 

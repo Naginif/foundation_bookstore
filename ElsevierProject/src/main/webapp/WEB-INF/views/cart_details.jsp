@@ -123,6 +123,7 @@ String navName = "cart";
             	<input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
             	Price: <label id="price_label<%=i%>"><%=priceForm%></label>
             	<input type="hidden" name="cart_total" value="<%=priceForm%>"/>
+            	<input id="quantity" type= "hidden"  min="1" name="quantity" value="1"/>
          	</form>
           </div>
           
