@@ -62,8 +62,9 @@ String navName = "home";
                     <option value="22"> 2022</option>
                 </select>
                </div>  
-            </div>
-  			<input type="submit" class="button" value="Submit Payment">       
+               
+  			<input type="submit" class="button" value="Submit Payment"> 
+            </div>      
 			</form>
       </div>
       
