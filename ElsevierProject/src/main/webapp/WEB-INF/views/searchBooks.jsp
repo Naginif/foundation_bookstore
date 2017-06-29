@@ -13,6 +13,9 @@ String title="Foundation Books";
 
 // Navigation link name
 String navName = "home";
+
+//Part of a workaround to make the header look nice
+navName = "header_workaround";
 %>
 
 <!doctype html>
