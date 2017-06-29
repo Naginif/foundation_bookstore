@@ -35,8 +35,6 @@ navName = "header_workaround";
 	
 	
 	
-	<div class="row">
-	
 		<%
 		Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
 		Iterator<Book> bookIter = books.iterator();
