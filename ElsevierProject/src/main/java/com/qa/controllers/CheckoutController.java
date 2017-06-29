@@ -2,6 +2,7 @@ package com.qa.controllers;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -19,22 +21,32 @@ import com.qa.models.Customer;
 import com.qa.models.Orders;
 import com.qa.models.Payment;
 import com.qa.repositories.OrdersRepository;
+import com.qa.repositories.AddressRepository;
 
 @SessionAttributes(names={"book_counts", "logged_in_customer"})
 @Controller
 public class CheckoutController {
 	
 	@Autowired
-	OrdersRepository ordersRepository;
+	private OrdersRepository ordersRepository;
 
+	@Autowired
+	private AddressRepository addressRepository;
+	
 	@RequestMapping("/sendShippingAddress")
 	public ModelAndView checkoutProcess(HttpSession session, @ModelAttribute("Address") Address shipping, @ModelAttribute("logged_in_customer") Customer customer)
 	{	
-		ModelAndView modelAndView = new ModelAndView("billing_address");
+		ModelAndView modelAndView = new ModelAndView("billing_address");	
 		shipping.setAddressType("shipping");
 		shipping.setCustomerId(customer.getCustomerId());		
 		session.setAttribute("shipping_address", shipping);
 		
+		//Fills in saved address
+		Customer loggedInCustomer = (Customer) session.getAttribute("logged_in_customer");
+		Address bAddress = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "billing");
+		modelAndView.addObject("billing_address", bAddress);
+		
+
 	    return modelAndView;
 	}
 	
@@ -77,6 +89,34 @@ public class CheckoutController {
 		return modelAndView;
 	}
 
+	
+	@RequestMapping("/updatePrice")
+	public ModelAndView bookDetails(@RequestParam("price") double price,@RequestParam("quantity") int quantity)
+	{
+		double totalPrice = price * quantity;
+		
+		System.out.println("Total price is "+price);
+		ModelAndView modelAndView = new ModelAndView("return_price","total_price",totalPrice);
+		
+		return modelAndView;
+		
+	}
+	
+	
+	
+	@RequestMapping("/checkout")
+	public ModelAndView checkoutForm(HttpSession session, @ModelAttribute("book_counts") Map<Integer,Integer> bookCounts,@RequestParam("order_total") double orderTotal)
+	{
+		Customer loggedInCustomer = (Customer) session.getAttribute("logged_in_customer");
+		ModelAndView modelAndView = new ModelAndView("checkout","order_total",orderTotal);
+		
+		//Fills in saved Address
+		Address sAddress = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "shipping");
+		modelAndView.addObject("book_counts", bookCounts);
+		modelAndView.addObject("shipping_address", sAddress);
+		return modelAndView;
+		
+	}
 	
 	
 	
