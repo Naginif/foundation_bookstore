@@ -27,7 +27,7 @@ String navName = "cart";
 	
 	      <div class="row column text-center">
 	        
-	        <a href="/" class="button large"> Continue shopping </a>
+	        <a href="/allbooks" class="button large"> Continue shopping </a>
 	      
 	      </div>
     </div>
