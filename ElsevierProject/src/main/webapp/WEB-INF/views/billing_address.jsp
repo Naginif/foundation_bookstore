@@ -58,7 +58,7 @@ String navName = "home";
 	          </div>
 	          <div class="column">
 	            <label> Address 2 </label>
-	            <input type="text" name="addressLine2" id="addressLine2" size="30" value=<%=ba.getAddressLine2() %>/>
+	            <input type="text" name="addressLine2" id="addressLine2" size="30" value="<%=ba.getAddressLine2() %>" />
 	          </div>
 	          <div class="column">
 	            <label> City * </label>
