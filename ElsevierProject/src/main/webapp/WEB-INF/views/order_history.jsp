@@ -53,33 +53,17 @@ String navName = "home";
     while(orderIter.hasNext()) { 
     
     	Orders order = orderIter.next();
-    	if (!order.getDate().equals(date)){
-    		date = order.getDate();
-    %>
-    	<div class="row">
-    	<h1> Books Ordered on: <%=date%></h1>
+    	%>
     	<div class="column large-4 medium-6 small-12 <% if (!orderIter.hasNext()) %>end <%;%>">
       
+      	Ordered on <%=order.getDate() %>
         <a href="/bookDetails?bookId=<%=order.getBook_id()%>"><img class="thumbnail" src="<%=order.getBook_image()%>" style="width:450px;height:375px;"></a>
-        <a href="/bookDetails?bookId=<%=order.getBook_id()%>" class="button expanded">View book details</a>
         
+        <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
       	
-      	</div>
       	</div>
       
     <%
-    	}
-    	else {
-    		%>
-    	<div class="column large-4 medium-6 small-12 <% if (!orderIter.hasNext()) %>end <%;%>">
-      
-        <a href="/bookDetails?bookId=<%=order.getBook_id()%>"><img class="thumbnail" src="<%=order.getBook_image()%>" style="width:450px;height:375px;"></a>
-        <a href="/bookDetails?bookId=<%=order.getBook_id()%>" class="button expanded">View book details</a>
-        
-      	
-      	</div>
-    <%
-    	}
     }
     %>  
     
