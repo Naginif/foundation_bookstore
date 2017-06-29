@@ -181,16 +181,16 @@ String navName = "cart";
     	  var cartTotal = document.getElementById("cart_total").value;
     	  console.log("cart_total" + cartTotal);
     	  console.log(x);
-    	  for (i = 1; i < x+1; i++) {
+    	  for (i = 0; i < x; i++) {
     		  console.log("line_item_"+i);
-    		  console.log("line_item_"+i + ", " + document.getElementById("cartForm.line_item_"+i));
-    		  console.log("line_item_"+i + ", " + document.getElementById("cartForm.line_item_"+i).value);
-    		  cartTotal += document.getElementById("cartForm.line_item_"+i).value;
+    		  console.log("line_item_"+i + ", " + document.getElementById("line_item_"+i));
+    		  console.log("line_item_"+i + ", " + document.getElementById("line_item_"+i));
+    		  cartTotal += document.getElementById("line_item_"+i).value;
     	  }
     	  
     	  console.log(cartTotal);
     	  
-    	  document.getElementById("cartForm.cart_total_label").value = cartTotal;
+    	  document.getElementById("cart_total_label").value = cartTotal;
       }
       
       function sum(x, y) {
