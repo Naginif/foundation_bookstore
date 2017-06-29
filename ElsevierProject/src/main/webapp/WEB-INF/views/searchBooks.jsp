@@ -31,10 +31,6 @@ String navName = "home";
     <%@ include file="html/nav.jsp" %>
     
     
-    <h1>Search Results for <%=query %></h1>
-    
-    <section class="row">
-	<div class="large-12 column text-center">
 
 	<!-- Content goes here -->
 
@@ -42,6 +38,10 @@ String navName = "home";
 		String query = (String) session.getAttribute("searchQuery");
 	%>
 
+    <h1>Search Results for <%=query %></h1>
+    
+    <section class="row">
+	<div class="large-12 column text-center">
 
       
 
