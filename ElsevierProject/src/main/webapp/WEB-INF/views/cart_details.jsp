@@ -120,7 +120,7 @@ String navName = "cart";
             	<input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
             	Price: <label id="price_label<%=i%>"><%=priceForm%></label>
             	<input type="hidden" name="cart_total" value="<%=priceForm%>"/>
-            	Quantity <input id="quantity<%=i%>" type="number"  min="1" name="quantity" value="<%=quantity%>" oninput="calculateTotalPrice(price.value,this.value,price_label<%=i%>)"/>
+            	Quantity <input id="quantity<%=i%>" type="number"  min="1" name="quantity" value="<%=quantity%>"/>
             </form>
           </div>
           

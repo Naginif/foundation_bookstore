@@ -1,12 +1,62 @@
 $(document).ready(function() {
-	$('#cartForm').on('change', 'input', function(e) {
-		console.log(e.target.id);
+	
 
-		var selector = "quantity"+e.target.id;
-		$('#'+selector).change(function(){
-			console.log(e.target.id + ": hello world");
-		});
+	var selector;
+	var oldVal = 1;
+	var test = 500;
+
+	var currentTotal = Number($('#cart_total_label').html().replace(/[^0-9\.]+/g,""));
+	console.log(currentTotal);
+	var cart = new Array();
+
+	$(document).on('change keyup', 'input', function(e) {
+		console.log(e.target.id);
+		var priceID = e.target.id.replace("quantity","");
+		cart[priceID] = price;
+		
+		//selector = e.target.id;
+
+		//cast as number and ya got it! 
+		var price = Number(document.getElementById(e.target.id).previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.value);
+		//console.log(price);
+		var newVal = $(this).val();
+		//console.log(newVal);
+		
+		if(newVal > oldVal) {
+			console.log("+");
+			var newPrice = price;
+			//newPrice += price;
+			//console.log(newPrice);
+			 //document.getElementById(e.target.id).previousElementSibling.previousElementSibling.innerHTML = "$"+123;
+
+			 //console.log("test:" +  document.getElementById(e.target.id).previousElementSibling.previousElementSibling.value);
+			 //console.log(Number($('#cart_total_label').html().replace(/[^0-9\.]+/g,"")));
+			//$('#cart_total_label').html(Number($('#cart_total_label').html().replace(/[^0-9\.]+/g,"")) + price);
+			cart[priceID] = price * newVal;
+			oldVal = newVal;
+		} else {
+			console.log("-");
+		
+			// document.getElementById(e.target.id).previousSibling.previousSibling.value -= price;
+			//$('#cart_total_label').html(Number($('#cart_total_label').html().replace(/[^0-9\.]+/g,"")) - price);
+			cart[priceID] = price * newVal;
+			oldVal = newVal;
+		}
+
+	
+		for(var i = 0; i < cart.length; i++) {
+			currentTotal += cart[i];
+			
+		}
+$('#cart_total_label').html(currentTotal);
+console.log("current total: " + currentTotal);
+		//console.log(test);
+
 	});
+
+
+
+	
 });
 
 /**
