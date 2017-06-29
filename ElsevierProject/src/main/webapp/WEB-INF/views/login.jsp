@@ -22,31 +22,34 @@ String navName = "home";
 	   <div><p>Login failed</p></div>
 	  <% } %>
 	
-
-    <div class="callout large">
-      <div class="row column">
-		
-        <div class="large-6 medium-8 small-12 large-centered medium-centred small-centered">
-
-           <h3> Please login using your stored credentials  </h3>
-                
-               <form action="loginProcess" method="post"> 
-              
-               <label>Email ID * </label>
-                <input type="text" placeholder="Enter email" name="email" id="email"/> 
-                <label>Password * </label>
-				 <input type="password" placeholder="Enter Password" name="password" id="password"/>
-            	<input type="submit" class="button expanded" value="Login">
-              
-              </form>
-           
-           <p> New Customer?  </p> <a href="/register" class="button large expanded">Register</a>
-         
-            </div>
-      
-       
-      </div>
+	<div class="bkg">
+		<div class="callout large">
+	      <div class="row column">
+			
+	        <div class="large-6 medium-8 small-12 large-centered medium-centred small-centered">
+	
+	           <h3> Please login using your stored credentials  </h3>
+	                
+	               <form action="loginProcess" method="post"> 
+	              
+	               <label>Email ID * </label>
+	                <input type="text" placeholder="Enter email" name="email" id="email"/> 
+	                <label>Password * </label>
+					 <input type="password" placeholder="Enter Password" name="password" id="password"/>
+	            	<input type="submit" class="button expanded" value="Login">
+	              
+	              </form>
+	           
+	           <p> New Customer?  </p> <a href="/register" class="button large expanded">Register</a>
+	         
+	            </div>
+	      
+	       
+	      </div>
     </div>
+    
+	</div>
+
     
    
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
