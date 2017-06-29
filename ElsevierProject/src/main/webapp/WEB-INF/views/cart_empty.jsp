@@ -17,22 +17,21 @@ String navName = "cart";
   <body>
   	<!-- Navigation markup -->
     <%@ include file="html/nav.jsp" %>
+    
+	        <h1>Your cart is now empty </h1>
     <section class="row">
 	<div class="large-12 column text-center">
 
 	<!-- Content goes here -->
 
 	<div class="bkg">
-		<div class="callout large">
 	      <div class="row column text-center">
-	        <h1>Your cart is now empty </h1>
 	        
 	        <a href="/" class="button large"> Continue shopping </a>
 	      
 	      </div>
     </div>
-	</div>
-    
+
     
    
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
