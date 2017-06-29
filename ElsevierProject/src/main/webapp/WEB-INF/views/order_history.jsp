@@ -41,7 +41,7 @@ String navName = "home";
 	
       
 
-    <h1><%=customerName %> Your Order History</h1>
+    <h1>Recently Ordered Books</h1>
 
     <div class="row">
 
