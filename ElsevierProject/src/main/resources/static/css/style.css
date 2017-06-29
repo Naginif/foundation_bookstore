@@ -4,7 +4,6 @@
 
 body {
 	background-color: #FADDAF;
-	position: relative;
 }
 
 .top-bar, .top-bar ul, .top-bar a {
@@ -26,16 +25,10 @@ h1 {
 	text-align: center;
 }
 
-section {
-	position: absolute;
-	dsiplay: flex;
-	width: 100%;
-	height: 100%;
-}
+
 
 footer {
 	width: 100%;
-	display: block;
 	background-color: #91371B;
 }
 
@@ -95,13 +88,3 @@ h1, h2, h3, h4, h5, h6, h7{
 	 border-radius: 15px;
 }
 
-/* Footer fix stuff */
-
-
-
-
-
-
-footer {
-	postion: absolute;
-}

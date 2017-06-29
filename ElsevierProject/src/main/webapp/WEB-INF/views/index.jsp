@@ -48,9 +48,6 @@ String height = "400px";
 	<div class="large-12 column text-center">
     
     
-    
-    <section class="row">
-	<div class="large-12 column text-center">
 
 	<!-- Content goes here -->
 	
