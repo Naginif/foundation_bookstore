@@ -18,7 +18,7 @@ Customer current_customer = (Customer) session.getAttribute("logged_in_customer"
   <div class="title-bar-title">Menu</div>
 </div>
 
-<div class="top-bar" id="example-menu">
+<div class="top-bar" id="top-menu">
   <div class="top-bar-left">
     <ul class="vertical medium-horizontal menu"
     data-responsive-menu="drilldown medium-dropdown">

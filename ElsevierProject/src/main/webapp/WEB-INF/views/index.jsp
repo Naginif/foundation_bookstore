@@ -117,11 +117,5 @@ String height = "400px";
 
 	<!--  Footer markup -->
     <%@include file="html/footer.jsp" %>
-    <script type="text/javascript" src="slick/slick.min.js"></script>
-    <script>
-    $(document).ready(function(){
-		  $('.carousel').slick();
-		});
-    </script>
   </body>
 </html>
