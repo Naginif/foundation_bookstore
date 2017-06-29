@@ -54,6 +54,13 @@ String navName = "cart";
     String orderTotalForm = "$0.00";
     
     String totalPriceForm = "$0.00";
+    
+    String checkLogin = "";
+    
+    if(session.getAttribute("logged_in_customer") == null)
+    	checkLogin = "/login";
+    else 
+    	checkLogin = "/checkout";
     %>
     
     <br>
@@ -158,9 +165,14 @@ String navName = "cart";
     
         
 
-		<form action="/checkout" method="post" id="checkout_form">   
-		<input type="hidden" name="order_total" value="<%=cartTotal %>"/>   
+		<form action=<%=checkLogin %> method="post" id="checkout_form">   
+		<input type="hidden" name="order_total" value="<%=cartTotal %>"/>
+		<%if(checkLogin.equals("/login")) {%>
+		<h3>You must login to <br>proceed to checkout</h3> <br>
+		<input type="submit" class="button large expanded" value="Login"/>
+		 <%} else {%>
         <input type="submit" class="button large expanded" value="Proceed to Checkout"/>
+        <% } %>
         </form> 
       </div>  
  </div>
