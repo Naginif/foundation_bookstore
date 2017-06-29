@@ -2,16 +2,24 @@ package com.qa.controllers;
 
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.qa.models.Address;
+import com.qa.models.Customer;
+import com.qa.repositories.AddressRepository;
 @SessionAttributes(names={"book_counts"})
 @Controller
 public class CartController {
 
+	@Autowired
+	private AddressRepository addressRepository;
+	
 	@RequestMapping("/updatePrice")
 	public ModelAndView bookDetails(@RequestParam("price") double price,@RequestParam("quantity") int quantity)
 	{
@@ -27,11 +35,16 @@ public class CartController {
 	
 	
 	@RequestMapping("/checkout")
-	public ModelAndView checkoutForm(@ModelAttribute("book_counts") Map<Integer,Integer> bookCounts,@RequestParam("order_total") double orderTotal)
+	public ModelAndView checkoutForm(@ModelAttribute("book_counts") Map<Integer,Integer> bookCounts,@RequestParam("order_total") double orderTotal, @ModelAttribute("logged_in_customer") Customer loggedInCustomer)
 	{
+		Address sAddress = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "shipping");
+		Address bAddress = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "billing");
+		
 		
 		ModelAndView modelAndView = new ModelAndView("checkout","order_total",orderTotal);
 		modelAndView.addObject("book_counts", bookCounts);
+		modelAndView.addObject("shipping_address", sAddress);
+		modelAndView.addObject("billing_address", bAddress);
 		return modelAndView;
 		
 	}
