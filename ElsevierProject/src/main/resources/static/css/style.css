@@ -22,6 +22,7 @@ h1 {
 	line-height: 1.5em;
 	background-color: #EB712F;
 	padding: 1em;
+	text-align: center;
 }
 
 footer {
@@ -59,5 +60,9 @@ h1, h2, h3, h4, h5, h6, h7{
 
 .orbit-previous, .orbit-next{
 	color:#91371B;
+}
+
+.bkg {
+	height: 83vh;
 }
 
