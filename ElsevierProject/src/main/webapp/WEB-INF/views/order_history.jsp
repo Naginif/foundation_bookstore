@@ -56,7 +56,7 @@ String navName = "home";
     	%>
     	<div class="column large-4 medium-6 small-12 <% if (!orderIter.hasNext()) %>end <%;%>">
       
-      	Ordered on <%=order.getDate() %>
+      	
         <a href="/bookDetails?bookId=<%=order.getBook_id()%>"><img class="thumbnail" src="<%=order.getBook_image()%>" style="width:450px;height:375px;"></a>
         
         <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->

@@ -43,7 +43,7 @@ String navName = "home";
 	<% for(int i = 0; i < books.size(); i++) { 
 	Book book = books.get(i);
 	Integer bookCount = bookCounts.get(book.getBookId());%>
-	<div class="row panel callout">
+	<div class="row panel large-4 orderList">
 		<div class="large-6 medium-6 small-12 column">
 			<img src="<%=book.getBookImage() %>" height="20px" />
 		</div>

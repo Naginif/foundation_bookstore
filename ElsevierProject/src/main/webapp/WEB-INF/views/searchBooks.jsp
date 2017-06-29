@@ -31,10 +31,6 @@ String navName = "home";
     <%@ include file="html/nav.jsp" %>
     
     
-    <h1>Search Results for <%=query %></h1>
-    
-    <section class="row">
-	<div class="large-12 column text-center">
 
 	<!-- Content goes here -->
 
@@ -42,29 +38,57 @@ String navName = "home";
 		String query = (String) session.getAttribute("searchQuery");
 	%>
 
+    <h1>Search Results for <%=query %></h1>
+    
+    <section class="row">
+	<div class="large-12 column text-center">
 
       
-
-
-    <div class="row">
 
  
     <%
     Iterable<Book> books = (Iterable<Book>) session.getAttribute("books");
     Iterator<Book> bookIter = books.iterator();
+   	int i=0;
     while(bookIter.hasNext()) { 
     
     	Book book = bookIter.next();
     	%>
-    	<div class="column large-4 medium-6 small-12 <% if (!bookIter.hasNext()) %>end <%;%>">
+    	<div class="column large-3 medium-6 small-12 <% if (!bookIter.hasNext()) %>end <%;%>">
       
         <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="thumbnail" src="<%=book.getBookImage()%>" style="width:450px;height:375px;"></a>
-        <a href="/bookDetails?bookId=<%=book.getBookId()%>" class="button expanded">View book details</a>
         <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
       	
       	</div>
       
     <%
+    	i = i+1;
+    }
+    switch (i){
+    case 3:
+    	%>
+    	<div class="column large-3 medium-6 small-12">
+    	</div>
+    	<%
+    	break;
+    case 2:
+    	%>
+    	<div class="column large-3 medium-6 small-12">
+    	</div>
+    	<div class="column large-3 medium-6 small-12">
+    	</div>
+    	<%
+    	break;
+    case 1:
+    	%>
+    	<div class="column large-3 medium-6 small-12">
+    	</div>
+    	<div class="column large-3 medium-6 small-12">
+    	</div>
+    	<div class="column large-3 medium-6 small-12">
+    	</div>
+    	<%
+    	break;
     }
     %>  
     
