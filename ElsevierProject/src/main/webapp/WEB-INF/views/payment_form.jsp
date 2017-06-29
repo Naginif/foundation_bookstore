@@ -25,7 +25,8 @@ String navName = "home";
       <div class="row column">
         
      <form id="payment_form" action="/paymentProcess" method="post">
-        <div class="medium-6">
+        <div class="large-6 medium-8 small-12 large-centered medium-centred small-centered">
+
            <h3> Submit Payment  </h3>
                 
                 
@@ -34,11 +35,11 @@ String navName = "home";
                <label>Card Number</label>
                <input type="text" placeholder ="Enter Card Number" name="cardNumber" required maxlength="16"/>
                <label> CVV </label>
-               <input type="text" placeholder="Enter CVV" name="CVV" id="CVV" required maxlength="3"/> 
+               <input type="password" placeholder="Enter CVV" name="CVV" id="CVV" required maxlength="3"/> 
   
   				 <div class="columns" id="expiration-date">
                 <label>Expiration Date</label>
-                <select>
+                <select name = "expiration_month">
                     <option value="01">January</option>
                     <option value="02">February </option>
                     <option value="03">March</option>
@@ -52,7 +53,7 @@ String navName = "home";
                     <option value="11">November</option>
                     <option value="12">December</option>
                 </select>
-                <select>
+                <select name = "expiration_year">
                     <option value="17"> 2017</option>
                     <option value="18"> 2018</option>
                     <option value="19"> 2019</option>

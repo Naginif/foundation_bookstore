@@ -115,12 +115,12 @@ String navName = "cart";
             Published In <%=book.getPublishedDate()%>
           </div>
           <div class="column large-4 medium-4 small-12">
-            <form name="f1">
+            <form id="cartForm" name="f1">
             	<input type="hidden" name="price" value="<%=price%>"/>
             	<input type="hidden" name="cart_total" value="<%=cartTotal%>"/>
             	Price: <label id="price_label<%=i%>"><%=priceForm%></label>
             	<input type="hidden" name="cart_total" value="<%=priceForm%>"/>
-            	Quantity <input type="number"  min="1" name="quantity" value="<%=quantity%>" oninput="calculateTotalPrice(price.value,this.value,price_label<%=i%>)"/>
+            	Quantity <input id="quantity<%=i%>" type="number"  min="1" name="quantity" value="<%=quantity%>" oninput="calculateTotalPrice(price.value,this.value,price_label<%=i%>)"/>
             </form>
           </div>
           
