@@ -29,7 +29,7 @@ CREATE TABLE orders
     customer_id int(11) NOT NULL,
     FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
 	ON DELETE CASCADE ON UPDATE CASCADE,
-    PRIMARY KEY(customer_id, book_id, date)
+    PRIMARY KEY(customer_id, book_id, date, order_id)
 );
 
 CREATE TABLE book

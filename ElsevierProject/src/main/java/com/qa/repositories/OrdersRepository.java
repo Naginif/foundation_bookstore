@@ -17,5 +17,6 @@ public interface OrdersRepository extends CrudRepository<Orders, Integer>{
 	
 	@Query("SELECT o from Orders o WHERE o.customer_id = :customer_id")
 	public Iterable<Orders> findOrders(@Param("customer_id") int customer_id);
+	
 }
 

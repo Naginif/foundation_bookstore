@@ -67,8 +67,11 @@ public class CheckoutController {
 		String localDate = LocalDateTime.now().toString();
 		System.out.println(cart.size());
 		System.out.println(customer);
+		int i = (int) (ordersRepository.count() + 1);
+		System.out.println(i);
 		for (Book b : cart){
-			ordersRepository.save(new Orders(0, b.getBookId(), b.getBookImage(), 1, localDate, customer.getCustomerId()));
+			ordersRepository.save(new Orders(i, b.getBookId(), b.getBookImage(), 1, localDate, customer.getCustomerId()));
+			i++;
 		}
 		sesh.setAttribute("confirm_order", true);
 		return modelAndView;

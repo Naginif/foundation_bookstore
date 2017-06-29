@@ -69,6 +69,17 @@ String navName = "home";
       
     <%
     	}
+    	else {
+    		%>
+    	<div class="column large-4 medium-6 small-12 <% if (!orderIter.hasNext()) %>end <%;%>">
+      
+        <a href="/bookDetails?bookId=<%=order.getBook_id()%>"><img class="thumbnail" src="<%=order.getBook_image()%>" style="width:450px;height:375px;"></a>
+        <a href="/bookDetails?bookId=<%=order.getBook_id()%>" class="button expanded">View book details</a>
+        
+      	
+      	</div>
+    <%
+    	}
     }
     %>  
     
