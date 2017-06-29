@@ -148,6 +148,7 @@ String navName = "home";
   </section>
 	
 	
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	
 	
 	
@@ -155,5 +156,7 @@ String navName = "home";
 
 	<!--  Footer markup -->
     <%@include file="html/footer.jsp" %>
+
   </body>
+  
 </html>
