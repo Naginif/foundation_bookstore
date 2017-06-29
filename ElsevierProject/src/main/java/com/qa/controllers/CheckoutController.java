@@ -28,11 +28,17 @@ public class CheckoutController {
 	@RequestMapping("/sendShippingAddress")
 	public ModelAndView checkoutProcess(HttpSession session, @ModelAttribute("Address") Address shipping, @ModelAttribute("logged_in_customer") Customer customer)
 	{	
-		ModelAndView modelAndView = new ModelAndView("billing_address");
+		ModelAndView modelAndView = new ModelAndView("billing_address");	
 		shipping.setAddressType("shipping");
 		shipping.setCustomerId(customer.getCustomerId());		
 		session.setAttribute("shipping_address", shipping);
 		
+		//Fills in saved address
+		Customer loggedInCustomer = (Customer) session.getAttribute("logged_in_customer");
+		Address bAddress = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "billing");
+		modelAndView.addObject("billing_address", bAddress);
+		
+
 	    return modelAndView;
 	}
 	
@@ -83,17 +89,12 @@ public class CheckoutController {
 	public ModelAndView checkoutForm(HttpSession session, @ModelAttribute("book_counts") Map<Integer,Integer> bookCounts,@RequestParam("order_total") double orderTotal)
 	{
 		Customer loggedInCustomer = (Customer) session.getAttribute("logged_in_customer");
-		
-		Address sAddress = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "shipping");
-		Address bAddress = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "billing");
-		
-		System.out.println("Customer: " + loggedInCustomer);
-		System.out.println("Address: " + addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "shipping"));
-		
 		ModelAndView modelAndView = new ModelAndView("checkout","order_total",orderTotal);
+		
+		//Fills in saved Address
+		Address sAddress = addressRepository.findAddressByType(loggedInCustomer.getCustomerId(), "shipping");
 		modelAndView.addObject("book_counts", bookCounts);
 		modelAndView.addObject("shipping_address", sAddress);
-		modelAndView.addObject("billing_address", bAddress);
 		return modelAndView;
 		
 	}
