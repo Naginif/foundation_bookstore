@@ -41,7 +41,11 @@ p{
 	font-family: 'Zilla Slab', serif;
 }
 
-.title-bar, .top-bar, .orbit-caption, h3{
+.title-bar, .top-bar, .orbit-caption{
+	font-family: 'Zilla Slab', serif;
+}
+
+h1, h2, h3, h4, h5, h6, h7{
 	font-family: 'Zilla Slab', serif;
 }
 
