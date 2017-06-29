@@ -22,7 +22,6 @@ String navName = "cart";
   <body>
   	<!-- Navigation markup -->
     <%@ include file="html/nav.jsp" %>
-<div class="bkg">
     <section class="row">
 	<div class="large-12 column text-center">
 
@@ -57,6 +56,13 @@ String navName = "cart";
     String orderTotalForm = "$0.00";
     
     String totalPriceForm = "$0.00";
+    
+    String checkLogin;
+    
+    if(session.getAttribute("logged_in_customer") == null)
+    	checkLogin = "/login";
+    else 
+    	checkLogin = "/checkout";
     %>
     
     <br>
@@ -159,12 +165,17 @@ String navName = "cart";
            
        </div>
    
-		<form action="/checkout" method="post" id="checkout_form">   
+		<form action=<%=checkLogin%> method="post" id="checkout_form">   
 		<input type="hidden" name="order_total" value="<%=cartTotal %>"/>   
+		
+		<%if(checkLogin.equals("/login")) { %>
+		<h3>You must be logged in to<br>proceed to checkout</h3><br>
+		<input type="submit" class="button large expanded" value="Login"/>
+		<%} else {%>		
         <input type="submit" class="button large expanded" value="Proceed to Checkout"/>
+        <%}%>
         </form> 
       </div>  
- </div>
  </div>
  </div>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
