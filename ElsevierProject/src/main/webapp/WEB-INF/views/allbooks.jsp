@@ -43,7 +43,7 @@ navName = "header_workaround";
 		while(bookIter.hasNext()) {
 			Book book = bookIter.next();
 		%>
-		   	<div class="column large-4 medium-6 small-12 <% if (!bookIter.hasNext()) %>end <%;%>">
+		   	<div class="column large-3 medium-6 small-12 <% if (!bookIter.hasNext()) %>end <%;%>">
       
         <a href="/bookDetails?bookId=<%=book.getBookId()%>"><img class="thumbnail" src="<%=book.getBookImage()%>" style="width:450px;height:375px;"></a>
         <!--  a href="/addToCart?bookId=" class="button expanded">Add to Cart</a>-->
