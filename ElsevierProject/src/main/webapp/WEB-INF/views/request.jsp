@@ -23,7 +23,7 @@ String navName = "request";
 	<div class="row column text-center">
 		<form id="request_form" action="mailto:customerrequests@foundationbooks.com" method="post">
         <div class="large-6 medium-8 small-12 large-centered medium-centered small-centered">
-           <h3> Contact Us!  </h3>
+           <h3> Request a Book </h3>
                <label>First Name </label>
                <input type="text" placeholder="Enter First Name" name="firstName" id="firstName" required/> 
                <label>Last Name</label>
