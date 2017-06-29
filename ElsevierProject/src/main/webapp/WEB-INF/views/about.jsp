@@ -17,8 +17,14 @@ String navName = "about";
  	<body>
   		<!-- Navigation markup -->
     	<%@ include file="html/nav.jsp" %>
+    	
+    	<h1>Welcome to Foundation Bookstore!</h1>
+    	
+    	<section class="row">
+		<div class="large-12 column text-center">
+		
     	<div class="row column text-center large-12 medium-12 small-12">
-		<h1>Welcome to Foundation Bookstore!</h1></div>
+		</div>
 		<div class="row">
 		<div class="column large-4 medium-4 small-12">
 		<p style="font-size:24px">Looking for the classics? Looking for something new? Looking for 

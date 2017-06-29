@@ -17,6 +17,8 @@ String navName = "cart";
   <body>
   	<!-- Navigation markup -->
     <%@ include file="html/nav.jsp" %>
+    <section class="row">
+	<div class="large-12 column text-center">
 
 	<!-- Content goes here -->
 

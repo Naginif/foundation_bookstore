@@ -17,15 +17,16 @@ String navName = "home";
   	<!-- Navigation markup -->
     <%@ include file="html/nav.jsp" %>
     
-        <h1> Registration failed </h1>
+        <h1>Login failed </h1>
+        
     <section class="row">
 	<div class="large-12 column text-center">
 
 	<!-- Content goes here -->
-
+    
       <div class="row column text-center">
         
-        <a href="/register" class="button large"> Click here to try again </a>
+        <a href="/login" class="button large"> Click here to return to Login </a>
       
       </div>
 
@@ -40,7 +41,6 @@ String navName = "home";
     <%@include file="html/footer.jsp" %>
   </body>
 </html>
-
 
 
     

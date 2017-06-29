@@ -16,10 +16,13 @@ String navName = "home";
   <body>
   	<!-- Navigation markup -->
     <%@ include file="html/nav.jsp" %>
+    
+           <h1> Create an account  </h1>
+    <section class="row">
+	<div class="large-12 column text-center">
 
 	<!-- Content goes here -->
 
-    <div class="callout large">
       <div class="row column">
         
         <form id="register_form" action="/registerProcess" method="post">
@@ -36,7 +39,6 @@ String navName = "home";
         	<div class="error"> <%=request.getAttribute("failure_reason") %> </div>
         	<% } %>
         	
-           <h3> Create an account  </h3>
                 
                 
                 <label>First Name <span style="color:red;">*</span> </label>
@@ -64,7 +66,6 @@ String navName = "home";
       
       
       </div>
-    </div>
     
    
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

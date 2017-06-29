@@ -19,6 +19,8 @@ String navName = "home";
   <body>
   	<!-- Navigation markup -->
     <%@ include file="html/nav.jsp" %>
+    <section class="row">
+	<div class="large-12 column text-center">
 
 	<!-- Content goes here -->
 	
@@ -36,7 +38,7 @@ String navName = "home";
   	%>
 	
 	<section class="large-6 medium-8 small-12 large-centered medium-centred small-centered">
-	<h1>Shipping details</h1>
+	<h2>Shipping details</h2>
 	
   			
 		 <form action="/sendShippingAddress">

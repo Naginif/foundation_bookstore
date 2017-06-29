@@ -12,9 +12,6 @@ String title="Foundation Books";
 // Navigation link name
 String navName = "home";
 
-//Part of a workaround to make the header look nice
-navName = "header_workaround";
-
 //Number of books to show in the carousel
 int n_books = 3;
 
@@ -46,6 +43,11 @@ String height = "400px";
     
     
 	<h1 align="center">Foundation Bookstore's Staff Picks</h1>
+    
+    <section class="row">
+	<div class="large-12 column text-center">
+    
+    
     
     <section class="row">
 	<div class="large-12 column text-center">
