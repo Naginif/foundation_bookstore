@@ -4,6 +4,15 @@
 Customer current_customer = (Customer) session.getAttribute("logged_in_customer");	
 %>
 
+<style>
+	#searchQuery{
+		float:left;
+	}
+	#searchButton{
+		float:right;
+	}
+</style>
+
 <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
   <button class="menu-icon" type="button" data-toggle="example-menu"></button>
   <div class="title-bar-title">Menu</div>
@@ -32,12 +41,12 @@ Customer current_customer = (Customer) session.getAttribute("logged_in_customer"
 		  <% } %>
     </ul>
   </div>
+  
   <div class="top-bar-right">
-      
-      <form action="/search" method="GET">
-      <input type="search" name = "searchQuery" id = "searchQuery" placeholder="Search">
-      <input type="submit" class="button" value="Search">
-      </form>
+      	<form action="/search" method="GET">
+      	<input type="search" name = "searchQuery" id = "searchQuery" placeholder="Search" required>
+      	<input type="submit" id="searchButton" class="button" value="Search">
+      	</form>
 
   </div>
 </div>
