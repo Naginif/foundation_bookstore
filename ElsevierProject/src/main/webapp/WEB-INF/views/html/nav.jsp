@@ -13,8 +13,8 @@ Customer current_customer = (Customer) session.getAttribute("logged_in_customer"
 	}
 </style>
 
-<div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
-  <button class="menu-icon" type="button" data-toggle="example-menu"></button>
+<div class="title-bar" data-responsive-toggle="top-menu" data-hide-for="medium">
+  <button class="menu-icon" type="button" data-toggle="top-menu"></button>
   <div class="title-bar-title">Menu</div>
 </div>
 
