@@ -135,7 +135,6 @@ String navName = "home";
 	          
 	           <div class="column">
 	            <label> Email * </label>
-	            <input type="text" name="addressEmail" id="addressEmail" size="30" required/>
 	            <input type="text" name="email" id="email" size="30" value="<%=c.getEmail() %>" required/>
 	          </div>
 	          <%} %>
