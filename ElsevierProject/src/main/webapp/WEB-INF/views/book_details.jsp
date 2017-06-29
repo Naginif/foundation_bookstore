@@ -19,6 +19,7 @@ String navName = "home";
   <body>
   	<!-- Navigation markup -->
     <%@ include file="html/nav.jsp" %>
+    <div class="bkg">
     <section class="row">
 	<div class="large-12 column text-center">
 
@@ -92,7 +93,7 @@ String navName = "home";
         <!-- <button href="/addToCart?bookId=<%=book.getBookId()%>" class="button large expanded" script="">Add to Cart</button> -->
         </div>
     </div>
- 
+ </div>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier.js"></script>
     <script>

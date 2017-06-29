@@ -22,7 +22,7 @@ String navName = "cart";
   <body>
   	<!-- Navigation markup -->
     <%@ include file="html/nav.jsp" %>
-
+<div class="bkg">
     <section class="row">
 	<div class="large-12 column text-center">
 
@@ -164,6 +164,8 @@ String navName = "cart";
         <input type="submit" class="button large expanded" value="Proceed to Checkout"/>
         </form> 
       </div>  
+ </div>
+ </div>
  </div>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="js/elsevier.js"></script>
