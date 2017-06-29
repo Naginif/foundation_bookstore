@@ -17,6 +17,9 @@ String navName = "about";
  	<body>
   		<!-- Navigation markup -->
     	<%@ include file="html/nav.jsp" %>
+    	<section class="row">
+		<div class="large-12 column text-center">
+		
     	<div class="row column text-center large-12 medium-12 small-12">
 		<h1>Welcome to Foundation Bookstore!</h1></div>
 		<div class="row">

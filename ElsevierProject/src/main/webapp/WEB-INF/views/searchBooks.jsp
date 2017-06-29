@@ -13,9 +13,6 @@ String title="Foundation Books";
 
 // Navigation link name
 String navName = "home";
-
-//Part of a workaround to make the header look nice
-navName = "header_workaround";
 %>
 
 <!doctype html>
@@ -32,6 +29,12 @@ navName = "header_workaround";
   <body>
   	<!-- Navigation markup -->
     <%@ include file="html/nav.jsp" %>
+    
+    
+    <h1>Search Results for <%=query %></h1>
+    
+    <section class="row">
+	<div class="large-12 column text-center">
 
 	<!-- Content goes here -->
 
@@ -42,7 +45,6 @@ navName = "header_workaround";
 
       
 
-    <h1>Search Results for <%=query %></h1>
 
     <div class="row">
 
