@@ -49,10 +49,6 @@ String navName = "home";
 		</div>
 		<div class="large-6 medium-6 small-12 column">
 			<h4><%=book.getTitle() %></h4>
-			<p>
-			Type: <%=book.getFormat() %><br>
-			Copies: <%=bookCount %><br>
-			</p>
 			
 		</div>
 		
