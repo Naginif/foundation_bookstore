@@ -23,7 +23,6 @@ String navName = "home";
 	
 
 	
-	 <div class="callout large">
       <div class="row column">
         
      <form id="payment_form" action="/paymentProcess" method="post">
@@ -71,7 +70,7 @@ String navName = "home";
       </div>
       
       
-    </div>
+  
     
     
 	
